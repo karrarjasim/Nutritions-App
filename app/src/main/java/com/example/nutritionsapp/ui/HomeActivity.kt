@@ -9,7 +9,7 @@ import java.io.InputStreamReader
 import com.example.nutritionsapp.data.DataManager
 
 
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     private fun openFile(){
         val inputStream = assets.open("nutrition.csv")
