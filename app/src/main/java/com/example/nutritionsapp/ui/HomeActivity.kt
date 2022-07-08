@@ -28,9 +28,9 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
 
     override fun setup() {
-        openFile()
-        val dataManger = DataManager()
-        log(dataManger.getAllMeals())
+//        openFile()
+//        val dataManger = DataManager()
+//        log(dataManger.getAllMeals())
     }
 
     override fun addCallbacks() {

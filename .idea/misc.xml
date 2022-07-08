@@ -4,6 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/calculate_fragment.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/calories_fragment.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/category_details_fragment.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/details_fragment.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/home_fragment.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/onboarding_fragment.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/search_fragment.xml" value="0.296195652173913" />
       </map>
     </option>
   </component>
