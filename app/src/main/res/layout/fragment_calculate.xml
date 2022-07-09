@@ -1,6 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
+    <TextView
+        android:id="@+id/textView"
+        style="@style/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="84dp"
+        android:gravity="center"
+        android:text="@string/calorie_calculator_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/calculator_body"
+        style="@style/body_text"
+        android:layout_width="386dp"
+        android:layout_height="43dp"
+        android:text="@string/calculator_body"
+        app:layout_constraintBottom_toTopOf="@+id/age_slider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.287" />
+
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/age_label"
+        app:layout_constraintBottom_toTopOf="@+id/age_slider"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/height_label"
+        app:layout_constraintBottom_toTopOf="@+id/height_slider"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/weight_label"
+        app:layout_constraintBottom_toTopOf="@+id/weight_slider"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/activity_label"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/gender_label"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/age_value"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="22"
+        app:layout_constraintBottom_toTopOf="@+id/age_slider"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/height_value"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="22"
+        app:layout_constraintBottom_toTopOf="@+id/height_slider"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/weight_value"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="22"
+        app:layout_constraintBottom_toTopOf="@+id/weight_slider"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/age_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:contentDescription="test"
+        android:stepSize="1"
+        android:value="20"
+        android:valueFrom="15"
+        android:valueTo="80"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:thumbColor="@color/primary"
+        app:tickVisible="false"
+        app:trackColorActive="@color/primary"
+        app:trackColorInactive="@color/gray_mid" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/height_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:contentDescription="test"
+        android:stepSize="1"
+        android:value="170"
+        android:valueFrom="100"
+        android:valueTo="200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age_slider"
+        app:thumbColor="@color/primary"
+        app:tickVisible="false"
+        app:trackColorActive="@color/primary"
+        app:trackColorInactive="@color/gray_mid" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/weight_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:contentDescription="test"
+        android:stepSize="1"
+        android:value="60"
+        android:valueFrom="50"
+        android:valueTo="200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/height_slider"
+        app:thumbColor="@color/primary"
+        app:tickVisible="false"
+        app:trackColorActive="@color/primary"
+        app:trackColorInactive="@color/gray_mid" />
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="378dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/spinner_background"
+        android:entries="@array/planets_array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight_slider" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="379dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner">
+
+        <RadioButton
+            android:id="@+id/male"
+            style="@style/label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/primary"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/female"
+            style="@style/label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:buttonTint="@color/primary"
+            android:text="Female" />
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/enter_btn"
+        android:layout_width="382dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_background"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Enter"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 </androidx.constraintlayout.widget.ConstraintLayout>
