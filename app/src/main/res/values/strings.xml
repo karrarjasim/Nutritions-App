@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Nutritions App</string>
+    <string name="find_track_and_eat_healthy_food">Find, track and eat healthy food.</string>
+    <string name="collections_for_you">Collections for you</string>
+    <string name="high_protein_meals">High protein meals</string>
+    <string name="top_10_recipes_n_contains_vitamin_d3">Top 10 recipes\n contains vitamin D3</string>
+    <string name="fibers">Fibers</string>
+    <string name="high_carb_meals">High carb meals</string>
 </resources>
