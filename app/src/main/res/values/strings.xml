@@ -7,6 +7,9 @@
     <string name="activity_label">Activity</string>
     <string name="gender_label">Gender</string>
     <string name="calculator_body">For accurate calculation, we need some basic info about you.</string>
+    <string name="calculated_items_Screen_Title">Calculated Items</string>
+    <string name="card_status_description">Items crosses your body optimal calories</string>
+    <string name="card_status_face">:(</string>
 
     <string-array name="planets_array">
         <item>Sedentary(no exercise, desk job)</item>

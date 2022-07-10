@@ -1,19 +1,19 @@
 package com.example.nutritionsapp.ui
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.example.nutritionsapp.R
+import com.example.nutritionsapp.databinding.FragmentCalorieBinding
+import com.github.mikephil.charting.charts.PieChart
 
-class CalorieFragment: Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_calorie, container, false)
+class CalorieFragment : BaseFragment<FragmentCalorieBinding>(FragmentCalorieBinding::inflate) {
+    override var LOG_TAG = "CalorieFragment"
+
+    override fun onStart() {
+        super.onStart()
     }
+
+    override fun addCallBacks() {
+
+    }
+
+
 }
