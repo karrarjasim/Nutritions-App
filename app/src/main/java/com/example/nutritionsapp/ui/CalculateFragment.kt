@@ -1,12 +1,14 @@
 package com.example.nutritionsapp.ui
 
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.databinding.FragmentCalculateBinding
 
-class CalculateFragment: BaseFragment<FragmentCalculateBinding>(FragmentCalculateBinding::inflate) {
+class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
 
     override var LOG_TAG = "CalculateFragment"
 
@@ -73,6 +75,9 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>(FragmentCalculat
         }
 
     }
+
+    override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentCalculateBinding
+        get() = FragmentCalculateBinding::inflate
 
 
 }

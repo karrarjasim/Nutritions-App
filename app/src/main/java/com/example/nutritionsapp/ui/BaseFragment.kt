@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<VB: ViewBinding>( private val bindingInflater : (inflater : LayoutInflater) -> VB
-): Fragment() {
+abstract class BaseFragment<VB: ViewBinding>: Fragment() {
 
     abstract var LOG_TAG : String
     private var _binding: VB? = null
-    val binding: VB
+    abstract val inflate: (LayoutInflater, ViewGroup? , attachToRoot: Boolean) -> VB
+    protected val binding: VB
     get() = _binding as VB
 
     override fun onCreateView(
@@ -21,7 +21,7 @@ abstract class BaseFragment<VB: ViewBinding>( private val bindingInflater : (inf
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = bindingInflater.invoke(inflater)
+        _binding = inflate(inflater, container, false)
         return _binding!!.root
     }
 
