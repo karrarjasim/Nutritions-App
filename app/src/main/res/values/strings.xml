@@ -10,6 +10,10 @@
     <string name="calculated_items_Screen_Title">Calculated Items</string>
     <string name="card_status_description">Items crosses your body optimal calories</string>
     <string name="card_status_face">:(</string>
+    <string name="items_selected">selected items</string>
+    <string name="name_of_added_item">Burger</string>
+    <string name="item_calories_count">200 cal</string>
+    <string name="calories_icon_description">calories_icon</string>
 
     <string-array name="planets_array">
         <item>Sedentary(no exercise, desk job)</item>
