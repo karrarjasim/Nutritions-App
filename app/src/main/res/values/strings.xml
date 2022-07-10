@@ -13,5 +13,7 @@
         <item>Moderate exercise(3–5 days per week)</item>
         <item>Hard exercise(6–7 days per week)</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

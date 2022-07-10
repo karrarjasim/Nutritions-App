@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.nutritionsapp.R
+import com.example.nutritionsapp.databinding.ActivityCalculateBinding
 import com.example.nutritionsapp.databinding.ActivityHomeBinding
 
-class HomeActivity : AppCompatActivity() {
+class CalculateActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityHomeBinding
+    lateinit var binding: ActivityCalculateBinding
     private val homeFragment = HomeFragment()
     private val searchFragment = SearchFragment()
     private val calorieFragment = CalorieFragment()
@@ -17,34 +18,17 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
+        binding = ActivityCalculateBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initSubView()
-        addNavigationListener()
+        addCallback()
     }
 
-    private fun addNavigationListener() {
-        binding.bottomAppBar.setOnItemSelectedListener {
-                when(it.itemId){
-                    R.id.pageHome -> {
-                        replaceFragment(homeFragment)
-                        true
-                    }
-                    R.id.pageSearch -> {
-                        replaceFragment(searchFragment)
-                        true
-                    }
-                    R.id.pageCalorie -> {
-                        replaceFragment(calorieFragment)
-                        true
-                    }
-                    else -> false
-                }
-        }
+    private fun addCallback() {
     }
 
     private fun initSubView(){
-        addFragment(homeFragment);
+        addFragment(calculateFragment);
     }
     private fun addFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
