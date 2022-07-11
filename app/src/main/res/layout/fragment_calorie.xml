@@ -107,7 +107,7 @@
             android:id="@+id/selected_items"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="66dp"
             android:text="@string/items_selected"
             android:textColor="@color/black"
