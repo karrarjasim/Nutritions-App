@@ -10,4 +10,5 @@
     <color name="primary">#37B64B</color>
     <color name="dark_green">#022508</color>
     <color name="gray_mid">#C4C4C4</color>
+    <color name="tv_color">#F5F5F5</color>
 </resources>

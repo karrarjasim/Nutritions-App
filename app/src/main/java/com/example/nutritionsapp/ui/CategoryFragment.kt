@@ -15,9 +15,10 @@ class CategoryFragment: BaseFragment<FragmentCategoryBinding>() {
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentCategoryBinding
         get() = FragmentCategoryBinding::inflate
 
+
+
     var list=DataManager().mlist
     override fun addCallBacks() {
-    println(list[0].name)
       binding.tvC1.text = list[0].name
         binding.tvCal1.text="${list[0].calories} cal"
         binding.tvC2.text = list[1].name
