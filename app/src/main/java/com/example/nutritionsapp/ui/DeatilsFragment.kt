@@ -55,7 +55,7 @@ class DeatilsFragment: Fragment() {
 
         val colors: ArrayList<Int> = ArrayList()
         colors.apply {
-            add(rgb("#40966C"))
+            add(rgb("#0064E5"))
             add(rgb("#FF6752"))
             add(rgb("#FAB131"))
         }

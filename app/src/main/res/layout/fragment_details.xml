@@ -99,7 +99,7 @@
         app:layout_constraintStart_toEndOf="@id/pie_chart_details"
         app:layout_constraintTop_toTopOf="@id/pie_chart_details"
         app:layout_constraintBottom_toBottomOf="@id/pie_chart_details"
-        android:backgroundTint="@color/primary_color" />
+        android:backgroundTint="#0064E5" />
 
 
 
