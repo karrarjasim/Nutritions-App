@@ -7,14 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.example.nutritionsapp.data.DataManager
 
-abstract class BaseFragment<VB: ViewBinding>: Fragment() {
+abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
-    abstract var LOG_TAG : String
+    abstract var LOG_TAG: String
     private var _binding: VB? = null
-    abstract val inflate: (LayoutInflater, ViewGroup? , attachToRoot: Boolean) -> VB
+    abstract val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> VB
     protected val binding: VB
-    get() = _binding as VB
+        get() = _binding as VB
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,7 +33,7 @@ abstract class BaseFragment<VB: ViewBinding>: Fragment() {
 
     abstract fun addCallBacks()
 
-    fun log(value: Any){
+    fun log(value: Any) {
         Log.v(LOG_TAG, value.toString())
     }
 }
