@@ -26,10 +26,11 @@
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="8dp"
         android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.307"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/catogory">
 
 
@@ -111,6 +112,7 @@
 
                 Asia .o.y, [7/11/2022 3:45 PM]
             </LinearLayout>
+
             <LinearLayout
                 style="@style/linerlayout"
                 android:layout_width="wrap_content"
@@ -256,15 +258,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="22 cal"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
 
             </LinearLayout>
 
         </LinearLayout>
-
-
-
 
 
     </ScrollView>
