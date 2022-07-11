@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/head_text"
@@ -80,12 +86,13 @@
         android:id="@+id/fiber_meal_card"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginVertical="16dp"
         app:cardBackgroundColor="#F5F5F5"
         app:cardCornerRadius="24dp"
         app:layout_constraintEnd_toStartOf="@+id/high_carb_meal_card"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/protein_meal_card" />
+        app:layout_constraintTop_toBottomOf="@id/protein_meal_card"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/high_carb_meal_card"
@@ -96,6 +103,7 @@
         app:layout_constraintTop_toBottomOf="@id/protein_meal_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/fiber_meal_card"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:cardBackgroundColor="#F5F5F5"/>
 
     <ImageView
@@ -132,7 +140,8 @@
         android:src="@drawable/vitamin_image"
         app:layout_constraintStart_toStartOf="@id/vitamin_d3_meal_card"
         app:layout_constraintEnd_toEndOf="@id/vitamin_d3_meal_card"
-        app:layout_constraintTop_toTopOf="@id/vitamin_d3_meal_card"/>
+        app:layout_constraintTop_toTopOf="@id/vitamin_d3_meal_card"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -227,7 +236,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="2dp"
-        android:text="Protein"
+        android:text="@string/protein"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@id/protein_number"
         app:layout_constraintTop_toBottomOf="@id/protein_number"
@@ -262,7 +271,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="2dp"
-        android:text="Carb"
+        android:text="@string/carb"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@id/carb_number"
         app:layout_constraintTop_toBottomOf="@id/carb_number"
@@ -297,11 +306,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="2dp"
-        android:text="Fat"
+        android:text="@string/fat"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@id/fat_number"
         app:layout_constraintTop_toBottomOf="@id/fat_number"
         />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -22,4 +22,7 @@
     <string name="top_10_recipes_n_contains_vitamin_d3">Top 10 recipes\n contains vitamin D3</string>
     <string name="fibers">Fibers</string>
     <string name="high_carb_meals">High carb meals</string>
+    <string name="protein">Protein</string>
+    <string name="carb">Carb</string>
+    <string name="fat">Fat</string>
 </resources>
