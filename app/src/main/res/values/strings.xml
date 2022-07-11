@@ -7,6 +7,13 @@
     <string name="activity_label">Activity</string>
     <string name="gender_label">Gender</string>
     <string name="calculator_body">For accurate calculation, we need some basic info about you.</string>
+    <string name="calculated_items_Screen_Title">Calculated Items</string>
+    <string name="card_status_description">Items crosses your body optimal calories</string>
+    <string name="card_status_face">:(</string>
+    <string name="items_selected">selected items</string>
+    <string name="name_of_added_item">Burger</string>
+    <string name="item_calories_count">200 cal</string>
+    <string name="calories_icon_description">calories_icon</string>
 
     <string-array name="planets_array">
         <item>Sedentary(no exercise, desk job)</item>
@@ -15,6 +22,7 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="calories">2500</string>
 
     <string name="find_track_and_eat_healthy_food">Find, track and eat healthy food.</string>
     <string name="collections_for_you">Collections for you</string>
