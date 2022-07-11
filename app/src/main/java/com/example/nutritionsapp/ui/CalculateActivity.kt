@@ -2,6 +2,7 @@ package com.example.nutritionsapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.databinding.ActivityCalculateBinding
@@ -19,6 +20,8 @@ class CalculateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCalculateBinding.inflate(layoutInflater)
+        installSplashScreen()
+
         setContentView(binding.root)
         initSubView()
         addCallback()
