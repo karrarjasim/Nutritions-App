@@ -1,125 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
 
-    <TextView
-        android:id="@+id/calculated_items_Screen_Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/calculated_items_Screen_Title"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    >
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_containing_status"
-        android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="16dp"
-        app:cardBackgroundColor="#F5F5F5"
-        app:cardCornerRadius="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculated_items_Screen_Title">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/card_status_description"
-            android:layout_width="155dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="58dp"
-            android:text="@string/card_status_description"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/card_status_face"
+            android:id="@+id/calculated_items_Screen_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="116dp"
-            android:text="@string/card_status_face"
+            android:layout_marginTop="24dp"
+            android:text="@string/calculated_items_Screen_Title"
             android:textColor="@color/black"
-            android:textSize="48sp"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            style="@style/CircularDeterminateProgressBar"
-            android:layout_width="190dp"
-            android:layout_height="190dp"
-            android:layout_gravity="end"
-            android:layout_marginTop="20dp"
-            tools:progress="110" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_containing_status"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="#F5F5F5"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calculated_items_Screen_Title">
 
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="end"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="60dp"
-            android:background="@drawable/ic_calories_icon"
-            android:contentDescription="@string/calories_icon_description" />
+            <TextView
+                android:id="@+id/card_status_description"
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="58dp"
+                android:text="@string/card_status_description"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/card_status_face"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="116dp"
+                android:text="@string/card_status_face"
+                android:textColor="@color/black"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/CircularDeterminateProgressBar"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                tools:progress="110" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="60dp"
+                android:background="@drawable/ic_calories_icon"
+                android:contentDescription="@string/calories_icon_description" />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="106dp"
+                android:layout_marginEnd="54dp"
+                android:text="2500"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="135dp"
+                android:layout_marginEnd="44dp"
+                android:text="Cal"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+        </androidx.cardview.widget.CardView>
 
         <TextView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="end"
-            android:layout_marginTop="106dp"
-            android:layout_marginEnd="54dp"
-            android:text="2500"
+            android:id="@+id/selected_items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="66dp"
+            android:text="@string/items_selected"
             android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_containing_status" />
 
-        <TextView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="end"
-            android:layout_marginTop="135dp"
-            android:layout_marginEnd="44dp"
-            android:text="Cal"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/selected_items"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="66dp"
-        android:text="@string/items_selected"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_containing_status" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selected_items">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/selected_items">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/single_item_card1"
@@ -321,13 +321,9 @@
 
             </androidx.cardview.widget.CardView>
 
-
-
-
         </LinearLayout>
 
-    </ScrollView>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 
