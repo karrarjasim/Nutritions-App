@@ -15,28 +15,27 @@ import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.ColorTemplate.rgb
 
 
-class HomeFragment: Fragment() {
+class HomeFragment: BaseFragment<FragmentHomeBinding>() {
 
-    lateinit var binding: FragmentHomeBinding
+    override var LOG_TAG = "HOME_FRAGMENT"
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
+    override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
+        get() = FragmentHomeBinding::inflate
+
+    override fun addCallBacks() {
+
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupPieChart()
+    override fun onStart() {
+        super.onStart()
+        val calorie = arguments?.getInt("calorie")
+        setupPieChart(calorie.toString())
         loadPieChartData()
     }
 
-    private fun setupPieChart() {
+    private fun setupPieChart(calories: String) {
         binding.pieChart.apply {
-            centerText = "hello"
+            centerText = "calories\n $calories"
             setCenterTextSize(12F)
             setUsePercentValues(true)
             description.isEnabled = false
@@ -65,10 +64,21 @@ class HomeFragment: Fragment() {
         binding.pieChart.data = data
         data.setDrawValues(true)
         data.setValueFormatter(PercentFormatter(binding.pieChart))
-        data.setValueTextSize(8f);
-        data.setValueTextColor(Color.BLACK);
+        data.setValueTextSize(8f)
+        data.setValueTextColor(Color.BLACK)
         binding.pieChart.invalidate()
         binding.pieChart.animateY(1400, Easing.EaseInOutQuad)
+    }
+
+    companion object {
+
+        fun newInstance(calorie: Int): HomeFragment {
+            return HomeFragment().apply {
+                arguments = Bundle().apply {
+                    putInt("calorie", calorie)
+                }
+            }
+        }
     }
 
 }
