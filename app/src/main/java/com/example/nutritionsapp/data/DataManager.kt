@@ -58,8 +58,22 @@ class DataManager {
         )
     )
 
+    private var calories: Int = 0
+    var optimalCalories: Int = 2000
+    var calculatedCalories: Int = 0
+    var progressBarPercentage: Int = 0
 
-    fun getAllAddedMeals(): MutableList<Meal> = addedItems
+    fun getAllAddedMeals(): MutableList<Meal> {
+        addedItems.forEach {
+            calories += it.calories.toInt()
+        }
+        calculatedCalories = calories
+        println("calories = $calories")
+        progressBarPercentage = (calories * 100) / optimalCalories
+        calories = 0
+        return addedItems
+    }
+
 
     fun addMeal(meal: Meal) {
         mealsList.add(meal)

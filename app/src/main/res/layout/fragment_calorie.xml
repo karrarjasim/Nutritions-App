@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    >
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -52,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="116dp"
+                android:layout_marginTop="126dp"
                 android:text="@string/card_status_face"
                 android:textColor="@color/black"
                 android:textSize="48sp"
@@ -77,12 +78,13 @@
                 android:contentDescription="@string/calories_icon_description" />
 
             <TextView
+                android:id="@+id/calories_count"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="106dp"
                 android:layout_marginEnd="54dp"
-                android:text="2500"
+                android:text="@string/calories"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -113,7 +115,6 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_containing_status" />
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -323,7 +324,7 @@
 
         </LinearLayout>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>
 
