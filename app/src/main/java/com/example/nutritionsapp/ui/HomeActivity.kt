@@ -5,21 +5,22 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.databinding.ActivityHomeBinding
+import com.example.nutritionsapp.util.Constants
 
 class HomeActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityHomeBinding
-    private val homeFragment = HomeFragment()
+    private lateinit var binding: ActivityHomeBinding
+    private lateinit var homeFragment : HomeFragment
     private val searchFragment = SearchFragment()
     private val calorieFragment = CalorieFragment()
-    private val calculateFragment = CalculateFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initSubView()
+        val calories = intent.getIntExtra(Constants.CALORIES_KEY,0)
+        initSubView(calories)
         addNavigationListener()
     }
 
@@ -43,8 +44,9 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun initSubView(){
-        addFragment(homeFragment);
+    private fun initSubView(calories: Int){
+         homeFragment = HomeFragment.newInstance(calories)
+        addFragment(homeFragment)
     }
     private fun addFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
