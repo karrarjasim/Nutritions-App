@@ -33,7 +33,7 @@ class DeatilsFragment: Fragment() {
         setupPieChart()
         loadPieChartData()
     }
-
+///
 
     private fun setupPieChart() {
         binding.pieChartDetails.apply {

@@ -52,6 +52,10 @@
         app:layout_constraintStart_toStartOf="@id/main_image"
         app:layout_constraintTop_toBottomOf="@id/main_image" />
 
+
+
+<!--    pie chart-->
+
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pie_chart_details"
         android:layout_width="120dp"
