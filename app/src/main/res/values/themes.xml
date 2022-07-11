@@ -39,5 +39,14 @@
         <item name="android:textColor">@color/gray_mid</item>
         <item name="android:textSize">12sp</item>
     </style>
+<style name="linerlayout">
+    <item name="android:orientation">horizontal</item>
+    <item name="android:padding">18dp</item>
+</style>
+    <style name="textview">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
 
 </resources>

@@ -13,7 +13,7 @@ class HomeActivity : AppCompatActivity() {
     private val searchFragment = SearchFragment()
     private val calorieFragment = CalorieFragment()
     private val calculateFragment = CalculateFragment()
-
+    private val categoryFragment = CategoryFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
         binding.bottomAppBar.setOnItemSelectedListener {
                 when(it.itemId){
                     R.id.pageHome -> {
-                        replaceFragment(homeFragment)
+                        replaceFragment(categoryFragment)
                         true
                     }
                     R.id.pageSearch -> {
