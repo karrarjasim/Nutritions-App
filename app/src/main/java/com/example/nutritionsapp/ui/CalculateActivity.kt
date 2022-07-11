@@ -30,16 +30,17 @@ class CalculateActivity : AppCompatActivity() {
     private fun addCallback() {
     }
 
-    private fun initSubView(){
+    private fun initSubView() {
         addFragment(calculateFragment);
     }
-    private fun addFragment(fragment: Fragment){
+
+    private fun addFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.fragment_container, fragment)
         transaction.commit()
     }
 
-    private fun replaceFragment(fragment: Fragment){
+    private fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
