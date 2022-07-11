@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.*
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.databinding.FragmentCalculateBinding
+import com.example.nutritionsapp.util.Constants
 
 
 class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
@@ -68,18 +69,18 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
             }
 
         }
-        binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
-            val gender =  if (R.id.male == checkedId) "male" else "female"
-            if (gender == "female") {
-               calories =  (((10 * weight) + (6.25 * height) - (5 * age) - 161) * activityFactor).toInt()
-            }else{
-               calories =  (((10 * weight) + (6.25 * height) - (5 * age ) + 5 ) * activityFactor).toInt()
-            }
-            log(calories)
-        }
 
         binding.enterBtn.setOnClickListener() {
-            val intent = Intent(activity, HomeActivity::class.java)
+            if (binding.female.isChecked) {
+                calories =  (((10 * weight) + (6.25 * height) - (5 * age) - 161) * activityFactor).toInt()
+            }else{
+                calories =  (((10 * weight) + (6.25 * height) - (5 * age ) + 5 ) * activityFactor).toInt()
+            }
+            log(calories)
+
+            val intent = Intent(activity, HomeActivity::class.java).apply {
+                putExtra(Constants.CALORIES_KEY, calories)
+            }
             startActivity(intent)
         }
 

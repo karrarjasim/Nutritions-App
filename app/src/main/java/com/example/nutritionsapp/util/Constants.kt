@@ -11,4 +11,6 @@ object Constants {
         const val FAT = 67
         const val CAFFEINE = 74
     }
+
+    const val CALORIES_KEY = "daily_calories"
 }
