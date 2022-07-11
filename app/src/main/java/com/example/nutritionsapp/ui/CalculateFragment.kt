@@ -1,14 +1,20 @@
 package com.example.nutritionsapp.ui
 
+import android.content.Intent
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.databinding.FragmentCalculateBinding
 
-class CalculateFragment: BaseFragment<FragmentCalculateBinding>(FragmentCalculateBinding::inflate) {
+
+class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
 
     override var LOG_TAG = "CalculateFragment"
+    override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentCalculateBinding
+        get() = FragmentCalculateBinding::inflate
 
     var age: Int = 20
     var height: Int = 150
@@ -72,7 +78,17 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>(FragmentCalculat
             log(calories)
         }
 
+        binding.enterBtn.setOnClickListener() {
+            val intent = Intent(activity, HomeActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
+
+
+
+
 
 
 }
