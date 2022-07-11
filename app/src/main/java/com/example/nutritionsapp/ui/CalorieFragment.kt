@@ -19,15 +19,15 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>() {
     override fun addCallBacks() {
         binding.apply {
             cardName.text = addedItems[0].name
-            cardCalories.text = addedItems[0].calories
+            cardCalories.text = "${addedItems[0].calories} Cal"
             cardName2.text = addedItems[1].name
-            cardCalories2.text = addedItems[1].calories
+            cardCalories2.text = "${addedItems[1].calories} Cal"
             cardName3.text = addedItems[2].name
-            cardCalories3.text = addedItems[2].calories
+            cardCalories3.text = "${addedItems[2].calories} Cal"
             cardName4.text = addedItems[3].name
-            cardCalories4.text = addedItems[3].calories
+            cardCalories4.text = "${addedItems[3].calories} Cal"
             cardName5.text = addedItems[4].name
-            cardCalories5.text = addedItems[4].calories
+            cardCalories5.text = "${addedItems[4].calories} Cal"
             progressBar.setProgress(dataManager.progressBarPercentage, true)
             caloriesCount.text = dataManager.optimalCalories.toString()
             if (dataManager.calculatedCalories > dataManager.optimalCalories) {
