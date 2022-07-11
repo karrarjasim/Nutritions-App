@@ -9,7 +9,7 @@
         android:id="@+id/calculated_items_Screen_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:text="@string/calculated_items_Screen_Title"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -32,7 +32,7 @@
 
         <TextView
             android:id="@+id/card_status_description"
-            android:layout_width="169dp"
+            android:layout_width="155dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="58dp"
@@ -320,6 +320,8 @@
 
 
             </androidx.cardview.widget.CardView>
+
+
 
 
         </LinearLayout>
