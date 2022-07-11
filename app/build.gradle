@@ -30,7 +30,7 @@ android {
         jvmTarget = '1.8'
     }
 
-    buildFeatures{
+    buildFeatures {
         viewBinding true
     }
 }
@@ -49,6 +49,7 @@ dependencies {
 
     implementation 'androidx.fragment:fragment-ktx:1.5.0'
     implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.core:core-splashscreen:1.0.0-rc01'
 
 
 }
