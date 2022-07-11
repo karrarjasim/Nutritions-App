@@ -12,7 +12,8 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>() {
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentCalorieBinding
         get() = FragmentCalorieBinding::inflate
 
-    private val addedItems: List<Meal> = DataManager().getAllAddedMeals()
+    private val dataManager = DataManager()
+    private val addedItems: List<Meal> = dataManager.getAllAddedMeals()
 
 
     override fun addCallBacks() {
@@ -27,9 +28,9 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>() {
             cardCalories4.text = addedItems[3].calories
             cardName5.text = addedItems[4].name
             cardCalories5.text = addedItems[4].calories
-            progressBar.setProgress(DataManager().progressBarPercentage, true)
-            caloriesCount.text = DataManager().optimalCalories.toString()
-            if (DataManager().calculatedCalories > DataManager().optimalCalories) {
+            progressBar.setProgress(dataManager.progressBarPercentage, true)
+            caloriesCount.text = dataManager.optimalCalories.toString()
+            if (dataManager.calculatedCalories > dataManager.optimalCalories) {
                 cardStatusDescription.text = "Items crosses your body optimal calories"
                 cardStatusFace.text = ":("
             } else {
