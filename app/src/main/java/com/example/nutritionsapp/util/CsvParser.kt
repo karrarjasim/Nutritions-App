@@ -9,6 +9,7 @@ class CsvParser() {
      fun parse(line: String): Meal {
         val mList = line.split(",")
         return Meal(
+            id = mList[Constants.ColumnIndex.ID].toInt(),
             name = mList[Constants.ColumnIndex.NAME],
             servingSize = mList[Constants.ColumnIndex.SERVING_SIZE],
             calories = mList[Constants.ColumnIndex.CALORIES],
@@ -17,9 +18,13 @@ class CsvParser() {
             protein = mList[Constants.ColumnIndex.PROTEIN],
             fat = mList[Constants.ColumnIndex.FAT],
             caffeine = mList[Constants.ColumnIndex.CAFFEINE],
-            vitaminD = mList[Constants.ColumnIndex.VITAMIN_D],
+            water = mList[Constants.ColumnIndex.WATER],
+            calcium = mList[Constants.ColumnIndex.CALCIUM],
+            fiber = mList[Constants.ColumnIndex.FIBRE],
+            sugar = mList[Constants.ColumnIndex.SUGAR],
+            cholesterol = mList[Constants.ColumnIndex.CHOLESTEROL],
             carb = mList[Constants.ColumnIndex.CARB],
-            fiber = mList[Constants.ColumnIndex.FIBER]
+            vitaminD = mList[Constants.ColumnIndex.VITAMIN_D],
         )
     }
 

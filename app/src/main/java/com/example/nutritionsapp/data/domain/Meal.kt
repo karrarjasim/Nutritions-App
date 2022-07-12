@@ -4,6 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Meal(
+    val id: Int,
     val name: String,
     val servingSize: String,
     val calories: String,
@@ -15,8 +16,17 @@ data class Meal(
     val vitaminD: String,
     val carb: String,
     val fiber: String,
+    val water: String,
+    val sugar: String,
+    val calcium: String,
+    val cholesterol: String,
 ) : Parcelable {
     constructor(parcel: Parcel) : this (
+        parcel.readInt(),
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
