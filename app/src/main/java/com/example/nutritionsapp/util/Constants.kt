@@ -10,7 +10,11 @@ object Constants {
         const val PROTEIN = 38
         const val FAT = 67
         const val CAFFEINE = 74
+        const val VITAMIN_D = 28
+        const val CARB = 58
+        const val FIBER = 59
     }
 
     const val CALORIES_KEY = "daily_calories"
+    const val CATEGORY_LIST_KEY = "meals_list"
 }

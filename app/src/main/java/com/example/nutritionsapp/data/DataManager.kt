@@ -5,113 +5,185 @@ import com.example.nutritionsapp.data.domain.Meal
 class DataManager {
     private val mealsList = mutableListOf<Meal>()
 
-    fun addMeal(meal: Meal){
-        mealsList.add(meal)
+     val addedItems = mutableListOf<Meal>(
+        Meal(
+            calories = "200",
+            name = "Pizza",
+            caffeine = "10",
+            fat = "10",
+            protein = "10",
+            saturatedFat = "10",
+            servingSize = "100",
+            totalFat = "10",
+            vitaminD = "10",
+            carb = "10",
+            fiber = "10",
+        ),
+        Meal(
+            calories = "150",
+            name = "Burger",
+            caffeine = "10",
+            fat = "10",
+            protein = "10",
+            saturatedFat = "10",
+            servingSize = "100",
+            totalFat = "10",
+            vitaminD = "10",
+            carb = "10",
+            fiber = "10",
+        ),
+        Meal(
+            calories = "100",
+            name = "Chips",
+            caffeine = "10",
+            fat = "10",
+            protein = "10",
+            saturatedFat = "10",
+            servingSize = "100",
+            totalFat = "10",
+            vitaminD = "10",
+            carb = "10",
+            fiber = "10",
+        ),
+        Meal(
+            calories = "50",
+            name = "Potatoes",
+            caffeine = "10",
+            fat = "10",
+            protein = "10",
+            saturatedFat = "10",
+            servingSize = "100",
+            totalFat = "10",
+            vitaminD = "10",
+            carb = "10",
+            fiber = "10",
+        ),
+        Meal(
+            calories = "50",
+            name = "Tomatoes",
+            caffeine = "10",
+            fat = "10",
+            protein = "10",
+            saturatedFat = "10",
+            servingSize = "100",
+            totalFat = "10",
+            vitaminD = "10",
+            carb = "10",
+            fiber = "10",
+        ),
+         Meal(
+             calories = "50",
+             name = "Tomatoes",
+             caffeine = "10",
+             fat = "10",
+             protein = "10",
+             saturatedFat = "10",
+             servingSize = "100",
+             totalFat = "10",
+             vitaminD = "10",
+             carb = "10",
+             fiber = "10",
+         ),
+         Meal(
+             calories = "50",
+             name = "Tomatoes",
+             caffeine = "10",
+             fat = "10",
+             protein = "10",
+             saturatedFat = "10",
+             servingSize = "100",
+             totalFat = "10",
+             vitaminD = "10",
+             carb = "10",
+             fiber = "10",
+         ),
+         Meal(
+             calories = "50",
+             name = "Tomatoes",
+             caffeine = "10",
+             fat = "10",
+             protein = "10",
+             saturatedFat = "10",
+             servingSize = "100",
+             totalFat = "10",
+             vitaminD = "10",
+             carb = "10",
+             fiber = "10",
+         ),
+         Meal(
+             calories = "50",
+             name = "Tomatoes",
+             caffeine = "10",
+             fat = "10",
+             protein = "10",
+             saturatedFat = "10",
+             servingSize = "100",
+             totalFat = "10",
+             vitaminD = "10",
+             carb = "10",
+             fiber = "10",
+         ),
+         Meal(
+             calories = "50",
+             name = "Tomatoes",
+             caffeine = "10",
+             fat = "10",
+             protein = "10",
+             saturatedFat = "10",
+             servingSize = "100",
+             totalFat = "10",
+             vitaminD = "10",
+             carb = "10",
+             fiber = "10",
+         ),
+
+    )
+
+    private var calories: Int = 0
+    var optimalCalories: Int = 2000
+    var calculatedCalories: Int = 0
+    var progressBarPercentage: Int = 0
+
+    fun getAllAddedMeals(): MutableList<Meal> {
+        addedItems.forEach {
+            calories += it.calories.toInt()
+        }
+        calculatedCalories = calories
+        println("calories = $calories")
+        progressBarPercentage = (calories * 100) / optimalCalories
+        calories = 0
+        return addedItems
     }
 
 
-    var mlist= mutableListOf<Meal>(
-        Meal(
-        name ="Quail - raw - meat only",
-        servingSize=  "100",
-        calories = "134",
-        totalFat = "4.5 g",
-        saturatedFat = "1.3",
-        protein = "21.76",
-        fat = "4.53 g",
-        caffeine = "0",
-        ),
-        Meal(
-            name ="Chicken - boiled - feet",
-            servingSize=  "100",
-            calories = "134",
-            totalFat = "4.5 g",
-            saturatedFat = "1.3",
-            protein = "19.40",
-            fat = "4.53 g",
-            caffeine = "0",
+    fun addMeal(meal: Meal) {
+        mealsList.add(meal)
+    }
 
-            ),
-        Meal(
-            name ="Fish - raw - milkfish",
-            servingSize=  "100",
-            calories = "134",
-            totalFat = "4.5 g",
-            saturatedFat = "1.3",
-            protein = "20.53",
-            fat = "4.53 g",
-            caffeine = "0",
-
-            ),
-        Meal(
-            name ="Emu - raw - full rump",
-            servingSize=  "100",
-            calories = "134",
-            totalFat = "4.5 g",
-            saturatedFat = "1.3",
-            protein = "20.53",
-            fat = "4.53 g",
-            caffeine = "0",
-
-            ),
-        Meal(
-            name ="Quail - raw2",
-            servingSize=  "100",
-            calories = "134",
-            totalFat = "4.5 g",
-            saturatedFat = "1.3",
-            protein = "2",
-            fat = "4.53 g",
-            caffeine = "0",
-
-            ),
-        Meal(
-            name ="Quail - raw3",
-            servingSize=  "100",
-            calories = "134",
-            totalFat = "4.5 g",
-            saturatedFat = "1.3",
-            protein = "0",
-            fat = "4.53 g",
-            caffeine = "0",
-
-            ),
-        Meal(
-            name ="Quail - raw4",
-            servingSize=  "100",
-            calories = "134",
-            totalFat = "4.5 g",
-            saturatedFat = "1.3",
-            protein = "0",
-            fat = "4.53 g",
-            caffeine = "0",
-
-            ),
-        Meal(
-            name ="Quail - raw5",
-            servingSize=  "100",
-            calories = "134",
-            totalFat = "4.5 g",
-            saturatedFat = "1.3",
-            protein = "0",
-            fat = "4.53 g",
-            caffeine = "0",
-
-            ),
-        Meal(
-            name ="Quail - raw6",
-            servingSize=  "100",
-            calories = "134",
-            totalFat = "4.5 g",
-            saturatedFat = "1.3",
-            protein = "0",
-            fat = "4.53 g",
-            caffeine = "0",
-
-            )
+    fun getAllMeals(): MutableList<Meal> = mealsList
 
 
+    fun getHighProteinMeals( size: Int = 10): MutableList<Meal> {
+        mealsList.let { it ->
+            return it.sortedByDescending { it.protein }.take(size).toMutableList()
+        }
+    }
 
-    )
+    fun getTopMealsContainsVitamin(size: Int = 10): MutableList<Meal> {
+        mealsList.let { it ->
+            return it.sortedByDescending { it.vitaminD }.take(size).toMutableList()
+        }
+    }
+
+    fun getTopMealsContainsCarb(size: Int = 10): MutableList<Meal> {
+        mealsList.let { it ->
+            return it.sortedByDescending { it.carb }.take(size).toMutableList()
+        }
+    }
+
+    fun getTopMealsContainsFiber(size: Int = 10): MutableList<Meal> {
+        mealsList.let { it ->
+            return it.sortedByDescending { it.fiber }.take(size).toMutableList()
+        }
+    }
 }
-

@@ -11,4 +11,12 @@
     <color name="dark_green">#022508</color>
     <color name="gray_mid">#C4C4C4</color>
     <color name="tv_color">#F5F5F5</color>
+
+
+
+    <!--  Green Color-->
+
+    <color name="primary_light">#F0F9F4</color>
+    <color name="icon_dark">#95B4A7</color>
+    <color name="icon_light">#C1DECE</color>
 </resources>
