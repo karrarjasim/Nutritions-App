@@ -9,7 +9,7 @@ class DataManager {
         mealsList.add(meal)
     }
 
-    fun getAllMeals(): MutableList<Meal> = mealsList
+
     var mlist= mutableListOf<Meal>(
         Meal(
         name ="Quail - raw - meat only",

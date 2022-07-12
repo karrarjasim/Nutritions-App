@@ -3,39 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:paddingLeft="12dp"
-    android:paddingRight="12dp"
-
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <TextView
         android:id="@+id/catogory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
         android:text="Protain Catogory"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
         android:textStyle="bold"
-        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ScrollView
+        android:layout_height="match_parent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="70dp"
         android:scrollbars="none"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/catogory">
 
 
         <LinearLayout
-            style="@style/linerlayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -64,10 +62,9 @@
             </LinearLayout>
 
             <LinearLayout
-                style="@style/linerlayout"
+                style="@style/linerlayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
                 android:background="@drawable/textv_background">
 
                 <TextView
@@ -88,10 +85,9 @@
             </LinearLayout>
 
             <LinearLayout
-                style="@style/linerlayout"
+                style="@style/linerlayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
                 android:background="@drawable/textv_background">
 
                 <TextView
@@ -110,14 +106,12 @@
                     android:layout_height="wrap_content"
                     android:text="22 cal" />
 
-                Asia .o.y, [7/11/2022 3:45 PM]
             </LinearLayout>
 
             <LinearLayout
-                style="@style/linerlayout"
+                style="@style/linerlayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
                 android:background="@drawable/textv_background">
 
                 <TextView
@@ -138,10 +132,9 @@
             </LinearLayout>
 
             <LinearLayout
-                style="@style/linerlayout"
+                style="@style/linerlayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
                 android:background="@drawable/textv_background">
 
                 <TextView
@@ -162,10 +155,9 @@
             </LinearLayout>
 
             <LinearLayout
-                style="@style/linerlayout"
+                style="@style/linerlayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
                 android:background="@drawable/textv_background">
 
                 <TextView
@@ -187,10 +179,9 @@
             </LinearLayout>
 
             <LinearLayout
-                style="@style/linerlayout"
+                style="@style/linerlayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
                 android:background="@drawable/textv_background">
 
                 <TextView
@@ -212,10 +203,9 @@
             </LinearLayout>
 
             <LinearLayout
-                style="@style/linerlayout"
+                style="@style/linerlayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
                 android:background="@drawable/textv_background">
 
                 <TextView
@@ -237,10 +227,9 @@
             </LinearLayout>
 
             <LinearLayout
-                style="@style/linerlayout"
+                style="@style/linerlayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
                 android:background="@drawable/textv_background">
 
                 <TextView
