@@ -1,6 +1,7 @@
 package com.example.nutritionsapp.data.domain
 
 data class Meal(
+    val id: Int,
     val name: String,
     val servingSize: String,
     val calories: String,

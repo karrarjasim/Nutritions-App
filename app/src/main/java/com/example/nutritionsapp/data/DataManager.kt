@@ -5,8 +5,9 @@ import com.example.nutritionsapp.data.domain.Meal
 class DataManager {
     private val mealsList = mutableListOf<Meal>()
 
-    private val addedItems = mutableListOf(
+    val  meals = mutableListOf<Meal>(
         Meal(
+            id = 0,
             calories = "200",
             name = "Pizza",
             caffeine = "10",
@@ -17,6 +18,7 @@ class DataManager {
             totalFat = "10",
         ),
         Meal(
+            id =1,
             calories = "150",
             name = "Burger",
             caffeine = "10",
@@ -27,6 +29,7 @@ class DataManager {
             totalFat = "10",
         ),
         Meal(
+            id = 2,
             calories = "100",
             name = "Chips",
             caffeine = "10",
@@ -37,6 +40,7 @@ class DataManager {
             totalFat = "10",
         ),
         Meal(
+            id = 3,
             calories = "50",
             name = "Potatoes",
             caffeine = "10",
@@ -47,6 +51,65 @@ class DataManager {
             totalFat = "10",
         ),
         Meal(
+            id = 4,
+            calories = "50",
+            name = "Tomatoes",
+            caffeine = "10",
+            fat = "10",
+            protein = "10",
+            saturatedFat = "10",
+            servingSize = "100",
+            totalFat = "10",
+        )
+    )
+
+    private val addedItems = mutableListOf(
+        Meal(
+            id = 0,
+            calories = "200",
+            name = "Pizza",
+            caffeine = "10",
+            fat = "10",
+            protein = "10",
+            saturatedFat = "10",
+            servingSize = "100",
+            totalFat = "10",
+        ),
+        Meal(
+            id =1,
+            calories = "150",
+            name = "Burger",
+            caffeine = "10",
+            fat = "10",
+            protein = "10",
+            saturatedFat = "10",
+            servingSize = "100",
+            totalFat = "10",
+        ),
+        Meal(
+            id = 2,
+            calories = "100",
+            name = "Chips",
+            caffeine = "10",
+            fat = "10",
+            protein = "10",
+            saturatedFat = "10",
+            servingSize = "100",
+            totalFat = "10",
+        ),
+        Meal(
+            id = 3,
+            calories = "50",
+            name = "Potatoes",
+            caffeine = "10",
+            fat = "10",
+            protein = "10",
+            saturatedFat = "10",
+            servingSize = "100",
+            totalFat = "10",
+        ),
+        Meal(
+            id = 4,
             calories = "50",
             name = "Tomatoes",
             caffeine = "10",
@@ -73,6 +136,8 @@ class DataManager {
         calories = 0
         return addedItems
     }
+
+    fun getMealByID(id: Int)  =  mealsList.filter { it.id ==id } as Meal
 
 
     fun addMeal(meal: Meal) {

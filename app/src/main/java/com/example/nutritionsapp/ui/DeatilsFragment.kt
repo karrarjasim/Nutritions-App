@@ -8,8 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.nutritionsapp.R
+import com.example.nutritionsapp.data.DataManager
+import com.example.nutritionsapp.databinding.FragmentCalculateBinding
 import com.example.nutritionsapp.databinding.FragmentDetailsBinding
 import com.example.nutritionsapp.databinding.FragmentDetailsBinding.*
+import com.example.nutritionsapp.util.Constants
+import com.example.nutritionsapp.util.Converter
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
@@ -17,27 +21,45 @@ import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.ColorTemplate.rgb
 
-class DeatilsFragment: Fragment() {
-   lateinit var binding: FragmentDetailsBinding
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-       binding = inflate(inflater ,container, false)
-        return binding.root
-    }
+class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupPieChart()
+    override var LOG_TAG = Constants.DEATILS_KEY
+
+    override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentDetailsBinding
+        get()= FragmentDetailsBinding::inflate
+    var meals =DataManager()
+
+
+    override fun onStart() {
+        super.onStart()
+        val id = arguments?.getInt(Constants.ID_KEY)
+        var meal= meals.getMealByID(1)
+        setupPieChart(meal.calories)
         loadPieChartData()
-    }
-////
 
-    private fun setupPieChart() {
+//        println("hiiiiiiiiiiiiiiiiiiiiii ${meal.name}")
+//        println("hiiiiiigggggggggggggggggggggggggggiii ${meal[1].caffeine}")
+    }
+//
+    override fun addCallBacks() {
+    }
+
+
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        val id = arguments?.getInt(Constants.ID_KEY)
+//        var meal= meals.getMealByID(1)
+//        setupPieChart(meal.calories)
+//        loadPieChartData()
+//
+//        println("hiiiiiiiiiiiiiiiiiiiiii ${meal.name}")
+//        println("hiiiiiigggggggggggggggggggggggggggiii ${meal.caffeine}")
+//    }
+
+    private fun setupPieChart( calories:String) {
         binding.pieChartDetails.apply {
-            centerText = "163\nCal"
+            centerText = "${calories}\nCal"
             setCenterTextSize(12F)
             setUsePercentValues(true)
             description.isEnabled = false
@@ -71,4 +93,15 @@ class DeatilsFragment: Fragment() {
         binding.pieChartDetails.invalidate()
         binding.pieChartDetails.animateY(1400, Easing.EaseInOutQuad)
     }
+
+//    companion object {
+//
+//        fun newInstance(id : Int):DeatilsFragment {
+//            return DeatilsFragment().apply {
+//                arguments = Bundle().apply {
+//                    putInt(Constants.ID_KEY, id)
+//                }
+//            }
+//        }
+//    }
 }
