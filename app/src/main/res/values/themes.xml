@@ -40,6 +40,10 @@
         <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="reduceNormal">
+        <item name="cornerSize">16dp</item>
+    </style>
+
     <style name="CircularDeterminateProgressBar">
         <item name="android:indeterminateOnly">false</item>
         <item name="android:progressDrawable">@drawable/circle</item>

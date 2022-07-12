@@ -24,4 +24,13 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="calories">2500</string>
 
+    <string name="find_track_and_eat_healthy_food">Find, track and eat healthy food.</string>
+    <string name="collections_for_you">Collections for you</string>
+    <string name="high_protein_meals">High protein meals</string>
+    <string name="top_10_recipes_n_contains_vitamin_d3">Top 10 recipes\n contains vitamin D3</string>
+    <string name="fibers">Fibers</string>
+    <string name="high_carb_meals">High carb meals</string>
+    <string name="protein">Protein</string>
+    <string name="carb">Carb</string>
+    <string name="fat">Fat</string>
 </resources>

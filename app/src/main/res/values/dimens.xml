@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="appbar_title_size">18sp</dimen>
+    <dimen name="size_icon_normal">24dp</dimen>
+    <dimen name="size_btn_icon_normal">36dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_larg">24dp</dimen>
+    <dimen name="margin_mid">8dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+</resources>
