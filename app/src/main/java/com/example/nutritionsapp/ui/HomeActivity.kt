@@ -2,10 +2,15 @@ package com.example.nutritionsapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.nutritionsapp.R
+import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.databinding.ActivityHomeBinding
 import com.example.nutritionsapp.util.Constants
+import com.example.nutritionsapp.util.CsvParser
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 class HomeActivity : AppCompatActivity() {
 
@@ -23,6 +28,8 @@ class HomeActivity : AppCompatActivity() {
         initSubView(calories)
         addNavigationListener()
     }
+
+
 
     private fun addNavigationListener() {
         binding.bottomAppBar.setOnItemSelectedListener {
@@ -54,9 +61,11 @@ class HomeActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-    private fun replaceFragment(fragment: Fragment){
+     fun replaceFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
     }
+
+
 }

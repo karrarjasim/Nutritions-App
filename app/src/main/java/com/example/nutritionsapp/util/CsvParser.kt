@@ -6,7 +6,7 @@ import java.io.File
 
 class CsvParser() {
 
-     fun getAllMeals(line: String): Meal {
+     fun parse(line: String): Meal {
         val mList = line.split(",")
         return Meal(
             name = mList[Constants.ColumnIndex.NAME],
@@ -16,7 +16,10 @@ class CsvParser() {
             saturatedFat = mList[Constants.ColumnIndex.SATURATED_FAT],
             protein = mList[Constants.ColumnIndex.PROTEIN],
             fat = mList[Constants.ColumnIndex.FAT],
-            caffeine = mList[Constants.ColumnIndex.CAFFEINE]
+            caffeine = mList[Constants.ColumnIndex.CAFFEINE],
+            vitaminD = mList[Constants.ColumnIndex.VITAMIN_D],
+            carb = mList[Constants.ColumnIndex.CARB],
+            fiber = mList[Constants.ColumnIndex.FIBER]
         )
     }
 
