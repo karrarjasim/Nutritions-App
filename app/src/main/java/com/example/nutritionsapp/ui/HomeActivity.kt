@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.databinding.ActivityHomeBinding
 import com.example.nutritionsapp.util.Constants
+import com.example.nutritionsapp.util.CsvParser
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 class HomeActivity : AppCompatActivity() {
 
@@ -28,38 +31,36 @@ class HomeActivity : AppCompatActivity() {
 
     private fun addNavigationListener() {
         binding.bottomAppBar.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.pageHome -> {
-                    replaceFragment(homeFragment)
-                    true
+                when(it.itemId){
+                    R.id.pageHome -> {
+                        replaceFragment(homeFragment)
+                        true
+                    }
+                    R.id.pageSearch -> {
+                        replaceFragment(searchFragment)
+                        true
+                    }
+                    R.id.pageCalorie -> {
+                        replaceFragment(calorieFragment)
+                        true
+                    }
+                    else -> false
                 }
-                R.id.pageSearch -> {
-                    replaceFragment(searchFragment)
-                    true
-                }
-                R.id.pageCalorie -> {
-                    replaceFragment(calorieFragment)
-                    true
-                }
-                else -> false
-            }
         }
     }
-
 
     private fun initSubView(calories: Int){
          homeFragment = HomeFragment.newInstance(calories)
         addFragment(homeFragment)
-
     }
-
-    private fun addFragment(fragment: Fragment) {
+     fun addFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.fragment_container, fragment)
+         transaction.addToBackStack("fragment")
         transaction.commit()
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+     fun replaceFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()

@@ -66,7 +66,7 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
         val buffer =BufferedReader(InputStreamReader(inputStream))
         val parser =CsvParser()
         buffer.forEachLine {
-            val meal = parser.getAllMeals(it)
+            val meal = parser.parse(it)
             meals.addMeal(meal)
         }
     }

@@ -82,6 +82,7 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
                 putExtra(Constants.CALORIES_KEY, calories)
             }
             startActivity(intent)
+            activity?.finish()
         }
 
 

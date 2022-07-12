@@ -1,10 +1,12 @@
 package com.example.nutritionsapp.util
 
 import com.example.nutritionsapp.data.domain.Meal
+import com.example.nutritionsapp.interfaces.DataSource
+import java.io.File
 
 class CsvParser() {
 
-     fun getAllMeals(line: String): Meal {
+     fun parse(line: String): Meal {
         val mList = line.split(",")
         return Meal(
             id = mList[Constants.ColumnIndex.ID].toInt(),
@@ -21,6 +23,8 @@ class CsvParser() {
             fiber = mList[Constants.ColumnIndex.FIBRE],
             sugar = mList[Constants.ColumnIndex.SUGAR],
             cholesterol = mList[Constants.ColumnIndex.CHOLESTEROL],
+            carb = mList[Constants.ColumnIndex.CARB],
+            vitaminD = mList[Constants.ColumnIndex.VITAMIN_D],
         )
     }
 
