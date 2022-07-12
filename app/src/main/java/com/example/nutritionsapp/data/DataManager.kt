@@ -15,6 +15,9 @@ class DataManager {
             saturatedFat = "10",
             servingSize = "100",
             totalFat = "10",
+            vitaminD = "10",
+            carb = "10",
+            fiber = "10",
         ),
         Meal(
             calories = "150",
@@ -25,6 +28,9 @@ class DataManager {
             saturatedFat = "10",
             servingSize = "100",
             totalFat = "10",
+            vitaminD = "10",
+            carb = "10",
+            fiber = "10",
         ),
         Meal(
             calories = "100",
@@ -35,6 +41,9 @@ class DataManager {
             saturatedFat = "10",
             servingSize = "100",
             totalFat = "10",
+            vitaminD = "10",
+            carb = "10",
+            fiber = "10",
         ),
         Meal(
             calories = "50",
@@ -45,6 +54,9 @@ class DataManager {
             saturatedFat = "10",
             servingSize = "100",
             totalFat = "10",
+            vitaminD = "10",
+            carb = "10",
+            fiber = "10",
         ),
         Meal(
             calories = "50",
@@ -55,6 +67,9 @@ class DataManager {
             saturatedFat = "10",
             servingSize = "100",
             totalFat = "10",
+            vitaminD = "10",
+            carb = "10",
+            fiber = "10",
         )
     )
 
@@ -80,4 +95,29 @@ class DataManager {
     }
 
     fun getAllMeals(): MutableList<Meal> = mealsList
+
+
+    fun getHighProteinMeals( size: Int = 10): MutableList<Meal> {
+        mealsList.let { it ->
+            return it.sortedByDescending { it.protein }.take(size).toMutableList()
+        }
+    }
+
+    fun getTopMealsContainsVitamin(size: Int = 10): MutableList<Meal> {
+        mealsList.let { it ->
+            return it.sortedByDescending { it.vitaminD }.take(size).toMutableList()
+        }
+    }
+
+    fun getTopMealsContainsCarb(size: Int = 10): MutableList<Meal> {
+        mealsList.let { it ->
+            return it.sortedByDescending { it.carb }.take(size).toMutableList()
+        }
+    }
+
+    fun getTopMealsContainsFiber(size: Int = 10): MutableList<Meal> {
+        mealsList.let { it ->
+            return it.sortedByDescending { it.fiber }.take(size).toMutableList()
+        }
+    }
 }
