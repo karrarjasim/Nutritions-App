@@ -14,12 +14,15 @@ import com.example.nutritionsapp.databinding.FragmentDetailsBinding
 import com.example.nutritionsapp.databinding.FragmentDetailsBinding.*
 import com.example.nutritionsapp.util.Constants
 import com.example.nutritionsapp.util.Converter
+import com.example.nutritionsapp.util.CsvParser
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.ColorTemplate.rgb
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
@@ -27,37 +30,53 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentDetailsBinding
         get()= FragmentDetailsBinding::inflate
-    var meals =DataManager()
 
-
+    private val meals =DataManager()
+     var water =""
+     var sugar =""
+     var fat =""
     override fun onStart() {
         super.onStart()
+        openFile()
         val id = arguments?.getInt(Constants.ID_KEY)
-        var meal= meals.getMealByID(1)
-        setupPieChart(meal.calories)
+        val meal= meals.getMealByID(1)
+        setupPieChart(meal?.calories)
         loadPieChartData()
 
-//        println("hiiiiiiiiiiiiiiiiiiiiii ${meal.name}")
-//        println("hiiiiiigggggggggggggggggggggggggggiii ${meal[1].caffeine}")
+        binding.caffeineNumber.text = meal?.caffeine
+        binding.waterNumber.text =meal?.water
+        binding.sugareNumber.text =meal?.sugar
+        binding.fatNumber.text =meal?.fat
+        binding.countFiber.text =meal?.fiber
+
+        binding.proteinNumber.text =meal?.protein
+        binding.calciumNumber.text =meal?.calcium
+        binding.cholesterolNumber.text =meal?.cholesterol
+
+        var waterN  = meal?.water!!.split(" ")
+        var sugarN  = meal?.sugar!!.split(" ")
+        var fatN  = meal?.fat!!.split(" ")
+        water = waterN[0]
+        sugar =sugarN[0]
+        fat =fatN[0]
     }
-//
+
+    private fun openFile() {
+        var inputStream = activity?.assets?.open("nutrition.csv")
+        val buffer =BufferedReader(InputStreamReader(inputStream))
+        val parser =CsvParser()
+        buffer.forEachLine {
+            val meal = parser.getAllMeals(it)
+            meals.addMeal(meal)
+        }
+    }
+
     override fun addCallBacks() {
     }
 
 
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        val id = arguments?.getInt(Constants.ID_KEY)
-//        var meal= meals.getMealByID(1)
-//        setupPieChart(meal.calories)
-//        loadPieChartData()
-//
-//        println("hiiiiiiiiiiiiiiiiiiiiii ${meal.name}")
-//        println("hiiiiiigggggggggggggggggggggggggggiii ${meal.caffeine}")
-//    }
-
-    private fun setupPieChart( calories:String) {
+    private fun setupPieChart( calories:String?) {
         binding.pieChartDetails.apply {
             centerText = "${calories}\nCal"
             setCenterTextSize(12F)
@@ -74,6 +93,9 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
             add(PieEntry(0.3f))
             add(PieEntry(0.2f))
         }
+//        add(PieEntry(water.toFloat() ))
+//        add(PieEntry(sugar.toFloat()))
+//        add(PieEntry(fat.toFloat()))
 
         val colors: ArrayList<Int> = ArrayList()
         colors.apply {

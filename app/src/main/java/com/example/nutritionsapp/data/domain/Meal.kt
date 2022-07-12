@@ -9,5 +9,11 @@ data class Meal(
     val saturatedFat: String,
     val protein: String,
     val fat: String,
-    val caffeine: String
+    val caffeine: String,
+    val water: String,
+    val sugar: String,
+    val fiber: String,
+    val calcium: String,
+    val cholesterol: String,
+
     )

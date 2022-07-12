@@ -16,6 +16,11 @@ class CsvParser() {
             protein = mList[Constants.ColumnIndex.PROTEIN],
             fat = mList[Constants.ColumnIndex.FAT],
             caffeine = mList[Constants.ColumnIndex.CAFFEINE],
+            water = mList[Constants.ColumnIndex.WATER],
+            calcium = mList[Constants.ColumnIndex.CALCIUM],
+            fiber = mList[Constants.ColumnIndex.FIBRE],
+            sugar = mList[Constants.ColumnIndex.SUGAR],
+            cholesterol = mList[Constants.ColumnIndex.CHOLESTEROL],
         )
     }
 
