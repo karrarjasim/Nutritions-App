@@ -23,7 +23,7 @@ class CalculateActivity : AppCompatActivity() {
         installSplashScreen()
 
         setContentView(binding.root)
-        initSubView()
+//        initSubView()
         addCallback()
     }
 

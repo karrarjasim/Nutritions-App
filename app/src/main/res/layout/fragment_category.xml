@@ -1,6 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
 
+    <TextView
+        android:id="@+id/catogory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Protain Catogory"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="70dp"
+        android:scrollbars="none"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/catogory">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/linerlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textv_background">
+
+                <TextView
+                    android:id="@+id/tv_c1"
+                    style="@style/textview"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cauliflower - raw" />
+
+                <TextView
+                    android:id="@+id/tv_cal1"
+                    style="@style/textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22 cal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linerlayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textv_background">
+
+                <TextView
+                    android:id="@+id/tv_c2"
+                    style="@style/textview"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cauliflower - raw" />
+
+                <TextView
+                    android:id="@+id/tv_cal2"
+                    style="@style/textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22 cal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linerlayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textv_background">
+
+                <TextView
+                    android:id="@+id/tv_c3"
+                    style="@style/textview"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cauliflower - raw" />
+
+
+                <TextView
+                    android:id="@+id/tv_cal3"
+                    style="@style/textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22 cal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linerlayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textv_background">
+
+                <TextView
+                    android:id="@+id/tv_c4"
+                    style="@style/textview"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cauliflower - raw" />
+
+                <TextView
+                    android:id="@+id/tv_cal4"
+                    style="@style/textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22 cal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linerlayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textv_background">
+
+                <TextView
+                    android:id="@+id/tv_c5"
+                    style="@style/textview"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cauliflower - raw" />
+
+
+                <TextView
+                    android:id="@+id/tv_cal5"
+                    style="@style/textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22 cal" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linerlayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textv_background">
+
+                <TextView
+                    android:id="@+id/tv_c6"
+                    style="@style/textview"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cauliflower - raw" />
+
+
+                <TextView
+                    android:id="@+id/tv_cal6"
+                    style="@style/textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22 cal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linerlayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textv_background">
+
+                <TextView
+                    android:id="@+id/tv_c7"
+                    style="@style/textview"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cauliflower - raw" />
+
+
+                <TextView
+                    android:id="@+id/tv_cal7"
+                    style="@style/textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22 cal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linerlayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textv_background">
+
+                <TextView
+                    android:id="@+id/tv_c8"
+                    style="@style/textview"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cauliflower - raw" />
+
+
+                <TextView
+                    android:id="@+id/tv_cal8"
+                    style="@style/textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22 cal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linerlayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textv_background">
+
+                <TextView
+                    android:id="@+id/tv_c9"
+                    style="@style/textview"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cauliflower - raw" />
+
+
+                <TextView
+                    android:id="@+id/tv_cal9"
+                    style="@style/textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22 cal"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

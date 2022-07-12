@@ -5,7 +5,7 @@ import com.example.nutritionsapp.data.domain.Meal
 class DataManager {
     private val mealsList = mutableListOf<Meal>()
 
-    private val addedItems = mutableListOf(
+     val addedItems = mutableListOf<Meal>(
         Meal(
             calories = "200",
             name = "Pizza",
@@ -70,7 +70,73 @@ class DataManager {
             vitaminD = "10",
             carb = "10",
             fiber = "10",
-        )
+        ),
+         Meal(
+             calories = "50",
+             name = "Tomatoes",
+             caffeine = "10",
+             fat = "10",
+             protein = "10",
+             saturatedFat = "10",
+             servingSize = "100",
+             totalFat = "10",
+             vitaminD = "10",
+             carb = "10",
+             fiber = "10",
+         ),
+         Meal(
+             calories = "50",
+             name = "Tomatoes",
+             caffeine = "10",
+             fat = "10",
+             protein = "10",
+             saturatedFat = "10",
+             servingSize = "100",
+             totalFat = "10",
+             vitaminD = "10",
+             carb = "10",
+             fiber = "10",
+         ),
+         Meal(
+             calories = "50",
+             name = "Tomatoes",
+             caffeine = "10",
+             fat = "10",
+             protein = "10",
+             saturatedFat = "10",
+             servingSize = "100",
+             totalFat = "10",
+             vitaminD = "10",
+             carb = "10",
+             fiber = "10",
+         ),
+         Meal(
+             calories = "50",
+             name = "Tomatoes",
+             caffeine = "10",
+             fat = "10",
+             protein = "10",
+             saturatedFat = "10",
+             servingSize = "100",
+             totalFat = "10",
+             vitaminD = "10",
+             carb = "10",
+             fiber = "10",
+         ),
+         Meal(
+             calories = "50",
+             name = "Tomatoes",
+             caffeine = "10",
+             fat = "10",
+             protein = "10",
+             saturatedFat = "10",
+             servingSize = "100",
+             totalFat = "10",
+             vitaminD = "10",
+             carb = "10",
+             fiber = "10",
+         ),
+
     )
 
     private var calories: Int = 0

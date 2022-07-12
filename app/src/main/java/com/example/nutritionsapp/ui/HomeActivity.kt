@@ -53,9 +53,10 @@ class HomeActivity : AppCompatActivity() {
          homeFragment = HomeFragment.newInstance(calories)
         addFragment(homeFragment)
     }
-    private fun addFragment(fragment: Fragment){
+     fun addFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.fragment_container, fragment)
+         transaction.addToBackStack("fragment")
         transaction.commit()
     }
 

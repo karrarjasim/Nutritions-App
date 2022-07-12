@@ -108,7 +108,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
 
     private fun openCategoryDetails(mealsList: MutableList<Meal>){
         val categoryFragment = CategoryFragment.newInstance(mealsList as ArrayList<Meal>)
-        (activity as HomeActivity).replaceFragment(categoryFragment)
+        (activity as HomeActivity).addFragment(categoryFragment)
     }
 
     companion object {
