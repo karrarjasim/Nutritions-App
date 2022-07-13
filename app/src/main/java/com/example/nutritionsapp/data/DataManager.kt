@@ -7,7 +7,7 @@ class DataManager {
     private val mealsList = mutableListOf<Meal>()
 
 
-    private val addedItems = mutableListOf(
+     val addedItems = mutableListOf(
         Meal(
             id = 0,
             calories = "200",
