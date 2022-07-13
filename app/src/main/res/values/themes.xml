@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.NutritionsApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.NutritionsApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -13,4 +13,55 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="title_text">
+        <item name="android:textColor">@color/dark_green</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="label_text">
+        <item name="android:textColor">@color/dark_green</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="body_text">
+        <item name="android:textColor">@color/gray_mid</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+
+    <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textColor">@color/gray_mid</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+<style name="linerlayout">
+    <item name="android:orientation">horizontal</item>
+    <item name="android:paddingTop">18dp</item>
+    <item name="android:paddingBottom">17dp</item>
+    <item name="android:paddingLeft">29dp</item>
+    <item name="android:paddingRight">25dp</item>
+</style>
+    <style name="linerlayout2" parent="linerlayout">
+       <item name="android:layout_marginTop">20dp</item>
+    </style>
+    <style name="textview">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="reduceNormal">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="CircularDeterminateProgressBar">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/circle</item>
+    </style>
+
 </resources>
