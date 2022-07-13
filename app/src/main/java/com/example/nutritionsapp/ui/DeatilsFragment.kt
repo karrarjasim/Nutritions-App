@@ -39,7 +39,7 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
         super.onStart()
         openFile()
         val id = arguments?.getInt(Constants.ID_KEY)
-        val meal= meals.getMealByID(1)
+        val meal= meals.getMealByID(requireNotNull(id))
         setupPieChart(meal?.calories)
         loadPieChartData()
 
