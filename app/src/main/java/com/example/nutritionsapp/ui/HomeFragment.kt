@@ -41,12 +41,12 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
         }
 
         binding.highCarbMealCard.setOnClickListener {
-            val carbList = dataManager.getTopMealsContainsCarb()
+            val carbList = dataManager.getTopMealsContainsCarb(mealsList)
             openCategoryDetails(carbList)
         }
 
         binding.fiberMealCard.setOnClickListener {
-            val fiberList = dataManager.getTopMealsContainsFiber()
+            val fiberList = dataManager.getTopMealsContainsFiber(mealsList)
             openCategoryDetails(fiberList)
         }
     }

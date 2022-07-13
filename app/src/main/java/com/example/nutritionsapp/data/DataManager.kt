@@ -115,26 +115,26 @@ class DataManager {
         mealsList.add(meal)
     }
 
-    fun getHighProteinMeals(addedItems: List<Meal>,size: Int = 10): MutableList<Meal> {
+    fun getHighProteinMeals(addedItems: List<Meal>, size: Int = 10): MutableList<Meal> {
         addedItems.let { it ->
             return it.sortedByDescending { it.protein }.take(size).toMutableList()
         }
     }
 
-    fun getTopMealsContainsVitamin(addedItems: List<Meal>,size: Int = 10): MutableList<Meal> {
+    fun getTopMealsContainsVitamin(addedItems: List<Meal>, size: Int = 10): MutableList<Meal> {
         addedItems.let { it ->
             return it.sortedByDescending { it.vitaminD }.take(size).toMutableList()
         }
     }
 
-    fun getTopMealsContainsCarb(size: Int = 10): MutableList<Meal> {
-        mealsList.let { it ->
+    fun getTopMealsContainsCarb(addedItems: List<Meal>, size: Int = 10): MutableList<Meal> {
+        addedItems.let { it ->
             return it.sortedByDescending { it.carb }.take(size).toMutableList()
         }
     }
 
-    fun getTopMealsContainsFiber(size: Int = 10): MutableList<Meal> {
-        mealsList.let { it ->
+    fun getTopMealsContainsFiber(addedItems: List<Meal>, size: Int = 10): MutableList<Meal> {
+        addedItems.let { it ->
             return it.sortedByDescending { it.fiber }.take(size).toMutableList()
         }
     }
