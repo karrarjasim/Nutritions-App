@@ -78,9 +78,9 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
         binding.btnDialy.setOnClickListener {
             binding.btnDialy.text = "Done"
         }
-        binding.arrowIcon.setOnClickListener {
-            openCategoryDetails()
-        }
+//        binding.arrowIcon.setOnClickListener {
+//            (activity as HomeActivity).replaceFragment(detylsFragment)
+//        }
     }
     private fun openCategoryDetails(){
 //        val transaction = supportFragmentManager.beginTransaction()
@@ -131,18 +131,12 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
 
 
-//    private fun  openCalorie(id :Int ){
-//        val calorieFragment = CalorieFragment.newInstance(id)
-//
-//    }
-
-
     companion object {
 
-        fun newInstance(meal: Meal):DeatilsFragment {
+        fun newInstance(key: Int):DeatilsFragment {
             return DeatilsFragment().apply {
                 arguments = Bundle().apply {
-                    putParcelable(Constants.ID_KEY, meal)
+                    putInt(Constants.ID_KEY, key)
                 }
             }
         }
