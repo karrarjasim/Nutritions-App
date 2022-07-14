@@ -5,7 +5,7 @@ import com.example.nutritionsapp.data.domain.Meal
 class DataManager {
     val mealsList = mutableListOf<Meal>()
 
-    val addedItems = mutableListOf(
+     val addedItems = mutableListOf(
         Meal(
             id = 0,
             calories = "200",
