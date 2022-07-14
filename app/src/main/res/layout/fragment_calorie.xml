@@ -18,8 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="@string/calculated_items_Screen_Title"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            style="@style/title_text"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,8 +38,8 @@
 
             <TextView
                 android:id="@+id/card_status_description"
-                android:layout_width="155dp"
-                android:layout_height="wrap_content"
+                android:layout_width="137dp"
+                android:layout_height="61dp"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="58dp"
                 android:text="@string/card_status_description"
@@ -53,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="126dp"
+                android:layout_marginTop="130dp"
                 android:text="@string/card_status_face"
                 android:textColor="@color/black"
                 android:textSize="48sp"
@@ -104,14 +103,13 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
+            style="@style/label_text"
             android:id="@+id/selected_items"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="66dp"
             android:text="@string/items_selected"
-            android:textColor="@color/black"
-            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_containing_status" />
@@ -130,34 +128,31 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="6dp"
                 app:cardBackgroundColor="#F5F5F5"
-                app:cardCornerRadius="16dp"
+                app:cardCornerRadius="10dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/selected_items">
 
                 <TextView
                     android:id="@+id/card_name"
+                    style="@style/textviewMarginStart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:layout_marginStart="28dp"
                     android:layout_marginTop="18dp"
-                    android:text="Burger"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:text="Burger" />
 
                 <TextView
                     android:id="@+id/card_calories"
+                    style="@style/textviewMarginEnd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="18dp"
                     android:layout_marginEnd="28dp"
                     android:text="200 cal"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/black" />
 
 
             </androidx.cardview.widget.CardView>
@@ -170,24 +165,23 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="6dp"
                 app:cardBackgroundColor="#F5F5F5"
-                app:cardCornerRadius="16dp"
+                app:cardCornerRadius="10dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/single_item_card1">
 
                 <TextView
                     android:id="@+id/card_name2"
+                    style="@style/textviewMarginStart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:layout_marginStart="28dp"
                     android:layout_marginTop="18dp"
-                    android:text="Pizza"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:text="Pizza" />
 
                 <TextView
+                    style="@style/textviewMarginEnd"
                     android:id="@+id/card_calories2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -195,8 +189,6 @@
                     android:layout_marginTop="18dp"
                     android:layout_marginEnd="28dp"
                     android:text="150 cal"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
@@ -210,34 +202,30 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="6dp"
                 app:cardBackgroundColor="#F5F5F5"
-                app:cardCornerRadius="16dp"
+                app:cardCornerRadius="10dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/single_item_card2">
 
                 <TextView
+                    style="@style/textviewMarginStart"
                     android:id="@+id/card_name3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:layout_marginStart="28dp"
                     android:layout_marginTop="18dp"
-                    android:text="Rezo"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:text="Rezo" />
 
                 <TextView
+                    style="@style/textviewMarginEnd"
                     android:id="@+id/card_calories3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="18dp"
                     android:layout_marginEnd="28dp"
-                    android:text="170 cal"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:text="170 cal" />
 
 
             </androidx.cardview.widget.CardView>
@@ -250,34 +238,30 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="6dp"
                 app:cardBackgroundColor="#F5F5F5"
-                app:cardCornerRadius="16dp"
+                app:cardCornerRadius="10dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/single_item_card2">
 
                 <TextView
+                    style="@style/textviewMarginStart"
                     android:id="@+id/card_name4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:layout_marginStart="28dp"
                     android:layout_marginTop="18dp"
-                    android:text="Rezo"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:text="Rezo" />
 
                 <TextView
+                    style="@style/textviewMarginEnd"
                     android:id="@+id/card_calories4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="18dp"
                     android:layout_marginEnd="28dp"
-                    android:text="170 cal"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:text="170 cal" />
 
 
             </androidx.cardview.widget.CardView>
@@ -290,34 +274,30 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="6dp"
                 app:cardBackgroundColor="#F5F5F5"
-                app:cardCornerRadius="16dp"
+                app:cardCornerRadius="10dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/single_item_card2">
 
                 <TextView
+                    style="@style/textviewMarginStart"
                     android:id="@+id/card_name5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:layout_marginStart="28dp"
                     android:layout_marginTop="18dp"
-                    android:text="Rezo"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:text="Rezo" />
 
                 <TextView
+                    style="@style/textviewMarginEnd"
                     android:id="@+id/card_calories5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="18dp"
                     android:layout_marginEnd="28dp"
-                    android:text="170 cal"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:text="170 cal" />
 
 
             </androidx.cardview.widget.CardView>
