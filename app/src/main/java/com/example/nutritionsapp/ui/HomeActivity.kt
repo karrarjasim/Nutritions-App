@@ -2,14 +2,11 @@ package com.example.nutritionsapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.databinding.ActivityHomeBinding
 import com.example.nutritionsapp.util.Constants
-import com.example.nutritionsapp.util.CsvParser
-import java.io.BufferedReader
-import java.io.InputStreamReader
+
 
 class HomeActivity : AppCompatActivity() {
 
@@ -22,7 +19,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
-        installSplashScreen()
+        setTheme(R.style.splashScreenTheme)
         setContentView(binding.root)
         val calories = intent.getIntExtra(Constants.CALORIES_KEY, 0)
         initSubView(calories)
