@@ -1,11 +1,10 @@
 package com.example.nutritionsapp.data
 
 import com.example.nutritionsapp.data.domain.Meal
-import com.example.nutritionsapp.util.Constants
+import java.io.Serializable
 
-class DataManager {
-    private val mealsList = mutableListOf<Meal>()
-
+class DataManager : Serializable {
+    val mealsList = mutableListOf<Meal>()
 
      val addedItems = mutableListOf(
         Meal(
@@ -18,16 +17,16 @@ class DataManager {
             saturatedFat = "10",
             servingSize = "100",
             totalFat = "10",
-            water = "10 g" ,
-            calcium = "10 g" ,
-            fiber ="10 g" ,
-            sugar ="10 g" ,
-            cholesterol = "10 g" ,
-            carb = "10 g" ,
-            vitaminD = "10 g" ,
+            water = "10 g",
+            calcium = "10 g",
+            fiber = "10 g",
+            sugar = "10 g",
+            cholesterol = "10 g",
+            carb = "10 g",
+            vitaminD = "10 g",
         ),
         Meal(
-            id =1,
+            id = 1,
             calories = "150",
             name = "Burger",
             caffeine = "10",
@@ -36,13 +35,13 @@ class DataManager {
             saturatedFat = "10",
             servingSize = "100",
             totalFat = "10",
-            water = "10 g" ,
-            calcium = "10 g" ,
-            fiber ="10 g" ,
-            sugar ="10 g" ,
-            cholesterol = "10 g" ,
-            carb = "10 g" ,
-            vitaminD = "10 g" ,
+            water = "10 g",
+            calcium = "10 g",
+            fiber = "10 g",
+            sugar = "10 g",
+            cholesterol = "10 g",
+            carb = "10 g",
+            vitaminD = "10 g",
         ),
         Meal(
             id = 2,
@@ -54,13 +53,13 @@ class DataManager {
             saturatedFat = "10",
             servingSize = "100",
             totalFat = "10",
-            water = "10 g" ,
-            calcium = "10 g" ,
-            fiber ="10 g" ,
-            sugar ="10 g" ,
-            cholesterol = "10 g" ,
-            carb = "10 g" ,
-            vitaminD = "10 g" ,
+            water = "10 g",
+            calcium = "10 g",
+            fiber = "10 g",
+            sugar = "10 g",
+            cholesterol = "10 g",
+            carb = "10 g",
+            vitaminD = "10 g",
         ),
         Meal(
             id = 3,
@@ -72,13 +71,13 @@ class DataManager {
             saturatedFat = "10",
             servingSize = "100",
             totalFat = "10",
-            water = "10 g" ,
-            calcium = "10 g" ,
-            fiber ="10 g" ,
-            sugar ="10 g" ,
-            cholesterol = "10 g" ,
-            carb = "10 g" ,
-            vitaminD = "10 g" ,
+            water = "10 g",
+            calcium = "10 g",
+            fiber = "10 g",
+            sugar = "10 g",
+            cholesterol = "10 g",
+            carb = "10 g",
+            vitaminD = "10 g",
         ),
         Meal(
             id = 4,
@@ -90,61 +89,53 @@ class DataManager {
             saturatedFat = "10",
             servingSize = "100",
             totalFat = "10",
-            water = "10 g" ,
-            calcium = "10 g" ,
-            fiber ="10 g" ,
-            sugar ="10 g" ,
-            cholesterol = "10 g" ,
-            carb = "10 g" ,
-            vitaminD = "10 g" ,
+            water = "10 g",
+            calcium = "10 g",
+            fiber = "10 g",
+            sugar = "10 g",
+            cholesterol = "10 g",
+            carb = "10 g",
+            vitaminD = "10 g",
         )
     )
 
-    private var calories: Int = 0
     var optimalCalories: Int = 2000
-    var calculatedCalories: Int = 0
-    var progressBarPercentage: Int = 0
 
-    fun getAllAddedMeals(): MutableList<Meal> {
+    fun calculateCaloriesForAddedMeals(addedItems: List<Meal>): Int {
+        var calories = 0
         addedItems.forEach {
             calories += it.calories.toInt()
         }
-        calculatedCalories = calories
-        println("calories = $calories")
-        progressBarPercentage = (calories * 100) / optimalCalories
-        calories = 0
-        return addedItems
+        return calories
     }
 
-    fun getMealByID(id: Int)  = mealsList.find { it.id ==id }
+    fun getMealByID(id: Int) = mealsList.find { it.id == id }
 
-
-    fun getAllMeals(): MutableList<Meal> = mealsList
 
     fun addMeal(meal: Meal) {
         mealsList.add(meal)
     }
 
-    fun getHighProteinMeals( size: Int = 10): MutableList<Meal> {
-        mealsList.let { it ->
+    fun getHighProteinMeals(addedItems: List<Meal>, size: Int = 10): MutableList<Meal> {
+        addedItems.let { it ->
             return it.sortedByDescending { it.protein }.take(size).toMutableList()
         }
     }
 
-    fun getTopMealsContainsVitamin(size: Int = 10): MutableList<Meal> {
-        mealsList.let { it ->
+    fun getTopMealsContainsVitamin(addedItems: List<Meal>, size: Int = 10): MutableList<Meal> {
+        addedItems.let { it ->
             return it.sortedByDescending { it.vitaminD }.take(size).toMutableList()
         }
     }
 
-    fun getTopMealsContainsCarb(size: Int = 10): MutableList<Meal> {
-        mealsList.let { it ->
+    fun getTopMealsContainsCarb(addedItems: List<Meal>, size: Int = 10): MutableList<Meal> {
+        addedItems.let { it ->
             return it.sortedByDescending { it.carb }.take(size).toMutableList()
         }
     }
 
-    fun getTopMealsContainsFiber(size: Int = 10): MutableList<Meal> {
-        mealsList.let { it ->
+    fun getTopMealsContainsFiber(addedItems: List<Meal>, size: Int = 10): MutableList<Meal> {
+        addedItems.let { it ->
             return it.sortedByDescending { it.fiber }.take(size).toMutableList()
         }
     }

@@ -24,28 +24,30 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
 
     override var LOG_TAG = "HOME_FRAGMENT"
     val dataManager = DataManager()
+    private val mealsList: List<Meal> = dataManager.mealsList
 
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
         get() = FragmentHomeBinding::inflate
 
     override fun addCallBacks() {
         binding.proteinMealCard.setOnClickListener{
-            val proteinList = dataManager.getHighProteinMeals()
+            val proteinList = dataManager.getHighProteinMeals(mealsList)
+            log(proteinList)
             openCategoryDetails(proteinList)
         }
 
         binding.vitaminD3MealCard.setOnClickListener{
-            val vitaminsList = dataManager.getTopMealsContainsVitamin()
+            val vitaminsList = dataManager.getTopMealsContainsVitamin(mealsList)
             openCategoryDetails(vitaminsList)
         }
 
         binding.highCarbMealCard.setOnClickListener {
-            val carbList = dataManager.getTopMealsContainsCarb()
+            val carbList = dataManager.getTopMealsContainsCarb(mealsList)
             openCategoryDetails(carbList)
         }
 
         binding.fiberMealCard.setOnClickListener {
-            val fiberList = dataManager.getTopMealsContainsFiber()
+            val fiberList = dataManager.getTopMealsContainsFiber(mealsList)
             openCategoryDetails(fiberList)
         }
     }
