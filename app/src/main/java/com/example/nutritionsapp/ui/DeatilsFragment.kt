@@ -139,12 +139,10 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
     companion object {
 
-        fun newInstance(id : Int):DeatilsFragment {
+        fun newInstance(meal: Meal):DeatilsFragment {
             return DeatilsFragment().apply {
                 arguments = Bundle().apply {
-                    getInt(Constants.ID_KEY, id)
-//                    putInt(Constants.ID_KEY, id)
-
+                    putParcelable(Constants.ID_KEY, meal)
                 }
             }
         }

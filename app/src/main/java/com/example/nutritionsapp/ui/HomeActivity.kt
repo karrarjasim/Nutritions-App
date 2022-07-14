@@ -14,7 +14,7 @@ import java.io.InputStreamReader
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private lateinit var homeFragment : HomeFragment
+    private lateinit var homeFragment: HomeFragment
     private val searchFragment = SearchFragment()
     private val calorieFragment = CalorieFragment()
 
@@ -24,43 +24,44 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         installSplashScreen()
         setContentView(binding.root)
-        val calories = intent.getIntExtra(Constants.CALORIES_KEY,0)
+        val calories = intent.getIntExtra(Constants.CALORIES_KEY, 0)
         initSubView(calories)
         addNavigationListener()
     }
 
     private fun addNavigationListener() {
         binding.bottomAppBar.setOnItemSelectedListener {
-                when(it.itemId){
-                    R.id.pageHome -> {
-                        replaceFragment(homeFragment)
-                        true
-                    }
-                    R.id.pageSearch -> {
-                        replaceFragment(searchFragment)
-                        true
-                    }
-                    R.id.pageCalorie -> {
-                        replaceFragment(calorieFragment)
-                        true
-                    }
-                    else -> false
+            when (it.itemId) {
+                R.id.pageHome -> {
+                    replaceFragment(homeFragment)
+                    true
                 }
+                R.id.pageSearch -> {
+                    replaceFragment(searchFragment)
+                    true
+                }
+                R.id.pageCalorie -> {
+                    replaceFragment(calorieFragment)
+                    true
+                }
+                else -> false
+            }
         }
     }
 
-    private fun initSubView(calories: Int){
-         homeFragment = HomeFragment.newInstance(calories)
+    private fun initSubView(calories: Int) {
+        homeFragment = HomeFragment.newInstance(calories)
         addFragment(homeFragment)
     }
-     fun addFragment(fragment: Fragment){
+
+    fun addFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.fragment_container, fragment)
-         transaction.addToBackStack("fragment")
+        transaction.addToBackStack("fragment")
         transaction.commit()
     }
 
-     fun replaceFragment(fragment: Fragment){
+    fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
