@@ -32,6 +32,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
     override fun addCallBacks() {
         binding.proteinMealCard.setOnClickListener{
             val proteinList = dataManager.getHighProteinMeals(mealsList)
+            log(proteinList)
             openCategoryDetails(proteinList)
         }
 

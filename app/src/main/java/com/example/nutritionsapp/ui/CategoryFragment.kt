@@ -31,23 +31,36 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
         val list= requireNotNull(mealsList)
         binding.tvC1.text = list[0].name
         binding.tvCal1.text="${list[0].calories} cal"
+
         binding.tvC2.text = list[1].name
         binding.tvCal2.text="${list[1].calories} cal"
+
         binding.tvC3.text = list[2].name
         binding.tvCal3.text="${list[2].calories} cal"
+
         binding.tvC4.text=list[3].name
         binding.tvCal4.text="${list[3].calories} cal"
+
         binding.tvC5.text=list[4].name
         binding.tvCal5.text="${list[4].calories} cal"
+
         binding.tvC6.text=list[5].name
         binding.tvCal6.text="${list[5].calories} cal"
+
         binding.tvC7.text=list[6].name
         binding.tvCal7.text="${list[6].calories} cal"
+
         binding.tvC8.text=list[7].name
         binding.tvCal8.text="${list[7].calories} cal"
+
         binding.tvC9.text=list[8].name
         binding.tvCal9.text="${list[8].calories} cal"
-        binding.tvCal10.text="${list[9].calories} cal"
+
+        binding.tvC9.text=list[9].name
+        binding.tvCal9.text="${list[9].calories} cal"
+
+
+
     }
 
     fun callBacks(mealslist: ArrayList<Meal>?) {
