@@ -1,5 +1,6 @@
 package com.example.nutritionsapp.ui
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.nutritionsapp.data.DataManager
@@ -12,10 +13,21 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>() {
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentCalorieBinding
         get() = FragmentCalorieBinding::inflate
 
-    private val dataManager = DataManager()
-    private val addedItems: List<Meal> = dataManager.addedItems
-    private val calculatedCalories: Int = dataManager.calculateCaloriesForAddedMeals(addedItems)
-    private val optimalCalories: Int = dataManager.optimalCalories
+    private lateinit var dataManager : DataManager
+    private lateinit var  addedItems: MutableList<Meal>
+    private  var calculatedCalories: Int = 0
+    private  var optimalCalories: Int = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val data = arguments?.getSerializable("dataManager") as DataManager
+        dataManager = data
+         addedItems = dataManager.addedItems
+         calculatedCalories = dataManager.calculateCaloriesForAddedMeals(addedItems)
+         optimalCalories = dataManager.optimalCalories
+    }
+
+
 
     override fun addCallBacks() {
         binding.apply {
@@ -51,5 +63,15 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>() {
         }
     }
 
+    companion object {
+
+        fun newInstance(dataManager: DataManager): CalorieFragment {
+            return CalorieFragment().apply {
+                arguments = Bundle().apply {
+                    putSerializable("dataManager", dataManager)
+                }
+            }
+        }
+    }
 
 }
