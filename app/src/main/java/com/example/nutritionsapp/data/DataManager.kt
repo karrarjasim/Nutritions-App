@@ -1,8 +1,9 @@
 package com.example.nutritionsapp.data
 
 import com.example.nutritionsapp.data.domain.Meal
+import java.io.Serializable
 
-class DataManager {
+class DataManager : Serializable {
     val mealsList = mutableListOf<Meal>()
 
      val addedItems = mutableListOf(
