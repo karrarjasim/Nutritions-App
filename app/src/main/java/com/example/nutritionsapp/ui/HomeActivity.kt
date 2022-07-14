@@ -19,7 +19,6 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
-        setTheme(R.style.splashScreenTheme)
         setContentView(binding.root)
         val calories = intent.getIntExtra(Constants.CALORIES_KEY, 0)
         initSubView(calories)
