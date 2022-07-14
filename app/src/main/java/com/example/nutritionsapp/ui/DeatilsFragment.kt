@@ -36,8 +36,9 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
     override fun onStart() {
         super.onStart()
         openFile()
-        var id = arguments?.getInt(Constants.ID_KEY)
-        val meal= meals.getMealByID(7)
+        val id = arguments?.getInt(Constants.ID_KEY)
+        val meal= meals.getMealByID(requireNotNull(id))
+
         setupPieChart(meal?.calories)
         loadPieChartData()
          addProperties(meal)
