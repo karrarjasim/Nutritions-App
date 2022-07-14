@@ -91,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="22"
+            android:text="@string/age"
             app:layout_constraintBottom_toTopOf="@+id/age_slider"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -101,7 +101,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="22"
+            android:text="@string/height"
             app:layout_constraintBottom_toTopOf="@+id/height_slider"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -111,7 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="22"
+            android:text="@string/weight"
             app:layout_constraintBottom_toTopOf="@+id/weight_slider"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -122,7 +122,7 @@
             android:layout_marginTop="92dp"
             android:contentDescription="test"
             android:stepSize="1"
-            android:value="20"
+            android:value="@string/age"
             android:valueFrom="15"
             android:valueTo="80"
             app:layout_constraintStart_toStartOf="parent"
@@ -139,7 +139,7 @@
             android:layout_marginTop="48dp"
             android:contentDescription="test"
             android:stepSize="1"
-            android:value="170"
+            android:value="@string/height"
             android:valueFrom="100"
             android:valueTo="200"
             app:layout_constraintStart_toStartOf="parent"
@@ -156,7 +156,7 @@
             android:layout_marginTop="48dp"
             android:contentDescription="test"
             android:stepSize="1"
-            android:value="60"
+            android:value="@string/weight"
             android:valueFrom="50"
             android:valueTo="200"
             app:layout_constraintStart_toStartOf="parent"

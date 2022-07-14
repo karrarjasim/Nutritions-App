@@ -33,4 +33,7 @@
     <string name="protein">Protein</string>
     <string name="carb">Carb</string>
     <string name="fat">Fat</string>
+    <string name="weight">75</string>
+    <string name="height">170</string>
+    <string name="age">25</string>
 </resources>
