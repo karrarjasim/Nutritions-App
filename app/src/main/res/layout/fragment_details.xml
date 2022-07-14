@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,7 +15,7 @@
     android:layout_height="@dimen/size_icon_normal"
     android:layout_marginLeft="@dimen/margin_normal"
     android:background="@color/white"
-    android:layout_marginTop="@dimen/margin_larg"
+    android:layout_marginTop="@dimen/margin_normal"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     android:src="@drawable/ic_arrow_back_24"/>
@@ -26,7 +27,7 @@
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="@dimen/appbar_title_size"
-        android:layout_marginTop="@dimen/margin_larg"
+        android:layout_marginTop="@dimen/margin_normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,23 +35,29 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/main_image"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_margin="@dimen/margin_normal"
-        app:layout_constraintTop_toBottomOf="@id/appbarTitle"
+        android:layout_height="160dp"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_mid"
+        android:layout_marginBottom="@dimen/margin_mid"
         android:background="@drawable/background_icon"
-        android:src="@drawable/food1"
         android:scaleType="centerCrop"
-        app:shapeAppearanceOverlay="@style/reduceNormal" />
+        android:src="@drawable/food1"
+        app:layout_constraintTop_toBottomOf="@id/appbarTitle"
+        app:shapeAppearanceOverlay="@style/reduceNormal"
+        tools:layout_editor_absoluteX="9dp" />
+
     <TextView
         android:id="@+id/title_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name of meal"
-        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="14dp"
         android:textStyle="bold"
         android:gravity="start"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:layout_marginTop="@dimen/margin_normal"
 
         app:layout_constraintStart_toStartOf="@id/main_image"
@@ -62,10 +69,10 @@
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pie_chart_details"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="@dimen/margin_normal"
-        android:layout_marginBottom="@dimen/margin_normal"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="@dimen/margin_mid"
+        android:layout_marginBottom="@dimen/margin_mid"
         android:elevation="2dp"
         app:layout_constraintStart_toStartOf="@id/main_image"
         app:layout_constraintTop_toBottomOf="@id/main_image" />
@@ -372,7 +379,7 @@
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:padding="@dimen/margin_small"
-        android:layout_marginBottom="@dimen/margin_larg"
+        android:layout_marginBottom="@dimen/margin_normal"
         android:background="@drawable/background_icon"
         android:src="@drawable/ic_caffeine"
         app:layout_constraintBottom_toTopOf="@id/btn_dialy"
@@ -410,7 +417,9 @@
         android:text="add to Diary"
         android:textColor="@color/white"
         android:textSize="14sp"
-        android:layout_margin="@dimen/margin_normal"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/main_image"
         app:layout_constraintStart_toStartOf="@id/main_image"/>
