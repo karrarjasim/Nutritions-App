@@ -52,43 +52,43 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
 
     fun callBacks(mealslist: ArrayList<Meal>?) {
         binding.card1.setOnClickListener() {
-            mealslist?.get(0)?.let { it1 -> openDetailsFragment(it1.id) }
+            openDetailsFragment(mealslist?.get(0))
         }
 
         binding.card2.setOnClickListener() {
-            mealslist?.get(1)?.let { it1 -> openDetailsFragment(it1.id) }
+            openDetailsFragment(mealslist?.get(1))
         }
 
         binding.card3.setOnClickListener() {
-            mealslist?.get(2)?.let { it1 -> openDetailsFragment(it1.id) }
+            openDetailsFragment(mealslist?.get(2))
         }
 
         binding.card4.setOnClickListener() {
-            mealslist?.get(3)?.let { it1 -> openDetailsFragment(it1.id) }
+            openDetailsFragment(mealslist?.get(3))
         }
 
         binding.card5.setOnClickListener() {
-            mealslist?.get(4)?.let { it1 -> openDetailsFragment(it1.id) }
+            openDetailsFragment(mealslist?.get(4))
         }
 
         binding.card6.setOnClickListener() {
-            mealslist?.get(5)?.let { it1 -> openDetailsFragment(it1.id) }
+            openDetailsFragment(mealslist?.get(5))
         }
 
         binding.card7.setOnClickListener() {
-            mealslist?.get(6)?.let { it1 -> openDetailsFragment(it1.id) }
+            openDetailsFragment(mealslist?.get(6))
         }
 
         binding.card8.setOnClickListener() {
-            mealslist?.get(7)?.let { it1 -> openDetailsFragment(it1.id) }
+            openDetailsFragment(mealslist?.get(7))
         }
 
         binding.card9.setOnClickListener() {
-            mealslist?.get(8)?.let { it1 -> openDetailsFragment(it1.id) }
+            openDetailsFragment(mealslist?.get(8))
         }
 
         binding.card10.setOnClickListener() {
-            mealslist?.get(9)?.let { it1 -> openDetailsFragment(it1.id) }
+            openDetailsFragment(mealslist?.get(9))
         }
     }
 
@@ -96,8 +96,8 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
 
     }
 
-    fun openDetailsFragment(id: Int){
-        val detylsFragment =DeatilsFragment.newInstance(id)
+    fun openDetailsFragment(meal:Meal?){
+        val detylsFragment =DeatilsFragment.newInstance(meal!!)
         (activity as HomeActivity).addFragment(detylsFragment)
     }
 

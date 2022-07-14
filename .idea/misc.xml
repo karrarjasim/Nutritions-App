@@ -31,6 +31,7 @@
         <entry key="..\:/the chance/Nutritions-AppFinal/app/src/main/res/layout/fragment_home.xml" value="0.13269927536231885" />
         <entry key="..\:/the chance/Nutritions-AppFinal/app/src/main/res/layout/selected_drop_down_item.xml" value="0.13269927536231885" />
         <entry key="..\:/the chance/Nutritions-AppFinal/app/src/main/res/menu/main_bottom_nav.xml" value="0.20416666666666666" />
+        <entry key="..\:/the chance/Nutritions-Appffffff/app/src/main/res/layout/fragment_details.xml" value="0.17074275362318841" />
       </map>
     </option>
   </component>
@@ -39,12 +40,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.12" />
-      </ProjectState>
-    </option>
   </component>
 </project>

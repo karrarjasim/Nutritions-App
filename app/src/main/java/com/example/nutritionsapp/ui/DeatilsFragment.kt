@@ -10,6 +10,7 @@ import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentDetailsBinding
 import com.example.nutritionsapp.util.Constants
 import com.example.nutritionsapp.util.CsvParser
+import com.example.nutritionsapp.util.toFloatNumber
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
@@ -24,31 +25,22 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
     override var LOG_TAG = Constants.DEATILS_KEY
 
+
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentDetailsBinding
         get()= FragmentDetailsBinding::inflate
 
-    private val meals =DataManager()
-     var carb =""
-     var protien =""
-     var fat =""
-    private val categoryFragment = CategoryFragment()
-
     override fun onStart() {
         super.onStart()
-        openFile()
-        val id = arguments?.getInt(Constants.ID_KEY)
-        val meal= meals.getMealByID(requireNotNull(id))
 
+        val meal = arguments?.getParcelable<Meal>(Constants.ID_KEY)
+        addProperties(meal)
+
+        var carb  = meal?.carb?.toFloatNumber()
+        var protein = meal?.protein?.toFloatNumber()
+        var fat = meal?.fat?.toFloatNumber()
         setupPieChart(meal?.calories)
-        loadPieChartData()
-         addProperties(meal)
+        loadPieChartData(carb!!,protein!!,fat!!)
 
-        var carbN  = meal?.carb!!.split(" ")
-        var protienN  = meal?.protein!!.split(" ")
-        var fatN  = meal?.fat!!.split(" ")
-        carb = carbN[0]
-        protien =protienN[0]
-        fat =fatN[0]
     }
 
     private fun addProperties(meal: Meal?) {
@@ -64,32 +56,18 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
         binding.sugarNumber.text =meal?.sugar
     }
 
-    private fun openFile() {
-        var inputStream = activity?.assets?.open("nutrition.csv")
-        val buffer =BufferedReader(InputStreamReader(inputStream))
-        val parser =CsvParser()
-        buffer.forEachLine {
-            val meal = parser.parse(it)
-            meals.addMeal(meal)
-        }
-    }
-
     override fun addCallBacks() {
         binding.btnDialy.setOnClickListener {
             binding.btnDialy.text = "Done"
         }
-//        binding.arrowIcon.setOnClickListener {
-//            (activity as HomeActivity).replaceFragment(detylsFragment)
-//        }
-    }
-    private fun openCategoryDetails(){
-//        val transaction = supportFragmentManager.beginTransaction()
-//        transaction.replace(this, CategoryFragment )
-//        transaction.commit()
+        binding.arrowIcon.setOnClickListener {
+            this.parentFragmentManager.popBackStack()
+        }
     }
 
 
-        private fun setupPieChart( calories:String?) {
+
+    private fun setupPieChart( calories:String?) {
         binding.pieChartDetails.apply {
             centerText = "calories\n $calories"
             setCenterTextSize(12F)
@@ -99,16 +77,13 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
         }
     }
 
-    private fun loadPieChartData() {
+    private fun loadPieChartData(carb :Float ,protein:Float,fat :Float) {
         val entries: ArrayList<PieEntry> = ArrayList()
         entries.apply {
-            add(PieEntry(0.4f ))
-            add(PieEntry(0.3f))
-            add(PieEntry(0.2f))
+            add(PieEntry(carb ))
+            add(PieEntry(protein))
+            add(PieEntry(fat))
         }
-//        add(PieEntry(water.toFloat() ))
-//        add(PieEntry(sugar.toFloat()))
-//        add(PieEntry(fat.toFloat()))
 
         val colors: ArrayList<Int> = ArrayList()
         colors.apply {
@@ -130,15 +105,16 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
     }
 
 
-
     companion object {
-
-        fun newInstance(key: Int):DeatilsFragment {
+        fun newInstance(meal :Meal):DeatilsFragment {
             return DeatilsFragment().apply {
                 arguments = Bundle().apply {
-                    putInt(Constants.ID_KEY, key)
+                    putParcelable(Constants.ID_KEY, meal)
+
                 }
             }
         }
     }
+
+
 }
