@@ -1,14 +1,8 @@
 package com.example.nutritionsapp.ui
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.example.nutritionsapp.R
-import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentCalculateBinding
 import com.example.nutritionsapp.databinding.FragmentCategoryBinding
@@ -26,6 +20,14 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
         super.onStart()
         val mealsList = arguments?.getParcelableArrayList<Meal>(Constants.CATEGORY_LIST_KEY)
         log(mealsList.toString())
+        setText(mealsList)
+        callBacks(mealsList)
+
+
+    }
+
+
+    fun setText(mealsList: ArrayList<Meal>?){
         val list= requireNotNull(mealsList)
         binding.tvC1.text = list[0].name
         binding.tvCal1.text="${list[0].calories} cal"
@@ -45,8 +47,59 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
         binding.tvCal8.text="${list[7].calories} cal"
         binding.tvC9.text=list[8].name
         binding.tvCal9.text="${list[8].calories} cal"
+        binding.tvCal10.text="${list[9].calories} cal"
     }
 
+    fun callBacks(mealslist: ArrayList<Meal>?) {
+        binding.card1.setOnClickListener() {
+            openDetailsFragment(mealslist?.get(0))
+        }
+
+        binding.card2.setOnClickListener() {
+            openDetailsFragment(mealslist?.get(1))
+        }
+
+        binding.card3.setOnClickListener() {
+            openDetailsFragment(mealslist?.get(2))
+        }
+
+        binding.card4.setOnClickListener() {
+            openDetailsFragment(mealslist?.get(3))
+        }
+
+        binding.card5.setOnClickListener() {
+            openDetailsFragment(mealslist?.get(4))
+        }
+
+        binding.card6.setOnClickListener() {
+            openDetailsFragment(mealslist?.get(5))
+        }
+
+        binding.card7.setOnClickListener() {
+            openDetailsFragment(mealslist?.get(6))
+        }
+
+        binding.card8.setOnClickListener() {
+            openDetailsFragment(mealslist?.get(7))
+        }
+
+        binding.card9.setOnClickListener() {
+            openDetailsFragment(mealslist?.get(8))
+        }
+
+        binding.card10.setOnClickListener() {
+            openDetailsFragment(mealslist?.get(9))
+        }
+    }
+
+    override fun addCallBacks(){
+
+    }
+
+    fun openDetailsFragment(meal:Meal?){
+        val detylsFragment =DeatilsFragment.newInstance(meal!!)
+        (activity as HomeActivity).addFragment(detylsFragment)
+    }
 
     companion object {
 
@@ -59,7 +112,4 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
         }
     }
 
-    override fun addCallBacks() {
-
-    }
 }

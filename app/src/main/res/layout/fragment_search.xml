@@ -3,20 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:background="@color/white"
+    android:paddingTop="31dp">
 
-    <SearchView
-        android:id="@+id/search_query"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:iconifiedByDefault="false"
-        android:padding="4dp"
-        android:queryHint="Search for a food like : pizza"
+
+<SearchView
+    android:id="@+id/search_query"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/search_bg"
+    android:drawableLeft="@drawable/ic_baseline_search_24"
+    android:drawableTint="#686B6F"
+    android:iconifiedByDefault="false"
+    android:padding="8dp"
+    android:layout_margin="8dp"
+    android:queryHint="Search for a food like : pizza"
+    android:textSize="14sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+
+    />
+
+
+    <ImageView
+        android:id="@+id/search_image"
+        android:layout_width="289dp"
+        android:layout_height="298dp"
+        android:src="@drawable/search"
+        android:alpha="0.1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/search_query" />
     <TextView
         android:id="@+id/search_label"
         android:layout_width="wrap_content"
@@ -25,7 +46,6 @@
         android:text="Suggestions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_query" />
 
@@ -36,6 +56,7 @@
         android:layout_marginTop="108dp"
         android:layout_marginEnd="24dp"
         android:scrollbars="none"
+        android:elevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +72,7 @@
                 style="@style/linerlayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textv_background">
+                android:background="@drawable/bg_catogry">
 
                 <TextView
                     android:id="@+id/tv_c1"
@@ -67,7 +88,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="22 cal" />
-
             </LinearLayout>
 
         </LinearLayout>
