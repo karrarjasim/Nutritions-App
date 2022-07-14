@@ -39,13 +39,20 @@
         <item name="android:textColor">@color/gray_mid</item>
         <item name="android:textSize">12sp</item>
     </style>
-<style name="linerlayout">
-    <item name="android:orientation">horizontal</item>
-    <item name="android:paddingTop">18dp</item>
-    <item name="android:paddingBottom">17dp</item>
-    <item name="android:paddingLeft">29dp</item>
-    <item name="android:paddingRight">25dp</item>
-</style>
+
+    <style name="linerlayout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:paddingBottom">17dp</item>
+        <item name="android:paddingLeft">29dp</item>
+        <item name="android:paddingRight">25dp</item>
+    </style>
+
+    <style name="linerlayout2" parent="linerlayout">
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+
 
     <style name="textview">
         <item name="android:textSize">14sp</item>
@@ -68,4 +75,8 @@
         <item name="android:progressDrawable">@drawable/circle</item>
     </style>
 
+    <style name="splashScreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
 </resources>
