@@ -10,9 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_constraint_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp" >
+        android:layout_height="wrap_content">
 
 
         <TextView
@@ -21,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
-            android:text="Catogory"
+            android:text="@string/category_content"
             android:textColor="@color/black"
             android:layout_marginTop="18dp"
             android:textSize="18sp"
@@ -34,312 +32,310 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card_1"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="50dp"
-            app:cardBackgroundColor="@color/tv_color"
+            app:cardBackgroundColor="@color/textView_color"
             app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
             app:layout_constraintEnd_toEndOf="@+id/catogory"
             app:layout_constraintStart_toStartOf="@+id/catogory"
-            app:layout_constraintTop_toBottomOf="@+id/catogory" />
+            app:layout_constraintTop_toBottomOf="@+id/catogory" >
 
+            <TextView
+                android:id="@+id/textView_1"
+                style="@style/textviewMarginStart"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:layout_gravity="start"
+                android:text="@string/name_of_item" />
 
-        <TextView
-            android:id="@+id/tv_c1"
-            style="@style/textviewMarginStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cauliflower - raw"
-            app:layout_constraintBottom_toBottomOf="@+id/card_1"
-            app:layout_constraintStart_toStartOf="@+id/card_1"
-            app:layout_constraintTop_toTopOf="@+id/card_1" />
-
-        <TextView
-            android:id="@+id/tv_cal1"
-            style="@style/textviewMarginEnd"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:text="22 cal"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_c1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_c1" />
+            <TextView
+                android:id="@+id/textView_cal1"
+                style="@style/textviewMarginEnd"
+                android:layout_marginVertical="20dp"
+                android:layout_gravity="end"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/_22_cal"/>
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_2"
+            app:cardElevation="4dp"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="20dp"
-            app:cardBackgroundColor="@color/tv_color"
+            app:cardBackgroundColor="@color/textView_color"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_1" />
+            app:layout_constraintTop_toBottomOf="@id/card_1" >
+
 
         <TextView
-            android:id="@+id/tv_c2"
+            android:id="@+id/textView_2"
             style="@style/textviewMarginStart"
-            android:layout_width="wrap_content"
+            android:paddingRight="12dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cauliflower - raw"
-            app:layout_constraintBottom_toBottomOf="@+id/card_2"
-            app:layout_constraintStart_toStartOf="@+id/card_2"
-            app:layout_constraintTop_toTopOf="@+id/card_2" />
+            android:layout_gravity="start"
+            android:layout_marginVertical="20dp"
+            android:text="@string/name_of_item" />
 
         <TextView
-            android:id="@+id/tv_cal2"
+            android:id="@+id/textView_cal2"
             style="@style/textviewMarginEnd"
+            android:layout_marginVertical="20dp"
+            android:layout_gravity="end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="22 cal"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_c2"
-            app:layout_constraintEnd_toEndOf="@id/card_2"
-            app:layout_constraintTop_toTopOf="@+id/tv_c2" />
+            android:text="@string/_22_cal" />
+    </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_3"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="20dp"
-            app:cardBackgroundColor="@color/tv_color"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/textView_color"
             app:cardCornerRadius="10dp"
+            app:cardElevation="4dp"
+            app:layout_constraintHorizontal_weight="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_2" />
-        <TextView
-            android:id="@+id/tv_c3"
-            style="@style/textviewMarginStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cauliflower - raw"
-            app:layout_constraintBottom_toBottomOf="@+id/card_3"
-            app:layout_constraintStart_toStartOf="@+id/card_3"
-            app:layout_constraintTop_toTopOf="@+id/card_3" />
+            app:layout_constraintTop_toBottomOf="@id/card_2">
 
-        <TextView
-            android:id="@+id/tv_cal3"
-            style="@style/textviewMarginEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="22 cal"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_c3"
-            app:layout_constraintEnd_toEndOf="@id/card_3"
-            app:layout_constraintTop_toTopOf="@+id/tv_c3" />
+
+            <TextView
+                android:id="@+id/textView_3"
+                style="@style/textviewMarginStart"
+                android:layout_width="220dp"
+                android:maxLength="12"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginVertical="20dp"
+                android:paddingRight="12dp"
+                android:text="@string/name_of_item" />
+
+            <TextView
+                android:id="@+id/textView_cal3"
+                style="@style/textviewMarginEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginVertical="20dp"
+                android:text="@string/_22_cal" />
+
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_4"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="20dp"
-            app:cardBackgroundColor="@color/tv_color"
+            app:cardBackgroundColor="@color/textView_color"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_3" />
-        <TextView
-            android:id="@+id/tv_c4"
-            style="@style/textviewMarginStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cauliflower - raw"
-            app:layout_constraintBottom_toBottomOf="@+id/card_4"
-            app:layout_constraintStart_toStartOf="@+id/card_4"
-            app:layout_constraintTop_toTopOf="@+id/card_4" />
+            app:layout_constraintTop_toBottomOf="@id/card_3" >
+
 
         <TextView
-            android:id="@+id/tv_cal4"
+            android:id="@+id/textView_4"
+            style="@style/textviewMarginStart"
+            android:paddingRight="12dp"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginVertical="20dp"
+            android:text="@string/name_of_item" />
+
+        <TextView
+            android:id="@+id/textView_cal4"
             style="@style/textviewMarginEnd"
+            android:layout_marginVertical="20dp"
+            android:layout_gravity="end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="22 cal"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_c4"
-            app:layout_constraintEnd_toEndOf="@id/card_4"
-            app:layout_constraintTop_toTopOf="@+id/tv_c4" />
+            android:text="@string/_22_cal" />
+    </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card_5"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="20dp"
-            app:cardBackgroundColor="@color/tv_color"
+            app:cardBackgroundColor="@color/textView_color"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_4" />
-        <TextView
-            android:id="@+id/tv_c5"
-            style="@style/textviewMarginStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cauliflower - raw"
-            app:layout_constraintBottom_toBottomOf="@+id/card_5"
-            app:layout_constraintStart_toStartOf="@+id/card_5"
-            app:layout_constraintTop_toTopOf="@+id/card_5" />
+            app:layout_constraintTop_toBottomOf="@id/card_4" >
+
 
         <TextView
-            android:id="@+id/tv_cal5"
+            android:id="@+id/textView_5"
+            style="@style/textviewMarginStart"
+            android:paddingRight="12dp"
+            android:layout_gravity="start"
+            android:layout_marginVertical="20dp"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="@string/name_of_item" />
+
+        <TextView
+            android:id="@+id/textView_cal5"
             style="@style/textviewMarginEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="22 cal"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_c5"
-            app:layout_constraintEnd_toEndOf="@id/card_5"
-            app:layout_constraintTop_toTopOf="@+id/tv_c5" />
-
+            android:layout_marginVertical="20dp"
+            android:layout_gravity="end"
+            android:text="@string/_22_cal" />
+    </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/card_6"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="20dp"
-            app:cardBackgroundColor="@color/tv_color"
+            app:cardBackgroundColor="@color/textView_color"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_5" />
-        <TextView
-            android:id="@+id/tv_c6"
-            style="@style/textviewMarginStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cauliflower - raw"
-            app:layout_constraintBottom_toBottomOf="@+id/card_6"
-            app:layout_constraintStart_toStartOf="@+id/card_6"
-            app:layout_constraintTop_toTopOf="@+id/card_6" />
+            app:layout_constraintTop_toBottomOf="@id/card_5" >
+
 
         <TextView
-            android:id="@+id/tv_cal6"
+            android:id="@+id/textView_6"
+            style="@style/textviewMarginStart"
+            android:paddingRight="12dp"
+            android:layout_gravity="start"
+            android:layout_marginVertical="20dp"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="@string/name_of_item" />
+
+        <TextView
+            android:id="@+id/textView_cal6"
             style="@style/textviewMarginEnd"
+            android:layout_marginVertical="20dp"
+            android:layout_gravity="end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="22 cal"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_c6"
-            app:layout_constraintEnd_toEndOf="@id/card_6"
-            app:layout_constraintTop_toTopOf="@+id/tv_c6" />
+            android:text="@string/_22_cal"/>
+    </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_7"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="20dp"
-            app:cardBackgroundColor="@color/tv_color"
+            app:cardBackgroundColor="@color/textView_color"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_6" />
-        <TextView
-            android:id="@+id/tv_c7"
-            style="@style/textviewMarginStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cauliflower - raw"
-            app:layout_constraintBottom_toBottomOf="@+id/card_7"
-            app:layout_constraintStart_toStartOf="@+id/card_7"
-            app:layout_constraintTop_toTopOf="@+id/card_7" />
+            app:layout_constraintTop_toBottomOf="@id/card_6" >
+
 
         <TextView
-            android:id="@+id/tv_cal7"
+            android:id="@+id/textView_7"
+            style="@style/textviewMarginStart"
+            android:paddingRight="12dp"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginVertical="20dp"
+            android:text="@string/name_of_item" />
+
+        <TextView
+            android:id="@+id/textView_cal7"
             style="@style/textviewMarginEnd"
+            android:layout_marginVertical="20dp"
+            android:layout_gravity="end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="22 cal"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_c7"
-            app:layout_constraintEnd_toEndOf="@id/card_7"
-            app:layout_constraintTop_toTopOf="@+id/tv_c7" />
+            android:text="@string/_22_cal" />
+       </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card_8"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="20dp"
-            app:cardBackgroundColor="@color/tv_color"
+            app:cardBackgroundColor="@color/textView_color"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_7" />
-        <TextView
-            android:id="@+id/tv_c8"
-            style="@style/textviewMarginStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cauliflower - raw"
-            app:layout_constraintBottom_toBottomOf="@+id/card_8"
-            app:layout_constraintStart_toStartOf="@+id/card_8"
-            app:layout_constraintTop_toTopOf="@+id/card_8" />
+            app:layout_constraintTop_toBottomOf="@id/card_7" >
+
 
         <TextView
-            android:id="@+id/tv_cal8"
+            android:id="@+id/textView_8"
+            style="@style/textviewMarginStart"
+            android:paddingRight="12dp"
+            android:layout_marginVertical="20dp"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="@string/name_of_item" />
+
+        <TextView
+            android:id="@+id/textView_cal8"
             style="@style/textviewMarginEnd"
+            android:layout_marginVertical="20dp"
+            android:layout_gravity="end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="22 cal"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_c8"
-            app:layout_constraintEnd_toEndOf="@id/card_8"
-            app:layout_constraintTop_toTopOf="@+id/tv_c8" />
+            android:text="@string/_22_cal" />
+    </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card_9"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="20dp"
-            app:cardBackgroundColor="@color/tv_color"
+            app:cardBackgroundColor="@color/textView_color"
             app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_8" />
-        <TextView
-            android:id="@+id/tv_c9"
-            style="@style/textviewMarginStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cauliflower - raw"
-            app:layout_constraintBottom_toBottomOf="@+id/card_9"
-            app:layout_constraintStart_toStartOf="@+id/card_9"
-            app:layout_constraintTop_toTopOf="@+id/card_9" />
+            app:layout_constraintTop_toBottomOf="@id/card_8">
 
-        <TextView
-            android:id="@+id/tv_cal9"
-            style="@style/textviewMarginEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="22 cal"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_c9"
-            app:layout_constraintEnd_toEndOf="@id/card_9"
-            app:layout_constraintTop_toTopOf="@+id/tv_c9" />
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_10"
-            android:layout_width="match_parent"
-            android:layout_height="69dp"
-            android:layout_marginVertical="20dp"
-            app:cardBackgroundColor="@color/tv_color"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_9" />
-        <TextView
-            android:id="@+id/tv_c10"
-            style="@style/textviewMarginStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cauliflower - raw"
-            app:layout_constraintBottom_toBottomOf="@+id/card_10"
-            app:layout_constraintStart_toStartOf="@+id/card_10"
-            app:layout_constraintTop_toTopOf="@+id/card_10" />
 
-        <TextView
-            android:id="@+id/tv_cal10"
-            style="@style/textviewMarginEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="22 cal"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_c10"
-            app:layout_constraintEnd_toEndOf="@id/card_10"
-            app:layout_constraintTop_toTopOf="@+id/tv_c10" />
+            <TextView
+                android:id="@+id/textView_9"
+                style="@style/textviewMarginStart"
+                android:layout_gravity="start"
+                android:layout_marginVertical="20dp"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:text="@string/name_of_item" />
+
+            <TextView
+                android:id="@+id/textView_cal9"
+                style="@style/textviewMarginEnd"
+                android:layout_marginVertical="20dp"
+                android:layout_gravity="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_22_cal" />
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

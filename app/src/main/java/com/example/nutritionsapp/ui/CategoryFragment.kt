@@ -29,35 +29,35 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
 
     fun setText(mealsList: ArrayList<Meal>?){
         val list= requireNotNull(mealsList)
-        binding.tvC1.text = list[0].name
-        binding.tvCal1.text="${list[0].calories} cal"
+        binding.textView1.text = list[0].name
+        binding.textViewCal1.text="${list[0].calories} cal"
 
-        binding.tvC2.text = list[1].name
-        binding.tvCal2.text="${list[1].calories} cal"
+        binding.textView2.text = list[1].name
+        binding.textViewCal2.text="${list[1].calories} cal"
 
-        binding.tvC3.text = list[2].name
-        binding.tvCal3.text="${list[2].calories} cal"
+        binding.textView3.text = list[2].name
+        binding.textViewCal3.text="${list[2].calories} cal"
 
-        binding.tvC4.text=list[3].name
-        binding.tvCal4.text="${list[3].calories} cal"
+        binding.textView4.text=list[3].name
+        binding.textViewCal4.text="${list[3].calories} cal"
 
-        binding.tvC5.text=list[4].name
-        binding.tvCal5.text="${list[4].calories} cal"
+        binding.textView5.text=list[4].name
+        binding.textViewCal5.text="${list[4].calories} cal"
 
-        binding.tvC6.text=list[5].name
-        binding.tvCal6.text="${list[5].calories} cal"
+        binding.textView6.text=list[5].name
+        binding.textViewCal6.text="${list[5].calories} cal"
 
-        binding.tvC7.text=list[6].name
-        binding.tvCal7.text="${list[6].calories} cal"
+        binding.textView7.text=list[6].name
+        binding.textViewCal7.text="${list[6].calories} cal"
 
-        binding.tvC8.text=list[7].name
-        binding.tvCal8.text="${list[7].calories} cal"
+        binding.textView8.text=list[7].name
+        binding.textViewCal8.text="${list[7].calories} cal"
 
-        binding.tvC9.text=list[8].name
-        binding.tvCal9.text="${list[8].calories} cal"
+        binding.textView9.text=list[8].name
+        binding.textViewCal9.text="${list[8].calories} cal"
 
-        binding.tvC9.text=list[9].name
-        binding.tvCal9.text="${list[9].calories} cal"
+        binding.textView9.text=list[9].name
+        binding.textViewCal9.text="${list[9].calories} cal"
 
 
 
@@ -100,9 +100,6 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
             openDetailsFragment(mealslist?.get(8))
         }
 
-        binding.card10.setOnClickListener() {
-            openDetailsFragment(mealslist?.get(9))
-        }
     }
 
     override fun addCallBacks(){
@@ -110,8 +107,8 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
     }
 
     fun openDetailsFragment(meal:Meal?){
-        val detylsFragment =DeatilsFragment.newInstance(meal!!)
-        (activity as HomeActivity).addFragment(detylsFragment)
+        val detylsFragment = meal?.let { DeatilsFragment.newInstance(it) }
+        detylsFragment?.let { (activity as HomeActivity).addFragment(it) }
     }
 
     companion object {

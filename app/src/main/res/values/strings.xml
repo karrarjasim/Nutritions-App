@@ -36,4 +36,7 @@
     <string name="weight">75</string>
     <string name="height">170</string>
     <string name="age">25</string>
+    <string name="_22_cal">22 cal</string>
+    <string name="name_of_item">Name of item</string>
+    <string name="category_content">Category content</string>
 </resources>
