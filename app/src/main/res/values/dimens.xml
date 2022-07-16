@@ -7,4 +7,6 @@
     <dimen name="margin_larg">24dp</dimen>
     <dimen name="margin_mid">8dp</dimen>
     <dimen name="margin_small">4dp</dimen>
+    <dimen name="size_pie_chart">120dp</dimen>
+    <dimen name="size_text_button">14sp</dimen>
 </resources>
