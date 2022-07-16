@@ -20,7 +20,7 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
     var age: Int = 20
     var height: Int = 150
     var weight: Int = 70
-    var activityFactor: Double = 1.2
+    var activityFactor: Double = 1.2 // The  activity factor is a function of the type of activity for an individual
     var calories: Int = 0
 
 
