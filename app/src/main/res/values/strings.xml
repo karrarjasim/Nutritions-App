@@ -36,4 +36,7 @@
     <string name="weight">75</string>
     <string name="height">170</string>
     <string name="age">25</string>
+    <string name="male_label">Male</string>
+    <string name="female_label">Female</string>
+    <string name="enter_btn">Enter</string>
 </resources>
