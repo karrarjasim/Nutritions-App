@@ -74,13 +74,13 @@ class HomeActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-    fun replaceFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
     }
 
-    private fun openFile(): String {
+    private fun openFile() {
         val inputStream = this.assets?.open("nutrition.csv")
         val buffer = BufferedReader(InputStreamReader(inputStream))
         val parser = CsvParser()
@@ -88,6 +88,5 @@ class HomeActivity : AppCompatActivity() {
             val meal = parser.parse(it)
             dataManager.addMeal(meal)
         }
-        return "openFile"
     }
 }
