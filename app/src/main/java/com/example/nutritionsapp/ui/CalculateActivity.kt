@@ -9,38 +9,14 @@ import com.example.nutritionsapp.databinding.ActivityCalculateBinding
 class CalculateActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityCalculateBinding
-    private val homeFragment = HomeFragment()
-    private val searchFragment = SearchFragment()
-    private val calorieFragment = CalorieFragment()
-    private val calculateFragment = CalculateFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCalculateBinding.inflate(layoutInflater)
         setTheme(R.style.splashScreenTheme)
-
         setContentView(binding.root)
-//        initSubView()
-        addCallback()
+
     }
 
-    private fun addCallback() {
-    }
-
-    private fun initSubView() {
-        addFragment(calculateFragment);
-    }
-
-    private fun addFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.fragment_container, fragment)
-        transaction.commit()
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, fragment)
-        transaction.commit()
-    }
 }
