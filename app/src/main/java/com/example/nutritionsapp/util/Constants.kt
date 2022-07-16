@@ -25,6 +25,6 @@ object Constants {
     const val CALORIES_KEY = "daily_calories"
     const val DEATILS_KEY = "DeatilsFragment"
     const val ID_KEY = "ID"
-
+    const val DATA_MANAGER_KEY = "data_manager"
     const val CATEGORY_LIST_KEY = "meals_list"
 }

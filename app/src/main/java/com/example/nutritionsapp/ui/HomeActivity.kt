@@ -7,6 +7,9 @@ import com.example.nutritionsapp.R
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.databinding.ActivityHomeBinding
 import com.example.nutritionsapp.util.Constants
+import com.example.nutritionsapp.util.CsvParser
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 
 class HomeActivity : AppCompatActivity() {
@@ -15,22 +18,32 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var homeFragment: HomeFragment
     private lateinit var searchFragment: SearchFragment
     private lateinit var calorieFragment : CalorieFragment
-    val dataManager = DataManager()
+    private val dataManager = DataManager()
+    private  var calories = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val calories = intent.getIntExtra(Constants.CALORIES_KEY, 0)
-        initSubView(calories)
+        calories = intent.getIntExtra(Constants.CALORIES_KEY, calories)
+        if (savedInstanceState == null){
+            initSubView(calories)
+        }
         addNavigationListener()
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        openFile()
     }
 
     private fun addNavigationListener() {
         binding.bottomAppBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.pageHome -> {
+                    homeFragment = HomeFragment.newInstance(calories, dataManager)
                     replaceFragment(homeFragment)
                     true
                 }
@@ -50,7 +63,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initSubView(calories: Int) {
-        homeFragment = HomeFragment.newInstance(calories)
+        homeFragment = HomeFragment.newInstance(calories, dataManager)
         addFragment(homeFragment)
     }
 
@@ -65,5 +78,16 @@ class HomeActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
+    }
+
+    private fun openFile(): String {
+        val inputStream = this.assets?.open("nutrition.csv")
+        val buffer = BufferedReader(InputStreamReader(inputStream))
+        val parser = CsvParser()
+        buffer.forEachLine {
+            val meal = parser.parse(it)
+            dataManager.addMeal(meal)
+        }
+        return "openFile"
     }
 }

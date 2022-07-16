@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentHomeBinding
+import com.example.nutritionsapp.util.Constants
 import com.example.nutritionsapp.util.CsvParser
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
@@ -23,8 +24,8 @@ import java.io.InputStreamReader
 class HomeFragment: BaseFragment<FragmentHomeBinding>() {
 
     override var LOG_TAG = "HOME_FRAGMENT"
-    val dataManager = DataManager()
-    private val mealsList: List<Meal> = dataManager.mealsList
+    lateinit var  dataManager : DataManager
+    lateinit var mealsList: MutableList<Meal>
 
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
         get() = FragmentHomeBinding::inflate
@@ -54,11 +55,11 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
 
     override fun onStart() {
         super.onStart()
-        val calorie = arguments?.getInt("calorie")
+        val calorie = arguments?.getInt(Constants.CALORIES_KEY)
         setupPieChart(calorie.toString())
         loadPieChartData()
-        openFile()
-
+        dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
+        mealsList = dataManager.mealsList
     }
 
     private fun setupPieChart(calories: String) {
@@ -98,15 +99,6 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
         binding.pieChart.animateY(1400, Easing.EaseInOutQuad)
     }
 
-    private fun openFile(){
-        val inputStream = activity?.assets?.open("nutrition.csv")
-        val buffer = BufferedReader(InputStreamReader(inputStream))
-        val parser = CsvParser()
-        buffer.forEachLine {
-            val meal = parser.parse(it)
-            dataManager.addMeal(meal)
-        }
-    }
 
     private fun openCategoryDetails(mealsList: MutableList<Meal>){
         val categoryFragment = CategoryFragment.newInstance(mealsList as ArrayList<Meal>)
@@ -115,10 +107,11 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
 
     companion object {
 
-        fun newInstance(calorie: Int): HomeFragment {
+        fun newInstance(calorie: Int, dataManager: DataManager): HomeFragment {
             return HomeFragment().apply {
                 arguments = Bundle().apply {
-                    putInt("calorie", calorie)
+                    putInt(Constants.CALORIES_KEY, calorie)
+                    putSerializable(Constants.DATA_MANAGER_KEY,dataManager)
                 }
             }
         }
