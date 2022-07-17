@@ -4,9 +4,9 @@ import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.interfaces.DataSource
 import java.io.File
 
-class CsvParser() {
+class CsvParser() : DataSource{
 
-     fun parse(line: String): Meal {
+    override fun parse(line: String): Meal {
         val mList = line.split(",")
         return Meal(
             id = mList[Constants.ColumnIndex.ID].toInt(),

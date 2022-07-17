@@ -16,7 +16,7 @@
 
     <style name="title_text">
         <item name="android:textColor">@color/dark_green</item>
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
@@ -58,6 +58,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/dark_green</item>
         <item name="android:elevation">2dp</item>
+        <item name="android:textStyle">bold</item>
     </style>
    <style name="titelOfCatogry" parent="textview">
        <item name="android:fontFamily">@font/poppins_medium</item>

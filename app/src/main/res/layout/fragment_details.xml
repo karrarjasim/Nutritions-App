@@ -6,28 +6,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/white"
+    android:orientation="vertical">
 
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:ignore="MissingConstraints">
+
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:background="@color/white">
 
 <ImageButton
     android:id="@+id/arrow_icon"
     android:layout_width="@dimen/size_icon_normal"
     android:layout_height="@dimen/size_icon_normal"
-    android:layout_marginLeft="@dimen/margin_normal"
+    android:layout_marginStart="@dimen/margin_normal"
     android:background="@color/white"
-    android:layout_marginTop="@dimen/margin_normal"
+    android:layout_marginTop="@dimen/margin_larg"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    android:src="@drawable/ic_arrow_back_24"/>
+    android:src="@drawable/ic_arrow_back_24"
+    app:tint="@color/dark_green" />
+
     <TextView
         android:id="@+id/appbarTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Details"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/dark_green"
         android:textSize="@dimen/appbar_title_size"
-        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_larg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,31 +53,31 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/main_image"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="170dp"
         android:layout_marginStart="@dimen/margin_normal"
         android:layout_marginEnd="@dimen/margin_normal"
-        android:layout_marginTop="@dimen/margin_mid"
-        android:layout_marginBottom="@dimen/margin_mid"
+        android:layout_marginTop="@dimen/margin_normal"
         android:background="@drawable/background_icon"
         android:scaleType="centerCrop"
-        android:src="@drawable/food1"
+        android:src="@drawable/foodo"
         app:layout_constraintTop_toBottomOf="@id/appbarTitle"
         app:shapeAppearanceOverlay="@style/reduceNormal"
         tools:layout_editor_absoluteX="9dp" />
 
     <TextView
         android:id="@+id/title_details"
-        android:layout_width="wrap_content"
+        android:layout_width="195dp"
         android:layout_height="wrap_content"
-        android:text="Name of meal"
+        android:text="@string/name_of_meal"
+        android:shadowColor="@color/dark_green"
+        android:elevation="18dp"
         android:layout_marginStart="12dp"
-        android:layout_marginBottom="14dp"
         android:textStyle="bold"
         android:gravity="start"
-        android:textColor="@color/white"
         android:textSize="18dp"
+        android:textColor="@color/white"
         android:layout_marginTop="@dimen/margin_normal"
-
+       app:layout_constraintTop_toTopOf="@id/main_image"
         app:layout_constraintStart_toStartOf="@id/main_image"
         app:layout_constraintBottom_toBottomOf="@id/main_image" />
 
@@ -69,11 +87,9 @@
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pie_chart_details"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
+        android:layout_width="@dimen/size_pie_chart"
+        android:layout_height="@dimen/size_pie_chart"
         android:layout_marginTop="@dimen/margin_mid"
-        android:layout_marginBottom="@dimen/margin_mid"
-        android:elevation="2dp"
         app:layout_constraintStart_toStartOf="@id/main_image"
         app:layout_constraintTop_toBottomOf="@id/main_image" />
 
@@ -110,7 +126,7 @@
         app:layout_constraintStart_toEndOf="@id/pie_chart_details"
         app:layout_constraintTop_toTopOf="@id/pie_chart_details"
         app:layout_constraintBottom_toBottomOf="@id/pie_chart_details"
-        android:backgroundTint="#0064E5" />
+        android:backgroundTint="@color/blue_pie_chart" />
 
 
 
@@ -131,7 +147,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="2dp"
-        android:text="Protein"
+        android:text="@string/protein"
         android:textStyle="bold"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@id/protein_number"
@@ -148,7 +164,7 @@
         app:layout_constraintStart_toEndOf="@id/carbs_text"
         app:layout_constraintTop_toTopOf="@id/pie_chart_details"
         app:layout_constraintBottom_toBottomOf="@id/pie_chart_details"
-        android:backgroundTint="#FF6752" />
+        android:backgroundTint="@color/red_pie_chart" />
 
     <TextView
         android:id="@+id/fat_number"
@@ -166,7 +182,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="2dp"
-        android:text="Fat"
+        android:text="@string/fat"
         android:textStyle="bold"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@id/fat_number"
@@ -183,246 +199,169 @@
         app:layout_constraintStart_toEndOf="@id/carbs2_text"
         app:layout_constraintTop_toTopOf="@id/pie_chart_details"
         app:layout_constraintBottom_toBottomOf="@id/pie_chart_details"
-        android:backgroundTint="#FAB131" />
+        android:backgroundTint="@color/yellow_pie_chart" />
 
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/icon_sugar"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:padding="@dimen/margin_small"
-        android:layout_marginBottom="@dimen/margin_mid"
-        android:background="@drawable/background_icon"
-        android:src="@drawable/ic_sugar"
-        app:layout_constraintBottom_toTopOf="@id/icon_a3"
-        app:layout_constraintStart_toStartOf="@id/main_image"
-        app:shapeAppearanceOverlay="@drawable/background_icon"
-        />
+<!--    <com.google.android.material.imageview.ShapeableImageView-->
+<!--        android:id="@+id/icon_sugar"-->
+<!--        android:layout_width="28dp"-->
+<!--        android:layout_height="28dp"-->
+<!--        android:padding="@dimen/margin_small"-->
+<!--        android:layout_marginBottom="@dimen/margin_mid"-->
+<!--        android:background="@drawable/background_icon"-->
+<!--        android:src="@drawable/ic_sugar"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/icon_a3"-->
+<!--        app:layout_constraintStart_toStartOf="@id/main_image"-->
+<!--        app:shapeAppearanceOverlay="@drawable/background_icon"-->
+<!--        />-->
 
     <TextView
+        android:id="@+id/sugar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
-        android:text="Sugar"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:text="@string/sugar"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_sugar"
-        app:layout_constraintStart_toEndOf="@id/icon_sugar"
-        app:layout_constraintTop_toTopOf="@id/icon_sugar"
+        app:layout_constraintTop_toBottomOf="@id/pie_chart_details"
+        app:layout_constraintStart_toStartOf="@id/main_image"
         tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/sugar_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
         android:text="12g"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_sugar"
+        app:layout_constraintBottom_toBottomOf="@id/sugar"
         app:layout_constraintEnd_toEndOf="@id/main_image"
-        app:layout_constraintTop_toTopOf="@id/icon_sugar"
+        app:layout_constraintTop_toTopOf="@id/sugar"
         tools:ignore="MissingConstraints" />
 
-
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/icon_a3"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:padding="@dimen/margin_small"
-        android:layout_marginBottom="@dimen/margin_mid"
-        android:background="@drawable/background_icon"
-        android:src="@drawable/ic_fiber"
-        app:layout_constraintBottom_toTopOf="@id/icon_d3"
-        app:layout_constraintStart_toStartOf="@id/main_image"
-        app:shapeAppearanceOverlay="@drawable/background_icon"
-        />
-
     <TextView
+        android:id="@+id/fiber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
-        android:text="Fiber"
+        android:layout_marginTop="@dimen/margin_mid"
+        android:text="@string/fiber"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_a3"
-        app:layout_constraintStart_toEndOf="@id/icon_a3"
-        app:layout_constraintTop_toTopOf="@id/icon_a3"
+        app:layout_constraintTop_toBottomOf="@id/sugar"
+        app:layout_constraintStart_toStartOf="@id/main_image"
         tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/count_fiber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
         android:text="12g"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_a3"
+        app:layout_constraintBottom_toBottomOf="@id/fiber"
         app:layout_constraintEnd_toEndOf="@id/main_image"
-        app:layout_constraintTop_toTopOf="@id/icon_a3"
+        app:layout_constraintTop_toTopOf="@id/fiber"
         tools:ignore="MissingConstraints" />
 
 
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/icon_d3"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:padding="@dimen/margin_small"
-        android:layout_marginBottom="@dimen/margin_mid"
-        android:background="@drawable/background_icon"
-        android:src="@drawable/ic_water"
-        app:layout_constraintBottom_toTopOf="@id/icon_fat"
-        app:layout_constraintStart_toStartOf="@id/main_image"
-        app:shapeAppearanceOverlay="@drawable/background_icon"
-        />
 
     <TextView
+        android:id="@+id/water"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
-        android:text="Water"
+        android:layout_marginTop="@dimen/margin_mid"
+        android:text="@string/water"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_d3"
-        app:layout_constraintStart_toEndOf="@id/icon_d3"
-        app:layout_constraintTop_toTopOf="@id/icon_d3"
+        app:layout_constraintTop_toBottomOf="@id/fiber"
+        app:layout_constraintStart_toStartOf="@id/main_image"
         tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/water_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
         android:text="14g"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_d3"
+        app:layout_constraintBottom_toBottomOf="@id/water"
         app:layout_constraintEnd_toEndOf="@id/main_image"
-        app:layout_constraintTop_toTopOf="@id/icon_d3"
+        app:layout_constraintTop_toTopOf="@id/water"
         tools:ignore="MissingConstraints" />
 
 
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/icon_fat"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="@dimen/margin_mid"
-        android:padding="@dimen/margin_small"
-        android:background="@drawable/background_icon"
-        android:src="@drawable/ic_calcium"
-        app:layout_constraintBottom_toTopOf="@id/icon_fiber"
-        app:layout_constraintStart_toStartOf="@id/main_image"
-        app:shapeAppearanceOverlay="@drawable/background_icon"
-        />
-
     <TextView
+        android:id="@+id/calcium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
-        android:text="Calcium"
+        android:layout_marginTop="@dimen/margin_mid"
+        android:text="@string/calcium"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_fat"
-        app:layout_constraintStart_toEndOf="@id/icon_fat"
-        app:layout_constraintTop_toTopOf="@id/icon_fat"
+        app:layout_constraintTop_toBottomOf="@id/water"
+        app:layout_constraintStart_toStartOf="@id/main_image"
         tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/calcium_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
         android:text="23g"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_fat"
+        app:layout_constraintBottom_toBottomOf="@id/calcium"
         app:layout_constraintEnd_toEndOf="@id/main_image"
-        app:layout_constraintTop_toTopOf="@id/icon_fat"
+        app:layout_constraintTop_toTopOf="@id/calcium"
         tools:ignore="MissingConstraints" />
 
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/icon_fiber"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:padding="@dimen/margin_small"
-        android:tint="@color/primary"
-        android:layout_marginBottom="@dimen/margin_mid"
-        android:background="@drawable/background_icon"
-        android:src="@drawable/ic_heart_health"
-        app:layout_constraintBottom_toTopOf="@id/icon_caffeine"
-        app:layout_constraintStart_toStartOf="@id/main_image"
-        app:shapeAppearanceOverlay="@drawable/background_icon"
-        />
-
     <TextView
+        android:id="@+id/cholesterol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
-        android:text="Cholesterol"
+        android:layout_marginTop="@dimen/margin_mid"
+        android:text="@string/cholesterol"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_fiber"
-        app:layout_constraintStart_toEndOf="@id/icon_fiber"
-        app:layout_constraintTop_toTopOf="@id/icon_fiber"
+        app:layout_constraintTop_toBottomOf="@id/calcium"
+        app:layout_constraintStart_toStartOf="@id/main_image"
         tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/cholesterol_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
         android:text="10g"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_fiber"
+        app:layout_constraintBottom_toBottomOf="@id/cholesterol"
         app:layout_constraintEnd_toEndOf="@id/main_image"
-        app:layout_constraintTop_toTopOf="@id/icon_fiber"
+        app:layout_constraintTop_toTopOf="@id/cholesterol"
         tools:ignore="MissingConstraints" />
 
 
-
-
-
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/icon_caffeine"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:padding="@dimen/margin_small"
-        android:layout_marginBottom="@dimen/margin_normal"
-        android:background="@drawable/background_icon"
-        android:src="@drawable/ic_caffeine"
-        app:layout_constraintBottom_toTopOf="@id/btn_dialy"
-        app:layout_constraintStart_toStartOf="@id/main_image"
-        app:shapeAppearanceOverlay="@drawable/background_icon"
-        />
-
     <TextView
+        android:id="@+id/caffeine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
-        android:text="Caffeine"
+        android:layout_marginTop="@dimen/margin_mid"
+        android:text="@string/caffeine"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_caffeine"
-        app:layout_constraintStart_toEndOf="@id/icon_caffeine"
-        app:layout_constraintTop_toTopOf="@id/icon_caffeine"
+        app:layout_constraintTop_toBottomOf="@id/cholesterol"
+        app:layout_constraintStart_toStartOf="@id/main_image"
         tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/caffeine_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_mid"
         android:text="11g"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/icon_caffeine"
+        app:layout_constraintBottom_toBottomOf="@id/caffeine"
         app:layout_constraintEnd_toEndOf="@id/main_image"
-        app:layout_constraintTop_toTopOf="@id/icon_caffeine"
+        app:layout_constraintTop_toTopOf="@id/caffeine"
         tools:ignore="MissingConstraints" />
 
+
+ </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
     <Button
         android:id="@+id/btn_dialy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
         android:background="@drawable/radius_btn"
-        android:text="add to Diary"
+        android:text="@string/add_to_diary"
         android:textColor="@color/white"
-        android:textSize="14sp"
-        android:layout_marginStart="@dimen/margin_normal"
-        android:layout_marginEnd="@dimen/margin_normal"
-        android:layout_marginBottom="@dimen/margin_normal"
+        android:textSize="@dimen/size_text_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/main_image"
-        app:layout_constraintStart_toStartOf="@id/main_image"/>
-
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

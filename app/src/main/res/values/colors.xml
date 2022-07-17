@@ -19,4 +19,7 @@
     <color name="primary_light">#F0F9F4</color>
     <color name="icon_dark">#95B4A7</color>
     <color name="icon_light">#C1DECE</color>
+    <color name="red_pie_chart">#FF6752</color>
+    <color name="yellow_pie_chart">#FAB131</color>
+    <color name="blue_pie_chart">#0064E5</color>
 </resources>

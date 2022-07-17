@@ -36,7 +36,22 @@
     <string name="weight">75</string>
     <string name="height">170</string>
     <string name="age">25</string>
-    <string name="_22_cal">22 cal</string>
-    <string name="name_of_item">Name of item</string>
-    <string name="category_content">Category content</string>
+    <string name="done">Done</string>
+    <string name="blue">#0064E5</string>
+    <string name="red">#FF6752</string>
+    <string name="yellow">#FAB131</string>
+    <string name="name_of_meal">Name of meal</string>
+    <string name="sugar">Sugar</string>
+    <string name="fiber">Fiber</string>
+    <string name="water">Water</string>
+    <string name="calcium">Calcium</string>
+    <string name="cholesterol">Cholesterol</string>
+    <string name="caffeine">Caffeine</string>
+    <string name="add_to_diary">add to Diary</string>
+    <string name="male_label">Male</string>
+    <string name="female_label">Female</string>
+    <string name="enter_btn">Enter</string>
+    <string name="cardName">item name</string>
+    <string name="cardCalories">card calories</string>
+    <string name="cal">Cal</string>
 </resources>

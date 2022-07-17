@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.example.nutritionsapp.R
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentDetailsBinding
@@ -25,7 +26,6 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
     override var LOG_TAG = Constants.DEATILS_KEY
 
-
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentDetailsBinding
         get()= FragmentDetailsBinding::inflate
 
@@ -34,12 +34,11 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
         val meal = arguments?.getParcelable<Meal>(Constants.ID_KEY)
         addProperties(meal)
-
-        var carb  = meal?.carb?.toFloatNumber()
-        var protein = meal?.protein?.toFloatNumber()
-        var fat = meal?.fat?.toFloatNumber()
+        val carb= requireNotNull(meal?.carb?.toFloatNumber())
+        val  protein = requireNotNull(meal?.protein?.toFloatNumber())
+        val  fat = requireNotNull(meal?.fat?.toFloatNumber())
         setupPieChart(meal?.calories)
-        loadPieChartData(carb!!,protein!!,fat!!)
+        loadPieChartData(carb,protein,fat)
 
     }
 
@@ -58,7 +57,7 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
     override fun addCallBacks() {
         binding.btnDialy.setOnClickListener {
-            binding.btnDialy.text = "Done"
+            binding.btnDialy.text = getString(R.string.done)
         }
         binding.arrowIcon.setOnClickListener {
             this.parentFragmentManager.popBackStack()
@@ -69,7 +68,7 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
     private fun setupPieChart( calories:String?) {
         binding.pieChartDetails.apply {
-            centerText = "calories\n $calories"
+            centerText ="$calories\nCal"
             setCenterTextSize(12F)
             setUsePercentValues(true)
             description.isEnabled = false
@@ -87,9 +86,9 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
         val colors: ArrayList<Int> = ArrayList()
         colors.apply {
-            add(rgb("#0064E5"))
-            add(rgb("#FF6752"))
-            add(rgb("#FAB131"))
+            add(rgb(getString(R.string.blue)))
+            add(rgb(getString(R.string.red)))
+            add(rgb(getString(R.string.yellow)))
         }
 
         val dataSet = PieDataSet(entries, "")
