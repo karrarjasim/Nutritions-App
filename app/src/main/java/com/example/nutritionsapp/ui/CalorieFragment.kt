@@ -13,39 +13,41 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>() {
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentCalorieBinding
         get() = FragmentCalorieBinding::inflate
 
-    private lateinit var dataManager : DataManager
-    private lateinit var  addedItems: MutableList<Meal>
-    private  var calculatedCalories: Int = 0
-    private  var optimalCalories: Int = 0
+    private lateinit var dataManager: DataManager
+    private lateinit var addedItems: MutableList<Meal>
+    private var calculatedCalories: Int = 0
+    private var optimalCalories: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val data = arguments?.getSerializable("dataManager") as DataManager
         dataManager = data
-         addedItems = dataManager.addedItems
-         calculatedCalories = dataManager.calculateCaloriesForAddedMeals(addedItems)
-         optimalCalories = dataManager.optimalCalories
-    }
+        addedItems = dataManager.addedItems
+        calculatedCalories = dataManager.calculateCaloriesForAddedMeals(addedItems)
+        optimalCalories = dataManager.optimalCalories
 
+        ///
+    }
 
 
     override fun addCallBacks() {
         binding.apply {
+            recyclerViewAddedItems.adapter = MealAdapter(addedItems)
 
-            cardName.text = addedItems[0].name
-            cardCalories.text = "${addedItems[0].calories} Cal"
+//            cardName.text = addedItems[0].name
+//            cardCalories.text = "${addedItems[0].calories} Cal"
 
-            cardName2.text = addedItems[1].name
-            cardCalories2.text = "${addedItems[1].calories} Cal"
+//            cardName2.text = addedItems[1].name
+//            cardCalories2.text = "${addedItems[1].calories} Cal"
 
-            cardName3.text = addedItems[2].name
-            cardCalories3.text = "${addedItems[2].calories} Cal"
+//            cardName3.text = addedItems[2].name
+//            cardCalories3.text = "${addedItems[2].calories} Cal"
 
-            cardName4.text = addedItems[3].name
-            cardCalories4.text = "${addedItems[3].calories} Cal"
+//            cardName4.text = addedItems[3].name
+//            cardCalories4.text = "${addedItems[3].calories} Cal"
 
-            cardName5.text = addedItems[4].name
-            cardCalories5.text = "${addedItems[4].calories} Cal"
+//            cardName5.text = addedItems[4].name
+//            cardCalories5.text = "${addedItems[4].calories} Cal"
 
             progressBar.setProgress((calculatedCalories * 100) / optimalCalories, true)
             caloriesCount.text = optimalCalories.toString()

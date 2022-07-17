@@ -51,4 +51,7 @@
     <string name="male_label">Male</string>
     <string name="female_label">Female</string>
     <string name="enter_btn">Enter</string>
+    <string name="cardName">item name</string>
+    <string name="cardCalories">card calories</string>
+    <string name="cal">Cal</string>
 </resources>
