@@ -16,7 +16,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
     override var LOG_TAG = "SearchFragment"
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentSearchBinding
         get() = FragmentSearchBinding::inflate
-    private lateinit var dataManager : DataManager
+    private lateinit var dataManager: DataManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,25 +26,25 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
 
     override fun addCallBacks() {
 
-        val mealsList = dataManager.addedItems
+        val mealsList = dataManager.addedMealsToBeCalculated
 
         binding.searchQuery.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             @SuppressLint("SetTextI18n")
             override fun onQueryTextSubmit(query: String): Boolean {
-                if (query.isEmpty()){
+                if (query.isEmpty()) {
                     Toast.makeText(activity, "please type a word", Toast.LENGTH_LONG)
                         .show()
                 }
-                val filtered = mealsList.filter{
+                val filtered = mealsList.filter {
                     it.name.lowercase().contains(query.lowercase())
                 }
-                if (filtered.isNotEmpty()){
+                if (filtered.isNotEmpty()) {
                     filtered.forEach {
                         binding.tvC1.text = it.name
-                        binding.tvCal1.text="${filtered[0].calories} cal"
+                        binding.tvCal1.text = "${filtered[0].calories} cal"
                     }
-                    binding.searchLabel.text ="Search results"
-                }else{
+                    binding.searchLabel.text = "Search results"
+                } else {
                     Toast.makeText(activity, "No result found", Toast.LENGTH_LONG)
                         .show()
                 }

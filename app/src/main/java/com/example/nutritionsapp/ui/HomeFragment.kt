@@ -21,23 +21,23 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 
-class HomeFragment: BaseFragment<FragmentHomeBinding>() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override var LOG_TAG = "HOME_FRAGMENT"
-    lateinit var  dataManager : DataManager
+    lateinit var dataManager: DataManager
     lateinit var mealsList: MutableList<Meal>
 
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
         get() = FragmentHomeBinding::inflate
 
     override fun addCallBacks() {
-        binding.proteinMealCard.setOnClickListener{
+        binding.proteinMealCard.setOnClickListener {
             val proteinList = dataManager.getHighProteinMeals(mealsList)
             log(proteinList)
             openCategoryDetails(proteinList)
         }
 
-        binding.vitaminD3MealCard.setOnClickListener{
+        binding.vitaminD3MealCard.setOnClickListener {
             val vitaminsList = dataManager.getTopMealsContainsVitamin(mealsList)
             openCategoryDetails(vitaminsList)
         }
@@ -87,7 +87,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
             add(rgb("#FAB131"))
         }
 
-        val dataSet = PieDataSet(entries,"")
+        val dataSet = PieDataSet(entries, "")
         dataSet.colors = colors
         val data = PieData(dataSet)
         binding.pieChart.data = data
@@ -100,8 +100,9 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
     }
 
 
-    private fun openCategoryDetails(mealsList: MutableList<Meal>){
-        val categoryFragment = CategoryFragment.newInstance(mealsList as ArrayList<Meal>)
+    private fun openCategoryDetails(mealsList: MutableList<Meal>) {
+        val categoryFragment =
+            CategoryFragment.newInstance(mealsList as ArrayList<Meal>, dataManager)
         (activity as HomeActivity).addFragment(categoryFragment)
     }
 
@@ -111,7 +112,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
             return HomeFragment().apply {
                 arguments = Bundle().apply {
                     putInt(Constants.CALORIES_KEY, calorie)
-                    putSerializable(Constants.DATA_MANAGER_KEY,dataManager)
+                    putSerializable(Constants.DATA_MANAGER_KEY, dataManager)
                 }
             }
         }

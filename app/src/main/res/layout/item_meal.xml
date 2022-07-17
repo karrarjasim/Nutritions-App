@@ -14,9 +14,11 @@
     <TextView
         android:id="@+id/card_name"
         style="@style/textviewMarginStart"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
+        android:lines="1"
+        android:ellipsize="end"
         android:layout_marginStart="28dp"
         android:layout_marginTop="18dp"
         android:text="@string/cardName" />

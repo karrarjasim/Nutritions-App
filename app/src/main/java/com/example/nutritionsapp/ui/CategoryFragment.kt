@@ -3,6 +3,7 @@ package com.example.nutritionsapp.ui
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentCalculateBinding
 import com.example.nutritionsapp.databinding.FragmentCategoryBinding
@@ -11,13 +12,16 @@ import com.example.nutritionsapp.util.Constants
 class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
 
     override var LOG_TAG = "CategoryFragment"
+    lateinit var dataManager: DataManager
+
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentCategoryBinding
         get() = FragmentCategoryBinding::inflate
 
 
-
     override fun onStart() {
         super.onStart()
+        dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
+
         val mealsList = arguments?.getParcelableArrayList<Meal>(Constants.CATEGORY_LIST_KEY)
         log(mealsList.toString())
         setText(mealsList)
@@ -27,38 +31,37 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
     }
 
 
-    fun setText(mealsList: ArrayList<Meal>?){
-        val list= requireNotNull(mealsList)
+    fun setText(mealsList: ArrayList<Meal>?) {
+        val list = requireNotNull(mealsList)
         binding.tvC1.text = list[0].name
-        binding.tvCal1.text="${list[0].calories} cal"
+        binding.tvCal1.text = "${list[0].calories} cal"
 
         binding.tvC2.text = list[1].name
-        binding.tvCal2.text="${list[1].calories} cal"
+        binding.tvCal2.text = "${list[1].calories} cal"
 
         binding.tvC3.text = list[2].name
-        binding.tvCal3.text="${list[2].calories} cal"
+        binding.tvCal3.text = "${list[2].calories} cal"
 
-        binding.tvC4.text=list[3].name
-        binding.tvCal4.text="${list[3].calories} cal"
+        binding.tvC4.text = list[3].name
+        binding.tvCal4.text = "${list[3].calories} cal"
 
-        binding.tvC5.text=list[4].name
-        binding.tvCal5.text="${list[4].calories} cal"
+        binding.tvC5.text = list[4].name
+        binding.tvCal5.text = "${list[4].calories} cal"
 
-        binding.tvC6.text=list[5].name
-        binding.tvCal6.text="${list[5].calories} cal"
+        binding.tvC6.text = list[5].name
+        binding.tvCal6.text = "${list[5].calories} cal"
 
-        binding.tvC7.text=list[6].name
-        binding.tvCal7.text="${list[6].calories} cal"
+        binding.tvC7.text = list[6].name
+        binding.tvCal7.text = "${list[6].calories} cal"
 
-        binding.tvC8.text=list[7].name
-        binding.tvCal8.text="${list[7].calories} cal"
+        binding.tvC8.text = list[7].name
+        binding.tvCal8.text = "${list[7].calories} cal"
 
-        binding.tvC9.text=list[8].name
-        binding.tvCal9.text="${list[8].calories} cal"
+        binding.tvC9.text = list[8].name
+        binding.tvCal9.text = "${list[8].calories} cal"
 
-        binding.tvC9.text=list[9].name
-        binding.tvCal9.text="${list[9].calories} cal"
-
+        binding.tvC9.text = list[9].name
+        binding.tvCal9.text = "${list[9].calories} cal"
 
 
     }
@@ -105,21 +108,23 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
         }
     }
 
-    override fun addCallBacks(){
+    override fun addCallBacks() {
 
     }
 
-    fun openDetailsFragment(meal:Meal?){
-        val detylsFragment =DeatilsFragment.newInstance(meal!!)
+    fun openDetailsFragment(meal: Meal?) {
+        val detylsFragment = DeatilsFragment.newInstance(meal!!,dataManager)
         (activity as HomeActivity).addFragment(detylsFragment)
     }
 
     companion object {
 
-        fun newInstance(proteinList: ArrayList<Meal>): CategoryFragment {
+        fun newInstance(proteinList: ArrayList<Meal>, dataManager: DataManager): CategoryFragment {
             return CategoryFragment().apply {
                 arguments = Bundle().apply {
                     putParcelableArrayList(Constants.CATEGORY_LIST_KEY, proteinList)
+                    putSerializable(Constants.DATA_MANAGER_KEY, dataManager)
+
                 }
             }
         }
