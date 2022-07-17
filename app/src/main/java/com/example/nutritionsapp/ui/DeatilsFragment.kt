@@ -31,12 +31,12 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
     override fun onStart() {
         super.onStart()
-
-        val meal = arguments?.getParcelable<Meal>(Constants.ID_KEY)
+//        val meal = arguments?.getParcelable<Meal>(Constants.ID_KEY)
+        val meal = arguments?.getParcelable<Meal>(Constants.MEAL_KEY)
         addProperties(meal)
-        val carb= requireNotNull(meal?.carb?.toFloatNumber())
-        val  protein = requireNotNull(meal?.protein?.toFloatNumber())
-        val  fat = requireNotNull(meal?.fat?.toFloatNumber())
+        val carb= if (meal?.carb !=null)  meal.carb.toFloatNumber() else 0f
+        val  protein = if (meal?.protein !=null)  meal.protein.toFloatNumber() else 0f
+        val  fat = if (meal?.fat !=null)  meal.fat.toFloatNumber() else 0f
         setupPieChart(meal?.calories)
         loadPieChartData(carb,protein,fat)
 
@@ -56,8 +56,9 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
     }
 
     override fun addCallBacks() {
-        binding.btnDialy.setOnClickListener {
-            binding.btnDialy.text = getString(R.string.done)
+        binding.buttonDialy.setOnClickListener {
+            binding.buttonDialy.text = getString(R.string.done)
+            binding.buttonDialy.isClickable =false
         }
         binding.arrowIcon.setOnClickListener {
             this.parentFragmentManager.popBackStack()

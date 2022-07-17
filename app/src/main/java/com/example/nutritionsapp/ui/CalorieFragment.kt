@@ -1,14 +1,17 @@
 package com.example.nutritionsapp.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentCalorieBinding
+import com.example.nutritionsapp.util.Constants
 
 
-class CalorieFragment : BaseFragment<FragmentCalorieBinding>() {
+class CalorieFragment : BaseFragment<FragmentCalorieBinding>(), MealInteractionListener {
     override var LOG_TAG = "CalorieFragment"
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentCalorieBinding
         get() = FragmentCalorieBinding::inflate
@@ -32,22 +35,7 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>() {
 
     override fun addCallBacks() {
         binding.apply {
-            recyclerViewAddedItems.adapter = MealAdapter(addedItems)
-
-//            cardName.text = addedItems[0].name
-//            cardCalories.text = "${addedItems[0].calories} Cal"
-
-//            cardName2.text = addedItems[1].name
-//            cardCalories2.text = "${addedItems[1].calories} Cal"
-
-//            cardName3.text = addedItems[2].name
-//            cardCalories3.text = "${addedItems[2].calories} Cal"
-
-//            cardName4.text = addedItems[3].name
-//            cardCalories4.text = "${addedItems[3].calories} Cal"
-
-//            cardName5.text = addedItems[4].name
-//            cardCalories5.text = "${addedItems[4].calories} Cal"
+            recyclerViewAddedItems.adapter = MealAdapter(addedItems, this@CalorieFragment)
 
             progressBar.setProgress((calculatedCalories * 100) / optimalCalories, true)
             caloriesCount.text = optimalCalories.toString()
@@ -65,15 +53,30 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>() {
         }
     }
 
+
+    override fun onMealClick(meal: Meal) {
+        val detailsFragment = DeatilsFragment.newInstance(meal)
+        (activity as HomeActivity).addFragment(detailsFragment)
+    }
+
+
     companion object {
 
-        fun newInstance(dataManager: DataManager): CalorieFragment {
+        fun newInstance(listOfMeals: ArrayList<Meal>): CalorieFragment {
+            return CalorieFragment().apply {
+                arguments = Bundle().apply {
+                    putParcelableArrayList(Constants.MEAL_KEY, listOfMeals)
+                }
+            }
+        }
+
+        fun newInstanceFromHome(dataManager: DataManager): CalorieFragment {
             return CalorieFragment().apply {
                 arguments = Bundle().apply {
                     putSerializable("dataManager", dataManager)
                 }
             }
         }
-    }
 
+    }
 }

@@ -3,13 +3,14 @@ package com.example.nutritionsapp.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.ItemMealBinding
 
 
-class MealAdapter(private val addedMeals: List<Meal>) :
+class MealAdapter(private val addedMeals: List<Meal>, val listener: MealInteractionListener) :
     RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealViewHolder {
         val view =
@@ -22,6 +23,10 @@ class MealAdapter(private val addedMeals: List<Meal>) :
         holder.binding.apply {
             cardName.text = currentMeal.name
             cardCalories.text = "${currentMeal.calories} cal"
+            singleItemCard1.setOnClickListener { listener.onMealClick(currentMeal) }
+            root.setOnClickListener {
+                listener.onMealClick(currentMeal)
+            }
         }
     }
 
