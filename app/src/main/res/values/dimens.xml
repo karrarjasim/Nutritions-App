@@ -9,4 +9,5 @@
     <dimen name="margin_small">4dp</dimen>
     <dimen name="size_pie_chart">120dp</dimen>
     <dimen name="size_text_button">14sp</dimen>
+    <dimen name="size_main_image">180dp</dimen>
 </resources>

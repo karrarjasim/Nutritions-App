@@ -56,8 +56,9 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
     }
 
     override fun addCallBacks() {
-        binding.btnDialy.setOnClickListener {
-            binding.btnDialy.text = getString(R.string.done)
+        binding.buttonDialy.setOnClickListener {
+            binding.buttonDialy.text = getString(R.string.done)
+            binding.buttonDialy.isClickable =false
         }
         binding.arrowIcon.setOnClickListener {
             this.parentFragmentManager.popBackStack()
