@@ -53,7 +53,7 @@ class HomeActivity : AppCompatActivity() {
                     true
                 }
                 R.id.pageCalorie -> {
-                    calorieFragment = CalorieFragment.newInstance(dataManager)
+                    calorieFragment = CalorieFragment.newInstanceFromHome(dataManager)
                     replaceFragment(calorieFragment)
                     true
                 }

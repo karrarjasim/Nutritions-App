@@ -69,5 +69,14 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>(), MealInteractionL
                 }
             }
         }
+
+        fun newInstanceFromHome(dataManager: DataManager): CalorieFragment {
+            return CalorieFragment().apply {
+                arguments = Bundle().apply {
+                    putSerializable("dataManager", dataManager)
+                }
+            }
+        }
+
     }
 }
