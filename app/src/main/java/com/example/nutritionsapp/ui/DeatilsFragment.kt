@@ -34,9 +34,9 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
         val meal = arguments?.getParcelable<Meal>(Constants.ID_KEY)
         addProperties(meal)
-        val carb= requireNotNull(meal?.carb?.toFloatNumber())
-        val  protein = requireNotNull(meal?.protein?.toFloatNumber())
-        val  fat = requireNotNull(meal?.fat?.toFloatNumber())
+        val carb= if (meal?.carb !=null)  meal.carb.toFloatNumber() else 0f
+        val  protein = if (meal?.protein !=null)  meal.protein.toFloatNumber() else 0f
+        val  fat = if (meal?.fat !=null)  meal.fat.toFloatNumber() else 0f
         setupPieChart(meal?.calories)
         loadPieChartData(carb,protein,fat)
 
