@@ -59,7 +59,7 @@
         android:layout_marginTop="@dimen/margin_normal"
         android:background="@drawable/background_icon"
         android:scaleType="centerCrop"
-        android:src="@drawable/foodo"
+        android:src="@drawable/food"
         app:layout_constraintTop_toBottomOf="@id/appbarTitle"
         app:shapeAppearanceOverlay="@style/reduceNormal"
         tools:layout_editor_absoluteX="9dp" />

@@ -31,8 +31,8 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
     override fun onStart() {
         super.onStart()
-
-        val meal = arguments?.getParcelable<Meal>(Constants.ID_KEY)
+//        val meal = arguments?.getParcelable<Meal>(Constants.ID_KEY)
+        val meal = arguments?.getParcelable<Meal>(Constants.MEAL_KEY)
         addProperties(meal)
         val carb= requireNotNull(meal?.carb?.toFloatNumber())
         val  protein = requireNotNull(meal?.protein?.toFloatNumber())
