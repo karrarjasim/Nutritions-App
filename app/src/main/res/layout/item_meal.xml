@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:id="@+id/single_item_card1"
     android:layout_width="match_parent"
-    android:layout_height="64dp"
+    android:layout_height="wrap_content"
     android:layout_marginHorizontal="24dp"
     android:layout_marginTop="16dp"
-    android:layout_marginBottom="6dp"
-    app:cardBackgroundColor="#F5F5F5"
-    app:cardCornerRadius="10dp">
+    android:layout_marginBottom="8dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/textView_color"
+    app:cardCornerRadius="10dp"
+    app:cardPreventCornerOverlap="true">
 
     <TextView
         android:id="@+id/card_name"
         style="@style/textviewMarginStart"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="18dp"
-        android:text="@string/cardName" />
+        android:text="@string/cardName"
+        android:layout_marginVertical="20dp" />
 
     <TextView
         android:id="@+id/card_calories"
@@ -27,8 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginVertical="20dp"
         android:text="@string/cardCalories"
         android:textColor="@color/black" />
 
