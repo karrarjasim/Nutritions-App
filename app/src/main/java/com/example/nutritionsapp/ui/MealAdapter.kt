@@ -10,12 +10,20 @@ import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.ItemMealBinding
 
 
-class MealAdapter(private val addedMeals: List<Meal>, val listener: MealInteractionListener) :
+class MealAdapter(
+    private var addedMeals: List<Meal>,
+    private val listener: MealInteractionListener
+) :
     RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_meal, parent, false)
         return MealViewHolder(view)
+    }
+
+    fun setData(newAddedMeals: List<Meal>) {
+        addedMeals = newAddedMeals
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) {

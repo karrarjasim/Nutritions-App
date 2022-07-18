@@ -28,7 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginVertical="20dp"
-        android:text="@string/cardCalories"
-        android:textColor="@color/black" />
+        android:text="@string/cardCalories" />
 
 </androidx.cardview.widget.CardView>

@@ -18,28 +18,28 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>(), MealInteractionL
 
     private lateinit var dataManager: DataManager
     private lateinit var addedItems: MutableList<Meal>
+    lateinit var adapter: MealAdapter
+
     private var calculatedCalories: Int = 0
     private var optimalCalories: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val data = arguments?.getSerializable("dataManager") as DataManager
+        val data = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
         dataManager = data
-        addedItems = dataManager.addedItems
+        addedItems = dataManager.addedMealsToBeCalculated
         calculatedCalories = dataManager.calculateCaloriesForAddedMeals(addedItems)
         optimalCalories = dataManager.optimalCalories
 
-        ///
     }
 
 
     override fun addCallBacks() {
         binding.apply {
-            recyclerViewAddedItems.adapter = MealAdapter(addedItems, this@CalorieFragment)
-
+            adapter = MealAdapter(addedItems, this@CalorieFragment)
+            recyclerViewAddedItems.adapter = adapter
             progressBar.setProgress((calculatedCalories * 100) / optimalCalories, true)
             caloriesCount.text = optimalCalories.toString()
-
             when {
                 calculatedCalories > optimalCalories -> {
                     cardStatusDescription.text = "Items crosses your body optimal calories"
@@ -55,25 +55,25 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>(), MealInteractionL
 
 
     override fun onMealClick(meal: Meal) {
-        val detailsFragment = DeatilsFragment.newInstance(meal)
+        val detailsFragment = DeatilsFragment.newInstance(meal, dataManager)
         (activity as HomeActivity).addFragment(detailsFragment)
     }
 
 
     companion object {
 
-        fun newInstance(listOfMeals: ArrayList<Meal>): CalorieFragment {
-            return CalorieFragment().apply {
-                arguments = Bundle().apply {
-                    putParcelableArrayList(Constants.MEAL_KEY, listOfMeals)
-                }
-            }
-        }
+//        fun newInstance(listOfMeals: ArrayList<Meal>): CalorieFragment {
+//            return CalorieFragment().apply {
+//                arguments = Bundle().apply {
+//                    putParcelableArrayList(Constants.MEAL_KEY, listOfMeals)
+//                }
+//            }
+//        }
 
         fun newInstanceFromHome(dataManager: DataManager): CalorieFragment {
             return CalorieFragment().apply {
                 arguments = Bundle().apply {
-                    putSerializable("dataManager", dataManager)
+                    putSerializable(Constants.DATA_MANAGER_KEY, dataManager)
                 }
             }
         }
