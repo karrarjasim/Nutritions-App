@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.data.domain.Meal
@@ -24,6 +25,12 @@ class MealAdapter(
     fun setData(newAddedMeals: List<Meal>) {
         addedMeals = newAddedMeals
         notifyDataSetChanged()
+    }
+
+    fun search(resultMeals: List<Meal>){
+        val diffResult = DiffUtil.calculateDiff(MealDiffUtil(addedMeals, resultMeals))
+        addedMeals = resultMeals
+        diffResult.dispatchUpdatesTo(this)
     }
 
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) {

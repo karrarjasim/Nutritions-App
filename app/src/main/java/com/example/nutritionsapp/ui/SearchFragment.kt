@@ -1,22 +1,23 @@
 package com.example.nutritionsapp.ui
 
-import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import android.widget.SearchView
-import android.widget.Toast
+import android.view.inputmethod.InputMethodManager
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentSearchBinding
-import com.example.nutritionsapp.util.Constants
 
-class SearchFragment : BaseFragment<FragmentSearchBinding>() {
+class SearchFragment : BaseFragment<FragmentSearchBinding>(), MealInteractionListener {
 
     override var LOG_TAG = "SearchFragment"
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentSearchBinding
         get() = FragmentSearchBinding::inflate
     private lateinit var dataManager: DataManager
+    lateinit var adapter: MealAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,38 +25,29 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
         dataManager = data
     }
 
+
     override fun addCallBacks() {
 
-        val mealsList = dataManager.addedMealsToBeCalculated
+        val mealsList = dataManager.mealsList
+        adapter = MealAdapter(mealsList, this@SearchFragment)
+        binding.apply {
+            recyclerViewAddedItems.adapter = adapter
+            searchEditText.addTextChangedListener(object : TextWatcher {
 
-        binding.searchQuery.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            @SuppressLint("SetTextI18n")
-            override fun onQueryTextSubmit(query: String): Boolean {
-                if (query.isEmpty()) {
-                    Toast.makeText(activity, "please type a word", Toast.LENGTH_LONG)
-                        .show()
-                }
-                val filtered = mealsList.filter {
-                    it.name.lowercase().contains(query.lowercase())
-                }
-                if (filtered.isNotEmpty()) {
-                    filtered.forEach {
-                        binding.tvC1.text = it.name
-                        binding.tvCal1.text = "${filtered[0].calories} cal"
-                    }
-                    binding.searchLabel.text = "Search results"
-                } else {
-                    Toast.makeText(activity, "No result found", Toast.LENGTH_LONG)
-                        .show()
-                }
-                return false
-            }
+                override fun afterTextChanged(s: Editable) {}
 
-            override fun onQueryTextChange(newText: String?): Boolean {
+                override fun beforeTextChanged(s: CharSequence, start: Int,
+                                               count: Int, after: Int) {
 
-                return false
-            }
-        })
+                }
+
+                override fun onTextChanged(s: CharSequence, start: Int,
+                                           before: Int, count: Int) {
+                    val newdata = dataManager.getFilteredMeals(s)
+                    adapter.search(newdata)
+                }
+            })
+        }
     }
 
     companion object {
@@ -67,6 +59,11 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
                 }
             }
         }
+    }
+
+    override fun onMealClick(meal: Meal) {
+        val detailsFragment = DeatilsFragment.newInstance(meal, dataManager)
+        (activity as HomeActivity).addFragment(detailsFragment)
     }
 
 }
