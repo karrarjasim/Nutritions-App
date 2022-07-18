@@ -44,7 +44,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>(), MealInteractio
     }
 
         override fun onMealClick(meal: Meal) {
-            val detailsFragment = DeatilsFragment.newInstance(meal)
+            val detailsFragment = DeatilsFragment.newInstance(meal,dataManager)
             (activity as HomeActivity).addFragment(detailsFragment)
         }
 
