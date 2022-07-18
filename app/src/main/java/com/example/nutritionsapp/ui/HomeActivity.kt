@@ -1,7 +1,12 @@
 package com.example.nutritionsapp.ui
 
+
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.data.DataManager
@@ -88,5 +93,12 @@ class HomeActivity : AppCompatActivity() {
             val meal = parser.parse(it)
             dataManager.addMeal(meal)
         }
+    }
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null) {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
     }
 }

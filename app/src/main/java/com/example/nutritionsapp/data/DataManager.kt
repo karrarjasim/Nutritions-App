@@ -6,6 +6,7 @@ import java.io.Serializable
 
 class DataManager : Serializable {
     val mealsList = mutableListOf<Meal>()
+
     val addedMealsToBeCalculated = mutableListOf<Meal>()
 
     fun addItemToAddedItems(meal: Meal) {
@@ -50,6 +51,12 @@ class DataManager : Serializable {
     fun getTopMealsContainsFiber(addedItems: List<Meal>, size: Int = 10): MutableList<Meal> {
         addedItems.let { it ->
             return it.sortedByDescending { it.fiber }.take(size).toMutableList()
+        }
+    }
+
+    fun getFilteredMeals(name: CharSequence): List<Meal>{
+        return mealsList.filter {
+            it.name.contains(name)
         }
     }
 
