@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentSearchBinding
+import com.example.nutritionsapp.interfaces.NavigationInterface
 
 class SearchFragment : BaseFragment<FragmentSearchBinding>(), MealInteractionListener {
 
@@ -23,6 +24,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), MealInteractionLis
         super.onCreate(savedInstanceState)
         val data = arguments?.getSerializable("dataManager") as DataManager
         dataManager = data
+        listener = context as NavigationInterface
     }
 
 
@@ -63,7 +65,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), MealInteractionLis
 
     override fun onMealClick(meal: Meal) {
         val detailsFragment = DeatilsFragment.newInstance(meal, dataManager)
-        (activity as HomeActivity).addFragment(detailsFragment)
+        listener?.addFragment(detailsFragment)
     }
 
 }

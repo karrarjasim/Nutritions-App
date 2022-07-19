@@ -1,24 +1,21 @@
 package com.example.nutritionsapp.ui
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentHomeBinding
+import com.example.nutritionsapp.interfaces.NavigationInterface
 import com.example.nutritionsapp.util.Constants
-import com.example.nutritionsapp.util.CsvParser
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.ColorTemplate.rgb
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -26,6 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override var LOG_TAG = "HOME_FRAGMENT"
     lateinit var dataManager: DataManager
     lateinit var mealsList: MutableList<Meal>
+
 
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
         get() = FragmentHomeBinding::inflate
@@ -53,6 +51,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
     }
 
+
     override fun onStart() {
         super.onStart()
         val calorie = arguments?.getInt(Constants.CALORIES_KEY)
@@ -60,6 +59,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         loadPieChartData()
         dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
         mealsList = dataManager.mealsList
+
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = context as NavigationInterface
     }
 
     private fun setupPieChart(calories: String) {
@@ -103,8 +108,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private fun openCategoryDetails(mealsList: MutableList<Meal>) {
         val categoryFragment =
             CategoryFragment.newInstance(mealsList as ArrayList<Meal>, dataManager)
-        (activity as HomeActivity).addFragment(categoryFragment)
+//        (activity as HomeActivity).addFragment(categoryFragment)
+        listener?.addFragment(categoryFragment)
     }
+
 
     companion object {
 

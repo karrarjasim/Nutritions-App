@@ -1,5 +1,6 @@
 package com.example.nutritionsapp.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.widget.Toast
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentCalorieBinding
+import com.example.nutritionsapp.interfaces.NavigationInterface
 import com.example.nutritionsapp.util.Constants
 
 
@@ -31,6 +33,10 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>(), MealInteractionL
         calculatedCalories = dataManager.calculateCaloriesForAddedMeals(addedItems)
         optimalCalories = dataManager.optimalCalories
 
+    }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = context as NavigationInterface
     }
 
 
@@ -56,7 +62,7 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>(), MealInteractionL
 
     override fun onMealClick(meal: Meal) {
         val detailsFragment = DeatilsFragment.newInstance(meal, dataManager)
-        (activity as HomeActivity).addFragment(detailsFragment)
+        listener?.addFragment(detailsFragment)
     }
 
 

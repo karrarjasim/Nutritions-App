@@ -11,13 +11,14 @@ import androidx.fragment.app.Fragment
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.databinding.ActivityHomeBinding
+import com.example.nutritionsapp.interfaces.NavigationInterface
 import com.example.nutritionsapp.util.Constants
 import com.example.nutritionsapp.util.CsvParser
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() , NavigationInterface{
 
     private lateinit var binding: ActivityHomeBinding
     private lateinit var homeFragment: HomeFragment
@@ -72,7 +73,7 @@ class HomeActivity : AppCompatActivity() {
         addFragment(homeFragment)
     }
 
-    fun addFragment(fragment: Fragment) {
+    override fun addFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.fragment_container, fragment)
         transaction.addToBackStack("fragment")
@@ -101,4 +102,6 @@ class HomeActivity : AppCompatActivity() {
         }
         return super.dispatchTouchEvent(ev)
     }
+
+
 }
