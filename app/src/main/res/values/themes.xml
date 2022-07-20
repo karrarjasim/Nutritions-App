@@ -3,7 +3,7 @@
     <style name="Theme.NutritionsApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/dark_green</item>
+        <item name="colorPrimaryVariant">@color/label_color</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -15,13 +15,13 @@
     </style>
 
     <style name="title_text">
-        <item name="android:textColor">@color/dark_green</item>
+        <item name="android:textColor">@color/label_color</item>
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
     <style name="label_text">
-        <item name="android:textColor">@color/dark_green</item>
+        <item name="android:textColor">@color/label_color</item>
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
@@ -56,7 +56,7 @@
 
     <style name="textview" >
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/dark_green</item>
+        <item name="android:textColor">@color/label_color</item>
         <item name="android:elevation">2dp</item>
         <item name="android:textStyle">bold</item>
     </style>

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:textSize="18sp"
     android:fontFamily="@font/poppins_regular"
-    android:textColor="@color/dark_green"
+    android:textColor="@color/label_color"
     android:padding="8dp"
     android:background="@color/white"
     >
