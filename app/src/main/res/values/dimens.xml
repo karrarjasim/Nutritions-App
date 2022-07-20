@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="appbar_title_size">18sp</dimen>
-    <dimen name="size_icon_normal">24dp</dimen>
+    <dimen name="appbar_title_size">16sp</dimen>
+    <dimen name="size_icon_normal">25dp</dimen>
     <dimen name="size_btn_icon_normal">36dp</dimen>
-    <dimen name="margin_normal">16dp</dimen>
-    <dimen name="margin_larg">24dp</dimen>
-    <dimen name="margin_mid">8dp</dimen>
+    <dimen name="margin_normal">9dp</dimen>
+    <dimen name="margin_larg">17dp</dimen>
+    <dimen name="margin_mid">6dp</dimen>
     <dimen name="margin_small">4dp</dimen>
     <dimen name="size_pie_chart">120dp</dimen>
     <dimen name="size_text_button">14sp</dimen>
-    <dimen name="size_main_image">180dp</dimen>
+    <dimen name="size_main_image">190dp</dimen>
     <dimen name="size_space">75dp</dimen>
+    <dimen name="marginmedum">12dp</dimen>
+    <dimen name="marginlarge">100dp</dimen>
+    <dimen name="elevationlarg">18dp</dimen>
+    <dimen name="size_title">18sp</dimen>
+    <dimen name="elevation_smail">2dp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="label_size">14sp</dimen>
 </resources>
