@@ -49,11 +49,11 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>(), MealInteractionL
             when {
                 calculatedCalories > optimalCalories -> {
                     cardStatusDescription.text = "Items crosses your body optimal calories"
-                    cardStatusFace.text = ":("
+//                    cardStatusFace.text = ":("
                 }
                 else -> {
                     cardStatusDescription.text = "Items is below your body optimal calories"
-                    cardStatusFace.text = ":)"
+//                    cardStatusFace.text = ":)"
                 }
             }
         }
