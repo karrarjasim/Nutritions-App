@@ -36,6 +36,7 @@
             app:tint="@color/dark_green" />
 
         <TextView
+            android:fontFamily="@font/poppins_bold"
             android:id="@+id/appbarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,6 +64,7 @@
             app:layout_constraintTop_toBottomOf="@id/appbarTitle" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/title_details"
             android:layout_width="195dp"
             android:layout_height="wrap_content"
@@ -94,6 +96,7 @@
             app:layout_constraintTop_toBottomOf="@id/main_image" />
 
         <TextView
+            android:fontFamily="@font/poppins_medium"
             android:id="@+id/carb_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -106,6 +109,7 @@
             app:layout_constraintTop_toTopOf="@id/green_circle" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/carbs_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -130,6 +134,7 @@
 
 
         <TextView
+            android:fontFamily="@font/poppins_medium"
             android:id="@+id/protein_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -142,6 +147,7 @@
             app:layout_constraintTop_toTopOf="@id/red_circle" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/carbs2_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -165,6 +171,7 @@
             app:layout_constraintTop_toTopOf="@id/pie_chart_details" />
 
         <TextView
+            android:fontFamily="@font/poppins_medium"
             android:id="@+id/fat_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -177,6 +184,7 @@
             app:layout_constraintTop_toTopOf="@id/yellow_circle" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/carbs3_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -200,6 +208,7 @@
             app:layout_constraintTop_toTopOf="@id/pie_chart_details" />
 
      <TextView
+         android:fontFamily="@font/poppins_regular"
             android:id="@+id/sugar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -212,6 +221,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/sugar_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -224,6 +234,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/fiber"
             android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
@@ -236,6 +247,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/count_fiber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -249,6 +261,7 @@
 
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/water"
             android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
@@ -261,6 +274,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/water_number"
             android:layout_marginEnd="15dp"
             android:layout_width="wrap_content"
@@ -274,6 +288,7 @@
 
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/calcium"
             android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
@@ -286,6 +301,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/calcium_number"
             android:layout_marginEnd="15dp"
             android:layout_width="wrap_content"
@@ -299,6 +315,7 @@
 
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/cholesterol"
             android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
@@ -311,6 +328,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/cholesterol_number"
             android:layout_marginEnd="15dp"
             android:layout_width="wrap_content"
@@ -323,6 +341,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/caffeine"
             android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
@@ -335,6 +354,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/caffeine_number"
             android:layout_marginEnd="15dp"
             android:layout_width="wrap_content"

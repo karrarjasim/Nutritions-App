@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/card_name"
             style="@style/textviewMarginStart"
             android:layout_width="wrap_content"
@@ -23,6 +24,7 @@
             android:layout_marginVertical="@dimen/text_item_margen_vertical" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/card_calories"
             style="@style/textviewMarginEnd"
             android:layout_width="wrap_content"

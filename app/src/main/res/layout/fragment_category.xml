@@ -9,11 +9,12 @@
     android:scrollbars="none">
 
         <TextView
+
             android:id="@+id/catogory"
             style="@style/titelOfCatogry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
+            android:fontFamily="@font/poppins_bold"
             android:text="Category content"
             android:textColor="@color/black"
             android:layout_marginTop="18dp"
