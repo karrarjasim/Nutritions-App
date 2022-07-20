@@ -68,9 +68,9 @@ class DeatilsFragment : BaseFragment<FragmentDetailsBinding>() {
         dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
 
         binding.buttonDialy.setOnClickListener {
-                meal?.let {
-                    dataManager.addItemToAddedItems(it)
-                }
+            meal?.let {
+                dataManager.addItemToAddedItems(it)
+            }
             binding.buttonDialy.text = getString(R.string.done)
             binding.buttonDialy.isClickable = false
 //            if (addedOrNot == null || addedOrNot == 0) {
@@ -101,9 +101,9 @@ class DeatilsFragment : BaseFragment<FragmentDetailsBinding>() {
 
         val colors: ArrayList<Int> = ArrayList()
         colors.apply {
-            add(rgb(getString(R.string.blue)))
-            add(rgb(getString(R.string.red)))
-            add(rgb(getString(R.string.yellow)))
+            add(rgb("#005F73")) // blue
+            add(rgb("#73C080")) // red
+            add(rgb("#C8ECE2")) // yellow
         }
 
         val dataSet = PieDataSet(entries, "")

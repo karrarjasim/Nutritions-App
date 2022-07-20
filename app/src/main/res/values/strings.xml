@@ -55,4 +55,14 @@
     <string name="cardCalories">card calories</string>
     <string name="_214_g">214 g</string>
     <string name="_216_g">216 g</string>
+    <string name="textWeight">57 kg</string>
+    <string name="textHieght">164 cm</string>
+    <string name="body_fat">Body fat</string>
+    <string name="textLabelWieght">Weight</string>
+    <string name="textLabelHeight">Height</string>
+    <string name="textFat">13%</string>
+    <string name="proteinNumber">216 g</string>
+    <string name="carbText">216 g</string>
+    <string name="fatText">216 g</string>
+    <string name="image_description">image description</string>
 </resources>
