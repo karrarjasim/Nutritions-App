@@ -69,8 +69,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun setupPieChart(calories: String) {
         binding.pieChart.apply {
-            centerText = "calories\n $calories"
-            setCenterTextSize(12F)
+            centerText = "\n$calories"
+            setCenterTextSize(18F)
             setUsePercentValues(true)
             description.isEnabled = false
             legend.isEnabled = false

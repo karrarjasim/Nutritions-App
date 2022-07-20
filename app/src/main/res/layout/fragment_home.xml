@@ -12,6 +12,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/head_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,11 +48,22 @@
             app:layout_constraintBottom_toBottomOf="@+id/main_card"
             app:layout_constraintStart_toStartOf="@id/main_card"
             app:layout_constraintTop_toTopOf="@id/main_card" />
-
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="46dp"
+            android:elevation="@dimen/dim4"
+            android:layout_marginBottom="@dimen/dim32"
+            android:background="@drawable/ic_calories_icon"
+            android:contentDescription="@string/calories_icon_description"
+            app:layout_constraintBottom_toBottomOf="@+id/pie_chart"
+            app:layout_constraintEnd_toEndOf="@+id/pie_chart"
+            app:layout_constraintStart_toStartOf="@+id/pie_chart"
+            app:layout_constraintTop_toTopOf="@+id/pie_chart" />
         <androidx.cardview.widget.CardView
             android:id="@+id/info_card"
             android:layout_width="match_parent"
-            android:layout_height="86dp"
+            android:layout_height="96dp"
             android:layout_marginHorizontal="@dimen/dim16"
             android:layout_marginTop="@dimen/dim16"
             app:cardBackgroundColor="#559960"
@@ -61,6 +73,7 @@
             app:layout_constraintTop_toBottomOf="@+id/main_card" />
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/weight_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,6 +88,7 @@
             app:layout_constraintTop_toTopOf="@+id/hight_label" />
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/hight_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,6 +106,7 @@
             app:layout_constraintTop_toTopOf="@+id/info_card" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/body_fat_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,6 +119,7 @@
             app:layout_constraintTop_toTopOf="@+id/hight_text" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/weight_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -117,6 +133,7 @@
             app:layout_constraintTop_toBottomOf="@+id/weight_label" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/hight_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -130,6 +147,7 @@
             app:layout_constraintTop_toTopOf="@+id/weight_text" />
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/body_fat_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -144,6 +162,7 @@
             app:layout_constraintTop_toTopOf="@+id/hight_label" />
 
         <TextView
+            android:fontFamily="@font/poppins_medium"
             android:id="@+id/collections_for_you"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -220,6 +239,7 @@
             app:layout_constraintTop_toTopOf="@id/protein_meal_card" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim14"
@@ -245,6 +265,7 @@
             tools:ignore="ContentDescription" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim14"
@@ -271,6 +292,7 @@
             app:layout_constraintTop_toTopOf="@id/fiber_meal_card" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim14"
@@ -297,6 +319,7 @@
             app:layout_constraintTop_toTopOf="@id/high_carb_meal_card" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim8"
@@ -324,6 +347,7 @@
             app:layout_constraintStart_toStartOf="@+id/orange_circle" />
 
         <TextView
+            android:fontFamily="@font/poppins_bold"
             android:id="@+id/protein_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -337,6 +361,7 @@
             app:layout_constraintTop_toTopOf="@+id/protein_text" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/protein_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -361,6 +386,7 @@
             app:layout_constraintTop_toTopOf="@+id/pie_chart" />
 
         <TextView
+            android:fontFamily="@font/poppins_bold"
             android:id="@+id/carb_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -374,6 +400,7 @@
             app:layout_constraintTop_toTopOf="@+id/carb_text" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/carb_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -398,6 +425,7 @@
             app:layout_constraintTop_toBottomOf="@+id/orange_circle" />
 
         <TextView
+            android:fontFamily="@font/poppins_bold"
             android:id="@+id/fat_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -411,6 +439,7 @@
             app:layout_constraintTop_toTopOf="@+id/fat_text" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/fat_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
