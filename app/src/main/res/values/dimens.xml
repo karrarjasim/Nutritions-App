@@ -18,4 +18,21 @@
     <dimen name="elevation_smail">2dp</dimen>
     <dimen name="text_size_small">12sp</dimen>
     <dimen name="label_size">14sp</dimen>
+    <dimen name="dim18">18dp</dimen>
+    <dimen name="dim12">12dp</dimen>
+    <dimen name="dimtext18">18sp</dimen>
+    <dimen name="dim16">16dp</dimen>
+    <dimen name="dim8">8dp</dimen>
+    <dimen name="dim4">4dp</dimen>
+    <dimen name="dimtext24">24sp</dimen>
+    <dimen name="dim32">32dp</dimen>
+    <dimen name="dimtext16">16sp</dimen>
+    <dimen name="dim2">2dp</dimen>
+    <dimen name="dim20">20dp</dimen>
+    <dimen name="textCardtext">14sp</dimen>
+    <dimen name="dim14">14dp</dimen>
+    <dimen name="dimtext8">8sp</dimen>
+    <dimen name="dim44">44dp</dimen>
+    <dimen name="dimtext10">10sp</dimen>
+    <dimen name="dim50">50dp</dimen>
 </resources>
