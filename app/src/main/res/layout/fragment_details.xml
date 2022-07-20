@@ -33,7 +33,7 @@
             android:src="@drawable/ic_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/dark_green" />
+            app:tint="@color/label_color" />
 
         <TextView
             android:fontFamily="@font/poppins_bold"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_larg"
             android:text="Details"
-            android:textColor="@color/dark_green"
+            android:textColor="@color/label_color"
             android:textSize="@dimen/appbar_title_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +72,7 @@
             android:layout_marginTop="@dimen/marginlarge"
             android:elevation="@dimen/elevationlarg"
             android:gravity="start"
-            android:shadowColor="@color/dark_green"
+            android:shadowColor="@color/label_color"
             android:text="@string/name_of_meal"
             android:textColor="@color/white"
             android:textSize="@dimen/size_title"
@@ -104,7 +104,7 @@
             android:elevation="@dimen/elevation_smail"
             android:text="@string/_214_g"
             android:textSize="@dimen/text_size_small"
-            android:textColor="@color/green_text_color"
+            android:textColor="@color/text_color"
             app:layout_constraintStart_toEndOf="@id/green_circle"
             app:layout_constraintTop_toTopOf="@id/green_circle" />
 
@@ -142,7 +142,7 @@
             android:elevation="@dimen/elevation_smail"
             android:text="211 g"
             android:textSize="12sp"
-            android:textColor="@color/green_text_color"
+            android:textColor="@color/text_color"
             app:layout_constraintStart_toEndOf="@id/red_circle"
             app:layout_constraintTop_toTopOf="@id/red_circle" />
 
@@ -179,7 +179,7 @@
             android:elevation="@dimen/elevation_smail"
             android:text="@string/_216_g"
             android:textSize="12sp"
-            android:textColor="@color/green_text_color"
+            android:textColor="@color/text_color"
             app:layout_constraintStart_toEndOf="@id/yellow_circle"
             app:layout_constraintTop_toTopOf="@id/yellow_circle" />
 
