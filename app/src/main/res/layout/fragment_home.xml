@@ -15,13 +15,11 @@
             android:id="@+id/head_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/title_text"
             android:layout_marginStart="@dimen/dim18"
             android:layout_marginTop="@dimen/dim12"
             android:fontFamily="@font/poppins_regular"
             android:text="@string/find_track_and_eat_healthy_food"
-            android:textColor="@color/label_color"
-            android:textSize="@dimen/dimtext18"
-            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -251,9 +249,7 @@
             android:elevation="@dimen/dim16"
             android:fontFamily="@font/poppins_regular"
             android:text="@string/high_protein_meals"
-            android:textColor="@color/label_color"
-            android:textSize="@dimen/textCardtext"
-            android:textStyle="bold"
+            style="@style/body_text"
             app:layout_constraintEnd_toEndOf="@id/high_protein_image"
             app:layout_constraintStart_toStartOf="@id/high_protein_image"
             app:layout_constraintTop_toBottomOf="@id/high_protein_image" />

@@ -30,7 +30,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), MealInteractionLis
 
     override fun addCallBacks() {
 
-        val mealsList = dataManager.mealsList
+        val mealsList = dataManager.searchHistoryList
         adapter = MealAdapter(mealsList, this@SearchFragment)
         binding.apply {
             recyclerViewAddedItems.adapter = adapter
@@ -51,6 +51,9 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), MealInteractionLis
                 ) {
                     val newdata = dataManager.getFilteredMeals(s)
                     adapter.search(newdata)
+                    if (newdata.isEmpty()){
+                        binding.noDataLayout.visibility = View.VISIBLE
+                    }
                 }
             })
         }
@@ -68,6 +71,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), MealInteractionLis
     }
 
     override fun onMealClick(meal: Meal) {
+        dataManager.searchHistoryList.add(meal)
         val detailsFragment = DeatilsFragment.newInstance(meal, dataManager)
         listener?.addFragment(detailsFragment)
     }

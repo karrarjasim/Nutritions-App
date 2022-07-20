@@ -65,4 +65,7 @@
     <string name="carbText">216 g</string>
     <string name="fatText">216 g</string>
     <string name="image_description">image description</string>
+    <string name="search_input_text">Search for meal ...</string>
+    <string name="no_results_found_title">No Results Found</string>
+    <string name="no_result_found_body">Try searching for a different keywork or tweek your search a little</string>
 </resources>
