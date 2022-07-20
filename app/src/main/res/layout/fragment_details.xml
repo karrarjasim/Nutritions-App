@@ -23,12 +23,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
         <ImageButton
             android:id="@+id/arrow_icon"
             android:layout_width="@dimen/size_icon_normal"
             android:layout_height="@dimen/size_icon_normal"
             android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginTop="@dimen/margin_larg"
+            android:layout_marginTop="@dimen/margin_normal"
             android:background="@color/white"
             android:src="@drawable/ic_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +40,7 @@
             android:id="@+id/appbarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_larg"
+            android:layout_marginTop="@dimen/margin_normal"
             android:text="Details"
             android:textColor="@color/dark_green"
             android:textSize="@dimen/appbar_title_size"
@@ -52,23 +53,33 @@
             android:id="@+id/main_image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_main_image"
-
             android:layout_marginTop="@dimen/margin_normal"
-
             android:background="@drawable/background_icon"
             android:scaleType="centerCrop"
             android:src="@drawable/foodo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/appbarTitle" />
+            app:layout_constraintTop_toBottomOf="@id/arrow_icon" />
+
+
+<!--        <com.google.android.material.imageview.ShapeableImageView-->
+<!--            android:id="@+id/main_image"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/size_main_image"-->
+
+<!--            android:layout_marginTop="@dimen/margin_normal"-->
+
+<!--            android:background="@drawable/background_icon"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/foodo"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/appbarTitle" />-->
 
         <TextView
             android:id="@+id/title_details"
-            android:layout_width="195dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/marginmedum"
-            android:layout_marginTop="@dimen/marginlarge"
-            android:elevation="@dimen/elevationlarg"
+            android:elevation="8dp"
             android:gravity="start"
             android:shadowColor="@color/dark_green"
             android:text="@string/name_of_meal"
@@ -89,8 +100,9 @@
             android:id="@+id/pie_chart_details"
             android:layout_width="@dimen/size_pie_chart"
             android:layout_height="@dimen/size_pie_chart"
-            android:layout_marginTop="@dimen/margin_mid"
-            app:layout_constraintStart_toStartOf="@id/main_image"
+            android:layout_margin="@dimen/margin_normal"
+
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_image" />
 
         <TextView

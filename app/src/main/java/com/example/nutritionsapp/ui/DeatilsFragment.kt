@@ -4,7 +4,9 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
@@ -38,7 +40,6 @@ class DeatilsFragment : BaseFragment<FragmentDetailsBinding>() {
 
         if (dataManager.addedMealsToBeCalculated.contains(meal)) {
             binding.buttonDialy.text = getString(R.string.done)
-            binding.buttonDialy.setBackgroundColor(Color.GRAY)
             binding.buttonDialy.isClickable = false
         }
 
@@ -71,10 +72,12 @@ class DeatilsFragment : BaseFragment<FragmentDetailsBinding>() {
             meal?.let {
                 dataManager.addItemToAddedItems(it)
             }
+
+            Toast.makeText(context, "Added successfully", Toast.LENGTH_SHORT).show()
             binding.buttonDialy.text = getString(R.string.done)
             binding.buttonDialy.isClickable = false
-//            if (addedOrNot == null || addedOrNot == 0) {
-//            }
+
+
         }
         binding.arrowIcon.setOnClickListener {
             this.parentFragmentManager.popBackStack()
@@ -101,9 +104,9 @@ class DeatilsFragment : BaseFragment<FragmentDetailsBinding>() {
 
         val colors: ArrayList<Int> = ArrayList()
         colors.apply {
-            add(rgb("#005F73")) // blue
-            add(rgb("#73C080")) // red
-            add(rgb("#C8ECE2")) // yellow
+            add(rgb(getString(R.string.light_green_pie_chare))) // light green
+            add(rgb(getString(R.string.mid_green_pie_chare))) // mid green
+            add(rgb(getString(R.string.dark_green_pie_chare))) // dark green
         }
 
         val dataSet = PieDataSet(entries, "")

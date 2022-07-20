@@ -65,4 +65,7 @@
     <string name="carbText">216 g</string>
     <string name="fatText">216 g</string>
     <string name="image_description">image description</string>
+    <string name="light_green_pie_chare">#005F73</string>
+    <string name="mid_green_pie_chare">#73C080</string>
+    <string name="dark_green_pie_chare">#C8ECE2</string>
 </resources>
