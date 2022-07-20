@@ -161,11 +161,13 @@
             android:id="@+id/protein_meal_card"
             android:layout_width="180dp"
             android:layout_height="160dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             app:cardBackgroundColor="#fff"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toStartOf="@+id/vitamin_d3_meal_card"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/collections_for_you" />
 
@@ -173,13 +175,15 @@
             android:id="@+id/vitamin_d3_meal_card"
             android:layout_width="180dp"
             android:layout_height="160dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             app:cardBackgroundColor="#fff"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/protein_meal_card"
-            app:layout_constraintTop_toBottomOf="@id/collections_for_you" />
+            app:layout_constraintTop_toTopOf="@+id/protein_meal_card" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/fiber_meal_card"
@@ -204,8 +208,8 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/fiber_meal_card"
+            app:layout_constraintEnd_toEndOf="@+id/vitamin_d3_meal_card"
+            app:layout_constraintStart_toStartOf="@+id/vitamin_d3_meal_card"
             app:layout_constraintTop_toTopOf="@+id/fiber_meal_card" />
 
         <ImageView
@@ -311,8 +315,8 @@
 
         <View
             android:id="@+id/blue_circle"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
             android:layout_marginVertical="16dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/circle_shape"
@@ -327,11 +331,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
+            android:layout_marginEnd="18dp"
             android:elevation="4dp"
             android:text="216 g"
             android:textColor="@color/dark_green"
             android:textSize="8sp"
             app:layout_constraintBottom_toBottomOf="@+id/protein_text"
+            app:layout_constraintEnd_toEndOf="@+id/main_card"
             app:layout_constraintStart_toEndOf="@+id/protein_text"
             app:layout_constraintTop_toTopOf="@+id/protein_text" />
 
@@ -349,8 +355,8 @@
 
         <View
             android:id="@+id/orange_circle"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
             android:layout_marginStart="50dp"
             android:background="@drawable/circle_shape"
             android:backgroundTint="#73C080"
@@ -386,8 +392,8 @@
 
         <View
             android:id="@+id/yellow_circle"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/circle_shape"
             android:backgroundTint="#C8ECE2"
