@@ -35,21 +35,20 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>(), MealInteractio
     }
 
 
-
-    fun setText(mealsList: ArrayList<Meal>?){
-        val list= requireNotNull(mealsList)
+    fun setText(mealsList: ArrayList<Meal>?) {
+        val list = requireNotNull(mealsList)
         binding.apply {
-            RecyclerViewCatogaryItems.adapter=MealAdapter(list,this@CategoryFragment)
+            RecyclerViewCatogaryItems.adapter = MealAdapter(list, this@CategoryFragment)
         }
     }
 
 
-    override fun addCallBacks(){
+    override fun addCallBacks() {
 
     }
 
     override fun onMealClick(meal: Meal) {
-        val detailsFragment = DeatilsFragment.newInstance(meal,dataManager)
+        val detailsFragment = DeatilsFragment.newInstance(meal, dataManager)
         listener?.addFragment(detailsFragment)
     }
 

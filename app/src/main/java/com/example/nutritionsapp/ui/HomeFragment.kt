@@ -87,9 +87,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
         val colors: ArrayList<Int> = ArrayList()
         colors.apply {
-            add(rgb("#0064E5"))
-            add(rgb("#FF6752"))
-            add(rgb("#FAB131"))
+            add(rgb("#005F73")) // blue
+            add(rgb("#73C080")) // red
+            add(rgb("#C8ECE2")) // yellow
         }
 
         val dataSet = PieDataSet(entries, "")

@@ -45,7 +45,7 @@ class CalorieFragment : BaseFragment<FragmentCalorieBinding>(), MealInteractionL
             adapter = MealAdapter(addedItems, this@CalorieFragment)
             recyclerViewAddedItems.adapter = adapter
             progressBar.setProgress((calculatedCalories * 100) / optimalCalories, true)
-            caloriesCount.text = optimalCalories.toString()
+            caloriesCount.text = "${(calculatedCalories * 100) / optimalCalories}%"
             when {
                 calculatedCalories > optimalCalories -> {
                     cardStatusDescription.text = "Items crosses your body optimal calories"

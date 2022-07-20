@@ -26,7 +26,6 @@ class DeatilsFragment : BaseFragment<FragmentDetailsBinding>() {
 
     override var LOG_TAG = Constants.DEATILS_KEY
     lateinit var dataManager: DataManager
-    lateinit var adapter: MealAdapter
     var meal: Meal? = null
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentDetailsBinding
         get() = FragmentDetailsBinding::inflate
@@ -35,8 +34,14 @@ class DeatilsFragment : BaseFragment<FragmentDetailsBinding>() {
         super.onStart()
         meal = requireNotNull(arguments?.getParcelable<Meal>(Constants.ID_KEY))
         /// meal comes when we click on a meal in the list in the added meals in calories fragment
-
         dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
+
+        if (dataManager.addedMealsToBeCalculated.contains(meal)) {
+            binding.buttonDialy.text = getString(R.string.done)
+            binding.buttonDialy.setBackgroundColor(Color.GRAY)
+            binding.buttonDialy.isClickable = false
+        }
+
         addProperties(meal)
         val carb = meal?.carb?.toFloatNumber() ?: 0f
         val protein = meal?.protein?.toFloatNumber() ?: 0f
@@ -63,11 +68,13 @@ class DeatilsFragment : BaseFragment<FragmentDetailsBinding>() {
         dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
 
         binding.buttonDialy.setOnClickListener {
+                meal?.let {
+                    dataManager.addItemToAddedItems(it)
+                }
             binding.buttonDialy.text = getString(R.string.done)
-            meal?.let {
-                dataManager.addItemToAddedItems(it)
-            }
             binding.buttonDialy.isClickable = false
+//            if (addedOrNot == null || addedOrNot == 0) {
+//            }
         }
         binding.arrowIcon.setOnClickListener {
             this.parentFragmentManager.popBackStack()

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_constraint_layout"
@@ -33,6 +33,8 @@
             android:layout_marginTop="8dp"
             app:cardBackgroundColor="#fff"
             app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/head_text" />
@@ -41,7 +43,7 @@
             android:id="@+id/pie_chart"
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:elevation="2dp"
+            android:elevation="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/main_card"
             app:layout_constraintStart_toStartOf="@id/main_card"
             app:layout_constraintTop_toTopOf="@id/main_card" />
@@ -52,18 +54,19 @@
             android:layout_height="88dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
-            app:cardBackgroundColor="#C237B64B"
+            app:cardBackgroundColor="#73C080"
             app:cardCornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_card" />
+
         <TextView
             android:id="@+id/weight_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="38dp"
+            android:elevation="4dp"
             android:text="57 kg"
-            android:elevation="2dp"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -161,7 +164,7 @@
             android:layout_marginTop="16dp"
             app:cardBackgroundColor="#fff"
             app:cardCornerRadius="8dp"
-            app:cardElevation="16dp"
+            app:cardElevation="8dp"
             app:layout_constraintEnd_toStartOf="@+id/vitamin_d3_meal_card"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/collections_for_you" />
@@ -173,7 +176,7 @@
             android:layout_marginTop="16dp"
             app:cardBackgroundColor="#fff"
             app:cardCornerRadius="8dp"
-            app:cardElevation="16dp"
+            app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/protein_meal_card"
             app:layout_constraintTop_toBottomOf="@id/collections_for_you" />
@@ -182,11 +185,11 @@
             android:id="@+id/fiber_meal_card"
             android:layout_width="180dp"
             android:layout_height="160dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="16dp"
             app:cardBackgroundColor="#fff"
             app:cardCornerRadius="8dp"
-            app:cardElevation="16dp"
-            android:layout_marginBottom="16dp"
+            app:cardElevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/protein_meal_card"
             app:layout_constraintStart_toStartOf="@+id/protein_meal_card"
@@ -196,10 +199,10 @@
             android:id="@+id/high_carb_meal_card"
             android:layout_width="180dp"
             android:layout_height="160dp"
+            android:layout_marginBottom="16dp"
             app:cardBackgroundColor="#fff"
             app:cardCornerRadius="8dp"
-            app:cardElevation="16dp"
-            android:layout_marginBottom="16dp"
+            app:cardElevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/fiber_meal_card"
@@ -212,8 +215,8 @@
             android:layout_marginTop="18dp"
             android:elevation="17dp"
             android:src="@drawable/ic_high_protein"
-            app:layout_constraintStart_toStartOf="@id/protein_meal_card"
             app:layout_constraintEnd_toEndOf="@id/protein_meal_card"
+            app:layout_constraintStart_toStartOf="@id/protein_meal_card"
             app:layout_constraintTop_toTopOf="@id/protein_meal_card"
             tools:ignore="ContentDescription" />
 
@@ -221,24 +224,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:text="@string/high_protein_meals"
             android:elevation="17dp"
+            android:text="@string/high_protein_meals"
+            android:textColor="@color/dark_green"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@color/dark_green"
-            app:layout_constraintStart_toStartOf="@id/high_protein_image"
             app:layout_constraintEnd_toEndOf="@id/high_protein_image"
-            app:layout_constraintTop_toBottomOf="@id/high_protein_image"/>
+            app:layout_constraintStart_toStartOf="@id/high_protein_image"
+            app:layout_constraintTop_toBottomOf="@id/high_protein_image" />
 
         <ImageView
             android:id="@+id/vitamin_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="17dp"
             android:layout_marginTop="14dp"
+            android:elevation="17dp"
             android:src="@drawable/vitamin_image"
-            app:layout_constraintStart_toStartOf="@id/vitamin_d3_meal_card"
             app:layout_constraintEnd_toEndOf="@id/vitamin_d3_meal_card"
+            app:layout_constraintStart_toStartOf="@id/vitamin_d3_meal_card"
             app:layout_constraintTop_toTopOf="@id/vitamin_d3_meal_card"
             tools:ignore="ContentDescription" />
 
@@ -246,65 +249,66 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:textStyle="bold"
+            android:elevation="17dp"
             android:text="@string/top_10_recipes_n_contains_vitamin_d3"
             android:textAlignment="center"
-            android:elevation="17dp"
-            android:textSize="14sp"
             android:textColor="@color/dark_green"
-            app:layout_constraintStart_toStartOf="@id/vitamin_image"
+            android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/vitamin_image"
-            app:layout_constraintTop_toBottomOf="@id/vitamin_image"/>
+            app:layout_constraintStart_toStartOf="@id/vitamin_image"
+            app:layout_constraintTop_toBottomOf="@id/vitamin_image" />
 
         <ImageView
             android:id="@+id/fiber_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="17dp"
             android:layout_marginTop="32dp"
+            android:elevation="17dp"
             android:src="@drawable/ic_fiber_image"
-            app:layout_constraintStart_toStartOf="@id/fiber_meal_card"
             app:layout_constraintEnd_toEndOf="@id/fiber_meal_card"
-            app:layout_constraintTop_toTopOf="@id/fiber_meal_card"/>
+            app:layout_constraintStart_toStartOf="@id/fiber_meal_card"
+            app:layout_constraintTop_toTopOf="@id/fiber_meal_card" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:textStyle="bold"
+            android:elevation="17dp"
             android:text="@string/fibers"
             android:textAlignment="center"
-            android:elevation="17dp"
-            android:textSize="14sp"
             android:textColor="@color/dark_green"
-            app:layout_constraintStart_toStartOf="@id/fiber_image"
+            android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/fiber_image"
-            app:layout_constraintTop_toBottomOf="@id/fiber_image"/>
+            app:layout_constraintStart_toStartOf="@id/fiber_image"
+            app:layout_constraintTop_toBottomOf="@id/fiber_image" />
 
         <ImageView
             android:id="@+id/high_carb_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="17dp"
             android:layout_marginTop="28dp"
+            android:elevation="17dp"
             android:src="@drawable/ic_high_carb_image"
-            app:layout_constraintStart_toStartOf="@id/high_carb_meal_card"
             app:layout_constraintEnd_toEndOf="@id/high_carb_meal_card"
-            app:layout_constraintTop_toTopOf="@id/high_carb_meal_card"/>
+            app:layout_constraintStart_toStartOf="@id/high_carb_meal_card"
+            app:layout_constraintTop_toTopOf="@id/high_carb_meal_card" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
+            android:elevation="17dp"
             android:text="@string/high_carb_meals"
             android:textAlignment="center"
-            android:elevation="17dp"
-            android:textSize="14sp"
             android:textColor="@color/dark_green"
-            app:layout_constraintStart_toStartOf="@id/high_carb_image"
+            android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/high_carb_image"
-            app:layout_constraintTop_toBottomOf="@id/high_carb_image"/>
+            app:layout_constraintStart_toStartOf="@id/high_carb_image"
+            app:layout_constraintTop_toBottomOf="@id/high_carb_image" />
+
         <View
             android:id="@+id/blue_circle"
             android:layout_width="16dp"
@@ -313,7 +317,7 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/circle_shape"
             android:backgroundTint="#005F73"
-            android:elevation="2dp"
+            android:elevation="4dp"
             app:layout_constraintBottom_toTopOf="@+id/orange_circle"
             app:layout_constraintEnd_toEndOf="@+id/orange_circle"
             app:layout_constraintStart_toStartOf="@+id/orange_circle" />
@@ -323,7 +327,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
-            android:elevation="2dp"
+            android:elevation="4dp"
             android:text="216 g"
             android:textColor="@color/dark_green"
             android:textSize="8sp"
@@ -336,9 +340,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:elevation="2dp"
-            android:textColor="@color/dark_green"
+            android:elevation="4dp"
             android:text="@string/protein"
+            android:textColor="@color/dark_green"
             android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@+id/blue_circle"
             app:layout_constraintTop_toTopOf="@+id/blue_circle" />
@@ -350,7 +354,7 @@
             android:layout_marginStart="50dp"
             android:background="@drawable/circle_shape"
             android:backgroundTint="#73C080"
-            android:elevation="2dp"
+            android:elevation="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/pie_chart"
             app:layout_constraintStart_toEndOf="@+id/pie_chart"
             app:layout_constraintTop_toTopOf="@+id/pie_chart" />
@@ -359,7 +363,7 @@
             android:id="@+id/carb_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="2dp"
+            android:elevation="4dp"
             android:text="216 g"
             android:textColor="@color/dark_green"
             android:textSize="8sp"
@@ -373,7 +377,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:elevation="2dp"
+            android:elevation="4dp"
             android:text="@string/carb"
             android:textColor="@color/dark_green"
             android:textSize="10sp"
@@ -387,7 +391,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/circle_shape"
             android:backgroundTint="#C8ECE2"
-            android:elevation="2dp"
+            android:elevation="4dp"
             app:layout_constraintEnd_toEndOf="@+id/orange_circle"
             app:layout_constraintStart_toStartOf="@+id/orange_circle"
             app:layout_constraintTop_toBottomOf="@+id/orange_circle" />
@@ -396,10 +400,10 @@
             android:id="@+id/fat_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="2dp"
+            android:elevation="4dp"
             android:text="216 g"
-            android:textSize="8sp"
             android:textColor="@color/dark_green"
+            android:textSize="8sp"
             app:layout_constraintBottom_toBottomOf="@+id/fat_text"
             app:layout_constraintEnd_toEndOf="@+id/carb_number"
             app:layout_constraintStart_toStartOf="@+id/carb_number"
@@ -409,10 +413,10 @@
             android:id="@+id/fat_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="2dp"
+            android:elevation="4dp"
             android:text="@string/fat"
-            android:textSize="10sp"
             android:textColor="@color/dark_green"
+            android:textSize="10sp"
             app:layout_constraintStart_toStartOf="@+id/carb_text"
             app:layout_constraintTop_toTopOf="@+id/yellow_circle" />
 
