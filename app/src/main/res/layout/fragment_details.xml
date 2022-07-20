@@ -11,363 +11,347 @@
     android:background="@color/white">
 
 
-<ScrollView
-    android:id="@+id/scroll_details"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="none"
-    android:orientation="vertical"
-    tools:ignore="MissingConstraints">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
+        android:id="@+id/scroll_details"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
 
-
-        <ImageButton
-            android:id="@+id/arrow_icon"
-            android:layout_width="@dimen/size_icon_normal"
-            android:layout_height="@dimen/size_icon_normal"
-            android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:background="@color/white"
-            android:src="@drawable/ic_arrow_back_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/dark_green" />
-
-        <TextView
-            android:id="@+id/appbarTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:text="Details"
-            android:textColor="@color/dark_green"
-            android:textSize="@dimen/appbar_title_size"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/main_image"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_main_image"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:background="@drawable/background_icon"
-            android:scaleType="centerCrop"
-            android:src="@drawable/foodo"
-            app:layout_constraintTop_toBottomOf="@id/arrow_icon" />
+            android:layout_height="wrap_content">
 
 
-<!--        <com.google.android.material.imageview.ShapeableImageView-->
-<!--            android:id="@+id/main_image"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="@dimen/size_main_image"-->
+            <ImageButton
+                android:id="@+id/arrow_icon"
+                android:layout_width="@dimen/size_icon_normal"
+                android:layout_height="@dimen/size_icon_normal"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:background="@color/white"
+                android:src="@drawable/ic_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/dark_green" />
 
-<!--            android:layout_marginTop="@dimen/margin_normal"-->
+            <TextView
+                android:id="@+id/appbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:text="Details"
+                android:textColor="@color/dark_green"
+                android:textSize="@dimen/appbar_title_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-<!--            android:background="@drawable/background_icon"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            android:src="@drawable/foodo"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/appbarTitle" />-->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_main_image"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:background="@drawable/background_icon"
+                android:scaleType="centerCrop"
+                android:src="@drawable/foodo"
+                app:layout_constraintTop_toBottomOf="@id/arrow_icon" />
 
-        <TextView
-            android:id="@+id/title_details"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/marginmedum"
-            android:elevation="8dp"
-            android:gravity="start"
-            android:shadowColor="@color/dark_green"
-            android:text="@string/name_of_meal"
-            android:textColor="@color/white"
-            android:textSize="@dimen/size_title"
-            android:shadowDy="6"
-            android:shadowRadius="9"
-            android:outlineSpotShadowColor="#000000"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/main_image"
-            app:layout_constraintStart_toStartOf="@id/main_image"
-            app:layout_constraintTop_toTopOf="@id/main_image" />
-
-
-        <!--    pie chart-->
-
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/pie_chart_details"
-            android:layout_width="@dimen/size_pie_chart"
-            android:layout_height="@dimen/size_pie_chart"
-            android:layout_margin="@dimen/margin_normal"
-
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_image" />
-
-        <TextView
-            android:id="@+id/carb_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_small"
-            android:elevation="@dimen/elevation_smail"
-            android:text="@string/_214_g"
-            android:textSize="@dimen/text_size_small"
-            android:textColor="@color/green_text_color"
-            app:layout_constraintStart_toEndOf="@id/green_circle"
-            app:layout_constraintTop_toTopOf="@id/green_circle" />
-
-        <TextView
-            android:id="@+id/carbs_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/elevation_smail"
-            android:text="Carbs"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/carb_number"
-            app:layout_constraintTop_toBottomOf="@id/carb_number" />
-
-        <View
-            android:id="@+id/green_circle"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="@dimen/margin_mid"
-            android:background="@drawable/circle_shape"
-            android:backgroundTint="@color/light_blue_pie_chart"
-            android:elevation="@dimen/elevation_smail"
-            app:layout_constraintBottom_toBottomOf="@id/pie_chart_details"
-            app:layout_constraintStart_toEndOf="@id/pie_chart_details"
-            app:layout_constraintTop_toTopOf="@id/pie_chart_details" />
+            <TextView
+                android:id="@+id/title_details"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginmedum"
+                android:elevation="8dp"
+                android:gravity="start"
+                android:shadowColor="@color/dark_green"
+                android:text="@string/name_of_meal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_title"
+                android:shadowDy="6"
+                android:shadowRadius="9"
+                android:outlineSpotShadowColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/main_image"
+                app:layout_constraintStart_toStartOf="@id/main_image"
+                app:layout_constraintTop_toTopOf="@id/main_image" />
 
 
-        <TextView
-            android:id="@+id/protein_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_small"
-            android:elevation="@dimen/elevation_smail"
-            android:text="211 g"
-            android:textSize="12sp"
-            android:textColor="@color/green_text_color"
-            app:layout_constraintStart_toEndOf="@id/red_circle"
-            app:layout_constraintTop_toTopOf="@id/red_circle" />
+            <!--    pie chart-->
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pie_chart_details"
+                android:layout_width="@dimen/size_pie_chart"
+                android:layout_height="@dimen/size_pie_chart"
+                android:layout_margin="@dimen/margin_normal"
 
-        <TextView
-            android:id="@+id/carbs2_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/elevation_smail"
-            android:text="@string/protein"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/protein_number"
-            app:layout_constraintTop_toBottomOf="@id/protein_number" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_image" />
 
-        <View
-            android:id="@+id/red_circle"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="16dp"
-            android:background="@drawable/circle_shape"
-            android:backgroundTint="@color/dark_green_pie_chart"
-            android:elevation="@dimen/elevation_smail"
-            app:layout_constraintBottom_toBottomOf="@id/pie_chart_details"
-            app:layout_constraintStart_toEndOf="@+id/carb_number"
-            app:layout_constraintTop_toTopOf="@id/pie_chart_details" />
+            <TextView
+                android:id="@+id/carb_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:elevation="@dimen/elevation_smail"
+                android:text="@string/_214_g"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/green_text_color"
+                app:layout_constraintStart_toEndOf="@id/green_circle"
+                app:layout_constraintTop_toTopOf="@id/green_circle" />
 
-        <TextView
-            android:id="@+id/fat_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_small"
-            android:elevation="@dimen/elevation_smail"
-            android:text="@string/_216_g"
-            android:textSize="12sp"
-            android:textColor="@color/green_text_color"
-            app:layout_constraintStart_toEndOf="@id/yellow_circle"
-            app:layout_constraintTop_toTopOf="@id/yellow_circle" />
+            <TextView
+                android:id="@+id/carbs_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/elevation_smail"
+                android:text="Carbs"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/carb_number"
+                app:layout_constraintTop_toBottomOf="@id/carb_number" />
 
-        <TextView
-            android:id="@+id/carbs3_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/elevation_smail"
-            android:text="@string/fat"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/fat_number"
-            app:layout_constraintTop_toBottomOf="@id/fat_number" />
-
-        <View
-            android:id="@+id/yellow_circle"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="16dp"
-            android:background="@drawable/circle_shape"
-            android:backgroundTint="@color/green_text_color"
-            android:elevation="@dimen/elevation_smail"
-            app:layout_constraintBottom_toBottomOf="@id/pie_chart_details"
-            app:layout_constraintStart_toEndOf="@+id/protein_number"
-            app:layout_constraintTop_toTopOf="@id/pie_chart_details" />
-
-     <TextView
-            android:id="@+id/sugar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-         android:layout_marginStart="15dp"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:text="@string/sugar"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintStart_toStartOf="@id/main_image"
-            app:layout_constraintTop_toBottomOf="@id/pie_chart_details"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/sugar_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="12g"
-            android:layout_marginEnd="15dp"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintBottom_toBottomOf="@id/sugar"
-            app:layout_constraintEnd_toEndOf="@id/main_image"
-            app:layout_constraintTop_toTopOf="@id/sugar"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/fiber"
-            android:layout_marginStart="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_mid"
-            android:text="@string/fiber"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintStart_toStartOf="@id/main_image"
-            app:layout_constraintTop_toBottomOf="@id/sugar"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/count_fiber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="12g"
-            android:layout_marginEnd="15dp"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintBottom_toBottomOf="@id/fiber"
-            app:layout_constraintEnd_toEndOf="@id/main_image"
-            app:layout_constraintTop_toTopOf="@id/fiber"
-            tools:ignore="MissingConstraints" />
+            <View
+                android:id="@+id/green_circle"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="@dimen/margin_mid"
+                android:background="@drawable/circle_shape"
+                android:backgroundTint="@color/light_blue_pie_chart"
+                android:elevation="@dimen/elevation_smail"
+                app:layout_constraintBottom_toBottomOf="@id/pie_chart_details"
+                app:layout_constraintStart_toEndOf="@id/pie_chart_details"
+                app:layout_constraintTop_toTopOf="@id/pie_chart_details" />
 
 
-        <TextView
-            android:id="@+id/water"
-            android:layout_marginStart="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_mid"
-            android:text="@string/water"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintStart_toStartOf="@id/main_image"
-            app:layout_constraintTop_toBottomOf="@id/fiber"
-            tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/protein_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:elevation="@dimen/elevation_smail"
+                android:text="211 g"
+                android:textSize="12sp"
+                android:textColor="@color/green_text_color"
+                app:layout_constraintStart_toEndOf="@id/red_circle"
+                app:layout_constraintTop_toTopOf="@id/red_circle" />
 
-        <TextView
-            android:id="@+id/water_number"
-            android:layout_marginEnd="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="14g"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintBottom_toBottomOf="@id/water"
-            app:layout_constraintEnd_toEndOf="@id/main_image"
-            app:layout_constraintTop_toTopOf="@id/water"
-            tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/carbs2_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/elevation_smail"
+                android:text="@string/protein"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/protein_number"
+                app:layout_constraintTop_toBottomOf="@id/protein_number" />
+
+            <View
+                android:id="@+id/red_circle"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle_shape"
+                android:backgroundTint="@color/dark_green_pie_chart"
+                android:elevation="@dimen/elevation_smail"
+                app:layout_constraintBottom_toBottomOf="@id/pie_chart_details"
+                app:layout_constraintStart_toEndOf="@+id/carb_number"
+                app:layout_constraintTop_toTopOf="@id/pie_chart_details" />
+
+            <TextView
+                android:id="@+id/fat_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:elevation="@dimen/elevation_smail"
+                android:text="@string/_216_g"
+                android:textSize="12sp"
+                android:textColor="@color/green_text_color"
+                app:layout_constraintStart_toEndOf="@id/yellow_circle"
+                app:layout_constraintTop_toTopOf="@id/yellow_circle" />
+
+            <TextView
+                android:id="@+id/carbs3_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/elevation_smail"
+                android:text="@string/fat"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/fat_number"
+                app:layout_constraintTop_toBottomOf="@id/fat_number" />
+
+            <View
+                android:id="@+id/yellow_circle"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle_shape"
+                android:backgroundTint="@color/green_text_color"
+                android:elevation="@dimen/elevation_smail"
+                app:layout_constraintBottom_toBottomOf="@id/pie_chart_details"
+                app:layout_constraintStart_toEndOf="@+id/protein_number"
+                app:layout_constraintTop_toTopOf="@id/pie_chart_details" />
+
+            <TextView
+                    android:id="@+id/sugar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@string/sugar"
+                    android:textSize="@dimen/label_size"
+                    app:layout_constraintStart_toStartOf="@id/main_image"
+                    app:layout_constraintTop_toBottomOf="@id/pie_chart_details"
+                    tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/sugar_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12g"
+                android:layout_marginEnd="15dp"
+                android:textSize="@dimen/label_size"
+                app:layout_constraintBottom_toBottomOf="@id/sugar"
+                app:layout_constraintEnd_toEndOf="@id/main_image"
+                app:layout_constraintTop_toTopOf="@id/sugar"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/fiber"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid"
+                android:text="@string/fiber"
+                android:textSize="@dimen/label_size"
+                app:layout_constraintStart_toStartOf="@id/main_image"
+                app:layout_constraintTop_toBottomOf="@id/sugar"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/count_fiber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12g"
+                android:layout_marginEnd="15dp"
+                android:textSize="@dimen/label_size"
+                app:layout_constraintBottom_toBottomOf="@id/fiber"
+                app:layout_constraintEnd_toEndOf="@id/main_image"
+                app:layout_constraintTop_toTopOf="@id/fiber"
+                tools:ignore="MissingConstraints" />
 
 
-        <TextView
-            android:id="@+id/calcium"
-            android:layout_marginStart="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_mid"
-            android:text="@string/calcium"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintStart_toStartOf="@id/main_image"
-            app:layout_constraintTop_toBottomOf="@id/water"
-            tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/water"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid"
+                android:text="@string/water"
+                android:textSize="@dimen/label_size"
+                app:layout_constraintStart_toStartOf="@id/main_image"
+                app:layout_constraintTop_toBottomOf="@id/fiber"
+                tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/calcium_number"
-            android:layout_marginEnd="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="23g"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintBottom_toBottomOf="@id/calcium"
-            app:layout_constraintEnd_toEndOf="@id/main_image"
-            app:layout_constraintTop_toTopOf="@id/calcium"
-            tools:ignore="MissingConstraints" />
-
-
-        <TextView
-            android:id="@+id/cholesterol"
-            android:layout_marginStart="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/cholesterol"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintStart_toStartOf="@id/main_image"
-            app:layout_constraintTop_toBottomOf="@id/calcium"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/cholesterol_number"
-            android:layout_marginEnd="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10g"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintBottom_toBottomOf="@id/cholesterol"
-            app:layout_constraintEnd_toEndOf="@id/main_image"
-            app:layout_constraintTop_toTopOf="@id/cholesterol"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/caffeine"
-            android:layout_marginStart="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_mid"
-            android:text="@string/caffeine"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintStart_toStartOf="@id/main_image"
-            app:layout_constraintTop_toBottomOf="@id/cholesterol"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/caffeine_number"
-            android:layout_marginEnd="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="11g"
-            android:textSize="@dimen/label_size"
-            app:layout_constraintBottom_toBottomOf="@id/caffeine"
-            app:layout_constraintEnd_toEndOf="@id/main_image"
-            app:layout_constraintTop_toTopOf="@id/caffeine"
-            tools:ignore="MissingConstraints" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_space"
-            app:layout_constraintEnd_toEndOf="@id/main_image"
-            app:layout_constraintTop_toBottomOf="@id/caffeine" />
+            <TextView
+                android:id="@+id/water_number"
+                android:layout_marginEnd="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14g"
+                android:textSize="@dimen/label_size"
+                app:layout_constraintBottom_toBottomOf="@id/water"
+                app:layout_constraintEnd_toEndOf="@id/main_image"
+                app:layout_constraintTop_toTopOf="@id/water"
+                tools:ignore="MissingConstraints" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/calcium"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid"
+                android:text="@string/calcium"
+                android:textSize="@dimen/label_size"
+                app:layout_constraintStart_toStartOf="@id/main_image"
+                app:layout_constraintTop_toBottomOf="@id/water"
+                tools:ignore="MissingConstraints" />
 
-</ScrollView>
+            <TextView
+                android:id="@+id/calcium_number"
+                android:layout_marginEnd="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23g"
+                android:textSize="@dimen/label_size"
+                app:layout_constraintBottom_toBottomOf="@id/calcium"
+                app:layout_constraintEnd_toEndOf="@id/main_image"
+                app:layout_constraintTop_toTopOf="@id/calcium"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/cholesterol"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/cholesterol"
+                android:textSize="@dimen/label_size"
+                app:layout_constraintStart_toStartOf="@id/main_image"
+                app:layout_constraintTop_toBottomOf="@id/calcium"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/cholesterol_number"
+                android:layout_marginEnd="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10g"
+                android:textSize="@dimen/label_size"
+                app:layout_constraintBottom_toBottomOf="@id/cholesterol"
+                app:layout_constraintEnd_toEndOf="@id/main_image"
+                app:layout_constraintTop_toTopOf="@id/cholesterol"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/caffeine"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid"
+                android:text="@string/caffeine"
+                android:textSize="@dimen/label_size"
+                app:layout_constraintStart_toStartOf="@id/main_image"
+                app:layout_constraintTop_toBottomOf="@id/cholesterol"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/caffeine_number"
+                android:layout_marginEnd="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11g"
+                android:textSize="@dimen/label_size"
+                app:layout_constraintBottom_toBottomOf="@id/caffeine"
+                app:layout_constraintEnd_toEndOf="@id/main_image"
+                app:layout_constraintTop_toTopOf="@id/caffeine"
+                tools:ignore="MissingConstraints" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_space"
+                app:layout_constraintEnd_toEndOf="@id/main_image"
+                app:layout_constraintTop_toBottomOf="@id/caffeine" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
     <Button
         android:id="@+id/button_dialy"
         android:layout_width="match_parent"
@@ -382,7 +366,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/scroll_details"
-        app:layout_constraintVertical_bias="1"
-
-        />
+        app:layout_constraintVertical_bias="1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
