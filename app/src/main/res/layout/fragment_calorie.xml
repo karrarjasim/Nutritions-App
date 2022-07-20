@@ -7,6 +7,7 @@
     android:layout_height="wrap_content">
 
     <TextView
+        android:fontFamily="@font/poppins_bold"
         android:id="@+id/calculated_items_Screen_Title"
         style="@style/title_text"
         android:layout_width="wrap_content"
@@ -45,6 +46,7 @@
         app:layout_constraintTop_toTopOf="@+id/card_containing_status">
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/card_status_description"
             style="@style/body_text"
             android:layout_width="180dp"
@@ -56,6 +58,7 @@
 
         <!--
             <TextView
+            android:fontFamily="@font/poppins_regular"
                 android:id="@+id/card_status_face"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,6 +96,7 @@
             app:layout_constraintTop_toTopOf="@+id/progress_bar" />
 
         <TextView
+            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/calories_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -106,6 +110,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -121,6 +126,7 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
+            android:fontFamily="@font/poppins_medium"
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,6 +145,7 @@
     <!--    </androidx.cardview.widget.CardView>-->
 
     <TextView
+        android:fontFamily="@font/poppins_medium"
         android:id="@+id/selected_items"
         style="@style/label_text"
         android:layout_width="wrap_content"

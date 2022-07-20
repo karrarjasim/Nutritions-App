@@ -18,6 +18,13 @@
     <dimen name="elevation_smail">2dp</dimen>
     <dimen name="text_size_small">12sp</dimen>
     <dimen name="label_size">14sp</dimen>
+    <dimen name="item_margen_top">8dp</dimen>
+    <dimen name="item_margen_bottom">8dp</dimen>
+    <dimen name="item_shadow">8dp</dimen>
+    <dimen name="item_redius">8dp</dimen>
+    <dimen name="item_margen_horizontal">16dp</dimen>
+    <dimen name="text_item_margen_vertical">24dp</dimen>
+    <dimen name="text_item_padding_left">14dp</dimen>
     <dimen name="dim18">18dp</dimen>
     <dimen name="dim12">12dp</dimen>
     <dimen name="dimtext18">18sp</dimen>

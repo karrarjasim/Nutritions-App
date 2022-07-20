@@ -7,212 +7,222 @@
     android:background="@color/white">
 
 
-        <TextView
-            android:id="@+id/textView"
-            style="@style/title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="@string/calorie_calculator_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:fontFamily="@font/poppins_bold"
+        android:id="@+id/textView"
+        style="@style/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/calorie_calculator_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/calculator_body"
-            style="@style/body_text"
-            android:layout_width="386dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="28dp"
-            android:text="@string/calculator_body"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <TextView
+        android:fontFamily="@font/poppins_semi_bold"
+        android:id="@+id/calculator_body"
+        style="@style/body_text"
+        android:layout_width="386dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/calculator_body"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <TextView
-            android:id="@+id/textView6"
+    <TextView
+        android:fontFamily="@font/poppins_medium"
+        android:id="@+id/textView6"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/age_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculator_body" />
+
+    <TextView
+        android:fontFamily="@font/poppins_medium"
+        android:id="@+id/textView2"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/height_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age_slider" />
+
+    <TextView
+        android:fontFamily="@font/poppins_medium"
+        android:id="@+id/textView3"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/weight_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/height_slider" />
+
+    <TextView
+        android:fontFamily="@font/poppins_medium"
+        android:id="@+id/textView4"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/activity_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight_slider" />
+
+    <TextView
+        android:fontFamily="@font/poppins_medium"
+        android:id="@+id/textView5"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/gender_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/age_value"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculator_body" />
+
+    <TextView
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/height_value"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age_slider" />
+
+    <TextView
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/weight_value"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/weight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/height_slider" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/age_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="test"
+        android:stepSize="1"
+        android:value="@string/age"
+        android:valueFrom="15"
+        android:valueTo="80"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:thumbColor="@color/primary"
+        app:tickVisible="false"
+        app:trackColorActive="@color/primary"
+        app:trackColorInactive="@color/gray_mid" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/height_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="1"
+        android:value="@string/height"
+        android:valueFrom="100"
+        android:valueTo="200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:thumbColor="@color/primary"
+        app:tickVisible="false"
+        app:trackColorActive="@color/primary"
+        app:trackColorInactive="@color/gray_mid" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/weight_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="1"
+        android:value="@string/weight"
+        android:valueFrom="50"
+        android:valueTo="200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:thumbColor="@color/primary"
+        app:tickVisible="false"
+        app:trackColorActive="@color/primary"
+        app:trackColorInactive="@color/gray_mid" />
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="378dp"
+        android:layout_height="35dp"
+        android:entries="@array/planets_array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <RadioButton
+            android:id="@+id/male"
             style="@style/label_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/age_label"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calculator_body" />
+            android:layout_weight="1"
+            android:buttonTint="@color/primary"
+            android:text="@string/male_label" />
 
-        <TextView
-            android:id="@+id/textView2"
+        <RadioButton
+            android:id="@+id/female"
             style="@style/label_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/height_label"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/age_slider" />
-
-        <TextView
-            android:id="@+id/textView3"
-            style="@style/label_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/weight_label"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/height_slider" />
-
-        <TextView
-            android:id="@+id/textView4"
-            style="@style/label_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/activity_label"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/weight_slider" />
-
-        <TextView
-            android:id="@+id/textView5"
-            style="@style/label_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/gender_label"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-        <TextView
-            android:id="@+id/age_value"
-            style="@style/label_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/age"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calculator_body" />
-
-        <TextView
-            android:id="@+id/height_value"
-            style="@style/label_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/height"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/age_slider" />
-
-        <TextView
-            android:id="@+id/weight_value"
-            style="@style/label_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/weight"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/height_slider" />
-
-        <com.google.android.material.slider.Slider
-            android:id="@+id/age_slider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:contentDescription="test"
-            android:stepSize="1"
-            android:value="@string/age"
-            android:valueFrom="15"
-            android:valueTo="80"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:thumbColor="@color/primary"
-            app:tickVisible="false"
-            app:trackColorActive="@color/primary"
-            app:trackColorInactive="@color/gray_mid" />
-
-        <com.google.android.material.slider.Slider
-            android:id="@+id/height_slider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:stepSize="1"
-            android:value="@string/height"
-            android:valueFrom="100"
-            android:valueTo="200"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:thumbColor="@color/primary"
-            app:tickVisible="false"
-            app:trackColorActive="@color/primary"
-            app:trackColorInactive="@color/gray_mid" />
-
-        <com.google.android.material.slider.Slider
-            android:id="@+id/weight_slider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:stepSize="1"
-            android:value="@string/weight"
-            android:valueFrom="50"
-            android:valueTo="200"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            app:thumbColor="@color/primary"
-            app:tickVisible="false"
-            app:trackColorActive="@color/primary"
-            app:trackColorInactive="@color/gray_mid" />
-
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="378dp"
-            android:layout_height="35dp"
-            android:entries="@array/planets_array"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5">
-
-            <RadioButton
-                android:id="@+id/male"
-                style="@style/label_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="@color/primary"
-                android:text="@string/male_label" />
-
-            <RadioButton
-                android:id="@+id/female"
-                style="@style/label_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:buttonTint="@color/primary"
-                android:text="@string/female_label" />
-        </RadioGroup>
+            android:layout_weight="3"
+            android:buttonTint="@color/primary"
+            android:text="@string/female_label" />
+    </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/enter_btn"
         android:layout_width="382dp"
         android:layout_height="48dp"
         android:background="@drawable/button_bg"
+        android:enabled="false"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/enter_btn"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
