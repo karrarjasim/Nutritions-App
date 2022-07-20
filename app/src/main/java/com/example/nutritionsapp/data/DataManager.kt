@@ -7,6 +7,8 @@ import java.io.Serializable
 class DataManager : Serializable {
     val mealsList = mutableListOf<Meal>()
 
+    val searchHistoryList = mutableListOf<Meal>()
+
     val addedMealsToBeCalculated = mutableListOf<Meal>()
 
     fun addItemToAddedItems(meal: Meal) {
@@ -54,9 +56,9 @@ class DataManager : Serializable {
         }
     }
 
-    fun getFilteredMeals(name: CharSequence): List<Meal>{
+    fun getFilteredMeals(name: CharSequence): List<Meal> {
         return mealsList.filter {
-            it.name.contains(name)
+            it.name.contains(name.trim())
         }
     }
 
