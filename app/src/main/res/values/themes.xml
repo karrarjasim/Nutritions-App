@@ -15,19 +15,19 @@
     </style>
 
     <style name="title_text">
-        <item name="android:textColor">@color/dark_green</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/normal_text_black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
     <style name="label_text">
-        <item name="android:textColor">@color/dark_green</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/normal_text_black</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
     <style name="body_text">
-        <item name="android:textColor">@color/gray_mid</item>
+        <item name="android:textColor">@color/normal_text_black</item>
         <item name="android:textSize">15sp</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
