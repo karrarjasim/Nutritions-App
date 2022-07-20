@@ -4,12 +4,12 @@
     android:id="@+id/single_item_card1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="16dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    app:cardElevation="16dp"
-    app:cardBackgroundColor="@color/textView_color"
-    app:cardCornerRadius="8dp">
+    android:layout_marginHorizontal="@dimen/item_margen_horizontal"
+    android:layout_marginTop="@dimen/item_margen_top"
+    android:layout_marginBottom="@dimen/item_margen_bottom"
+    app:cardElevation="@dimen/item_shadow"
+    app:cardBackgroundColor="@color/item_color"
+    app:cardCornerRadius="@dimen/item_redius">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:text="@string/cardName"
             android:layout_weight="2"
-            android:layout_marginVertical="24dp" />
+            android:layout_marginVertical="@dimen/text_item_margen_vertical" />
 
         <TextView
             android:fontFamily="@font/poppins_regular"
@@ -29,8 +29,8 @@
             style="@style/textviewMarginEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="24dp"
-            android:paddingLeft="14dp"
+            android:layout_marginVertical="@dimen/text_item_margen_vertical"
+            android:paddingLeft="@dimen/text_item_padding_left"
             android:text="@string/cardCalories" />
 
     </LinearLayout>

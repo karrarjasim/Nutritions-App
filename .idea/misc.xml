@@ -11,21 +11,30 @@
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/btn_background.xml" value="0.1" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/circle.xml" value="0.1" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/circle_shape.xml" value="0.1" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/ic_calories_icon.xml" value="0.106" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/radius_btn.xml" value="0.163" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/search_bg.xml" value="0.1" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/textv_background.xml" value="0.1195" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/activity_home.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/drop_down_item.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_calorie.xml" value="0.2" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_category.xml" value="0.22" />
-        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_home.xml" value="0.11574074074074074" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_details.xml" value="0.25" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_onboard.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_search.xml" value="0.22" />
-        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/item_meal.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/item_meal.xml" value="0.18" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/selected_drop_down_item.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/fragment_category.xml" value="0.29595375722543354" />
         <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/fragment_details.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/fragment_home.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/karra/AndroidStudioProjects/NutritionsApp/app/src/main/res/layout/fragment_search.xml" value="0.5" />
+        <entry key="..\:/Users/trans/Downloads/projects/New folder/Nutritions-App/app/src/main/res/layout/fragment_calorie.xml" value="0.2" />
+        <entry key="..\:/Users/trans/Downloads/projects/New folder/Nutritions-App/app/src/main/res/layout/fragment_details.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/trans/Downloads/projects/New folder/Nutritions-App/app/src/main/res/layout/fragment_calorie.xml" value="0.25" />
+        <entry key="..\:/Users/trans/Downloads/projects/New folder/Nutritions-App/app/src/main/res/layout/fragment_details.xml" value="0.72" />
+        <entry key="..\:/Users/trans/Downloads/projects/New folder/Nutritions-App/app/src/main/res/layout/fragment_home.xml" value="0.8" />
         <entry key="..\:/Users/trans/Downloads/projects/New folder/Nutritions-App/app/src/main/res/layout/activity_calculate.xml" value="0.2234375" />
         <entry key="..\:/Users/trans/Downloads/projects/New folder/Nutritions-App/app/src/main/res/layout/activity_home.xml" value="0.16" />
         <entry key="..\:/Users/trans/Downloads/projects/New folder/Nutritions-App/app/src/main/res/layout/drop_down_item.xml" value="0.2234375" />
@@ -60,5 +69,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.18" />
+      </ProjectState>
+    </option>
   </component>
 </project>
