@@ -42,4 +42,16 @@
     <dimen name="dim44">44dp</dimen>
     <dimen name="dimtext10">10sp</dimen>
     <dimen name="dim50">50dp</dimen>
+    <dimen name="paddingBottom_carogary">6dp</dimen>
+    <dimen name="margin_title_catogry">18dp</dimen>
+    <dimen name="marginTop_recycle_catogry">70dp</dimen>
+    <dimen name="cardLayoutHigh_homepage">180dp</dimen>
+    <dimen name="chart_width_home">160dp</dimen>
+    <dimen name="chart_height_home">160dp</dimen>
+    <dimen name="chartImage_width_home">50dp</dimen>
+    <dimen name="chartImage_height_home">46dp</dimen>
+    <dimen name="marginstart_home">38dp</dimen>
+    <dimen name="margintop_card_home">16dp</dimen>
+    <dimen name="textwidth_home">150dp</dimen>
+    <dimen name="marginstart">40dp</dimen>
 </resources>

@@ -33,16 +33,15 @@
             android:src="@drawable/ic_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/dark_green" />
+            app:tint="@color/normal_text_black" />
 
         <TextView
-            android:fontFamily="@font/poppins_bold"
+            style="@style/title_text"
             android:id="@+id/appbarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_larg"
             android:text="Details"
-            android:textColor="@color/dark_green"
             android:textSize="@dimen/appbar_title_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -53,9 +52,7 @@
             android:id="@+id/main_image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_main_image"
-
             android:layout_marginTop="@dimen/margin_normal"
-
             android:background="@drawable/background_icon"
             android:scaleType="centerCrop"
             android:src="@drawable/foodo"
@@ -64,7 +61,7 @@
             app:layout_constraintTop_toBottomOf="@id/appbarTitle" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
+            style="@style/label_text"
             android:id="@+id/title_details"
             android:layout_width="195dp"
             android:layout_height="wrap_content"
@@ -72,10 +69,9 @@
             android:layout_marginTop="@dimen/marginlarge"
             android:elevation="@dimen/elevationlarg"
             android:gravity="start"
-            android:shadowColor="@color/dark_green"
+            android:shadowColor="@color/normal_text_black"
             android:text="@string/name_of_meal"
             android:textColor="@color/white"
-            android:textSize="@dimen/size_title"
             android:shadowDy="6"
             android:shadowRadius="9"
             android:outlineSpotShadowColor="#000000"
@@ -96,15 +92,13 @@
             app:layout_constraintTop_toBottomOf="@id/main_image" />
 
         <TextView
-            android:fontFamily="@font/poppins_medium"
+            style="@style/number_text"
             android:id="@+id/carb_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_small"
             android:elevation="@dimen/elevation_smail"
             android:text="@string/_214_g"
-            android:textSize="@dimen/text_size_small"
-            android:textColor="@color/green_text_color"
             app:layout_constraintStart_toEndOf="@id/green_circle"
             app:layout_constraintTop_toTopOf="@id/green_circle" />
 
@@ -134,15 +128,13 @@
 
 
         <TextView
-            android:fontFamily="@font/poppins_medium"
+            style="@style/number_text"
             android:id="@+id/protein_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_small"
             android:elevation="@dimen/elevation_smail"
-            android:text="211 g"
-            android:textSize="12sp"
-            android:textColor="@color/green_text_color"
+            android:text="@string/_211_g"
             app:layout_constraintStart_toEndOf="@id/red_circle"
             app:layout_constraintTop_toTopOf="@id/red_circle" />
 
@@ -160,8 +152,8 @@
 
         <View
             android:id="@+id/red_circle"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="@dimen/dim16"
+            android:layout_height="@dimen/dim16"
             android:layout_marginStart="16dp"
             android:background="@drawable/circle_shape"
             android:backgroundTint="@color/dark_green_pie_chart"
@@ -171,15 +163,13 @@
             app:layout_constraintTop_toTopOf="@id/pie_chart_details" />
 
         <TextView
-            android:fontFamily="@font/poppins_medium"
+            style="@style/number_text"
             android:id="@+id/fat_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_small"
             android:elevation="@dimen/elevation_smail"
             android:text="@string/_216_g"
-            android:textSize="12sp"
-            android:textColor="@color/green_text_color"
             app:layout_constraintStart_toEndOf="@id/yellow_circle"
             app:layout_constraintTop_toTopOf="@id/yellow_circle" />
 
@@ -208,159 +198,140 @@
             app:layout_constraintTop_toTopOf="@id/pie_chart_details" />
 
      <TextView
-         android:fontFamily="@font/poppins_regular"
+            style="@style/label_text"
             android:id="@+id/sugar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-         android:layout_marginStart="15dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="@dimen/margin_normal"
             android:text="@string/sugar"
-            android:textSize="@dimen/label_size"
             app:layout_constraintStart_toStartOf="@id/main_image"
-            app:layout_constraintTop_toBottomOf="@id/pie_chart_details"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toBottomOf="@id/pie_chart_details" />
 
         <TextView
-            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/sugar_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="12g"
+            android:text="@string/_12g"
             android:layout_marginEnd="15dp"
-            android:textSize="@dimen/label_size"
+            style="@style/number_text_detals"
             app:layout_constraintBottom_toBottomOf="@id/sugar"
             app:layout_constraintEnd_toEndOf="@id/main_image"
             app:layout_constraintTop_toTopOf="@id/sugar"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
+            style="@style/label_text"
             android:id="@+id/fiber"
             android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_mid"
             android:text="@string/fiber"
-            android:textSize="@dimen/label_size"
             app:layout_constraintStart_toStartOf="@id/main_image"
             app:layout_constraintTop_toBottomOf="@id/sugar"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:fontFamily="@font/poppins_semi_bold"
+            style="@style/number_text_detals"
             android:id="@+id/count_fiber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="12g"
             android:layout_marginEnd="15dp"
-            android:textSize="@dimen/label_size"
             app:layout_constraintBottom_toBottomOf="@id/fiber"
             app:layout_constraintEnd_toEndOf="@id/main_image"
-            app:layout_constraintTop_toTopOf="@id/fiber"
-            tools:ignore="MissingConstraints" />
-
+            app:layout_constraintTop_toTopOf="@id/fiber"/>
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
+            style="@style/label_text"
             android:id="@+id/water"
             android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_mid"
             android:text="@string/water"
-            android:textSize="@dimen/label_size"
             app:layout_constraintStart_toStartOf="@id/main_image"
-            app:layout_constraintTop_toBottomOf="@id/fiber"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toBottomOf="@id/fiber" />
 
         <TextView
-            android:fontFamily="@font/poppins_semi_bold"
+            style="@style/number_text_detals"
             android:id="@+id/water_number"
             android:layout_marginEnd="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="14g"
-            android:textSize="@dimen/label_size"
             app:layout_constraintBottom_toBottomOf="@id/water"
             app:layout_constraintEnd_toEndOf="@id/main_image"
-            app:layout_constraintTop_toTopOf="@id/water"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toTopOf="@id/water"/>
 
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
+            style="@style/label_text"
             android:id="@+id/calcium"
             android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_mid"
             android:text="@string/calcium"
-            android:textSize="@dimen/label_size"
             app:layout_constraintStart_toStartOf="@id/main_image"
             app:layout_constraintTop_toBottomOf="@id/water"
-            tools:ignore="MissingConstraints" />
+            />
 
         <TextView
-            android:fontFamily="@font/poppins_semi_bold"
+            style="@style/number_text_detals"
             android:id="@+id/calcium_number"
             android:layout_marginEnd="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="23g"
-            android:textSize="@dimen/label_size"
             app:layout_constraintBottom_toBottomOf="@id/calcium"
             app:layout_constraintEnd_toEndOf="@id/main_image"
-            app:layout_constraintTop_toTopOf="@id/calcium"
-            tools:ignore="MissingConstraints" />
-
+            app:layout_constraintTop_toTopOf="@id/calcium"/>
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
+            style="@style/label_text"
             android:id="@+id/cholesterol"
             android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/cholesterol"
-            android:textSize="@dimen/label_size"
             app:layout_constraintStart_toStartOf="@id/main_image"
             app:layout_constraintTop_toBottomOf="@id/calcium"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:fontFamily="@font/poppins_semi_bold"
+            style="@style/number_text_detals"
             android:id="@+id/cholesterol_number"
             android:layout_marginEnd="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10g"
-            android:textSize="@dimen/label_size"
             app:layout_constraintBottom_toBottomOf="@id/cholesterol"
             app:layout_constraintEnd_toEndOf="@id/main_image"
             app:layout_constraintTop_toTopOf="@id/cholesterol"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
+            style="@style/label_text"
             android:id="@+id/caffeine"
             android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_mid"
             android:text="@string/caffeine"
-            android:textSize="@dimen/label_size"
             app:layout_constraintStart_toStartOf="@id/main_image"
             app:layout_constraintTop_toBottomOf="@id/cholesterol"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:fontFamily="@font/poppins_semi_bold"
+            style="@style/number_text_detals"
             android:id="@+id/caffeine_number"
             android:layout_marginEnd="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="11g"
-            android:textSize="@dimen/label_size"
             app:layout_constraintBottom_toBottomOf="@id/caffeine"
             app:layout_constraintEnd_toEndOf="@id/main_image"
             app:layout_constraintTop_toTopOf="@id/caffeine"

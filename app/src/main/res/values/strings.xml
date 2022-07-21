@@ -37,9 +37,9 @@
     <string name="height">170</string>
     <string name="age">25</string>
     <string name="done">Done</string>
-    <string name="blue">#0064E5</string>
-    <string name="red">#FF6752</string>
-    <string name="yellow">#FAB131</string>
+    <string name="blue">#005F73</string>
+    <string name="red">#73C080</string>
+    <string name="yellow">#C8ECE2</string>
     <string name="name_of_meal">Name of meal</string>
     <string name="sugar">Sugar</string>
     <string name="fiber">Fiber</string>
@@ -68,4 +68,6 @@
     <string name="search_input_text">Search for meal ...</string>
     <string name="no_results_found_title">No Results Found</string>
     <string name="no_result_found_body">Try searching for a different keywork or tweek your search a little</string>
+    <string name="_211_g">211 g</string>
+    <string name="_12g">12g</string>
 </resources>

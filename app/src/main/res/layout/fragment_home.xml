@@ -18,6 +18,7 @@
             style="@style/title_text"
             android:layout_marginStart="@dimen/dim18"
             android:layout_marginTop="@dimen/dim12"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/find_track_and_eat_healthy_food"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +27,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/main_card"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="@dimen/cardLayoutHigh_homepage"
             android:layout_marginHorizontal="@dimen/dim16"
             android:layout_marginTop="@dimen/dim8"
             app:cardBackgroundColor="@color/white"
@@ -39,43 +40,45 @@
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pie_chart"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
+            android:layout_width="@dimen/chart_width_home"
+            android:layout_height="@dimen/chart_height_home"
             android:elevation="@dimen/dim4"
             app:layout_constraintBottom_toBottomOf="@+id/main_card"
             app:layout_constraintStart_toStartOf="@id/main_card"
             app:layout_constraintTop_toTopOf="@id/main_card" />
+
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="50dp"
-            android:layout_height="46dp"
-            android:elevation="@dimen/dim4"
+            android:layout_width="@dimen/chartImage_width_home"
+            android:layout_height="@dimen/chartImage_height_home"
             android:layout_marginBottom="@dimen/dim32"
             android:background="@drawable/ic_calories_icon"
             android:contentDescription="@string/calories_icon_description"
+            android:elevation="@dimen/dim4"
             app:layout_constraintBottom_toBottomOf="@+id/pie_chart"
             app:layout_constraintEnd_toEndOf="@+id/pie_chart"
             app:layout_constraintStart_toStartOf="@+id/pie_chart"
             app:layout_constraintTop_toTopOf="@+id/pie_chart" />
+
         <androidx.cardview.widget.CardView
             android:id="@+id/info_card"
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:layout_marginHorizontal="@dimen/dim16"
             android:layout_marginTop="@dimen/dim16"
-            app:cardBackgroundColor="#559960"
+            app:cardBackgroundColor="@color/card_color_home"
             app:cardCornerRadius="@dimen/dim8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_card" />
 
         <TextView
-            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/weight_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="38dp"
+            android:layout_marginStart="@dimen/marginstart_home"
             android:elevation="@dimen/dim4"
+            android:fontFamily="@font/poppins_semi_bold"
             android:text="@string/textWeight"
             android:textColor="@color/white"
             android:textSize="@dimen/dimtext24"
@@ -85,7 +88,6 @@
             app:layout_constraintTop_toTopOf="@+id/hight_label" />
 
         <TextView
-            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/hight_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,6 +95,7 @@
             android:layout_marginEnd="@dimen/dim32"
             android:layout_marginBottom="@dimen/dim16"
             android:elevation="@dimen/dim2"
+            android:fontFamily="@font/poppins_semi_bold"
             android:text="@string/textHieght"
             android:textColor="@color/white"
             android:textSize="@dimen/dimtext24"
@@ -103,11 +106,11 @@
             app:layout_constraintTop_toTopOf="@+id/info_card" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/body_fat_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="@dimen/dim2"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/body_fat"
             android:textColor="@color/white"
             android:textSize="@dimen/dimtext16"
@@ -116,11 +119,11 @@
             app:layout_constraintTop_toTopOf="@+id/hight_text" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/weight_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="@dimen/dim2"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/textLabelWieght"
             android:textColor="@color/white"
             android:textSize="@dimen/dimtext16"
@@ -130,26 +133,25 @@
             app:layout_constraintTop_toBottomOf="@+id/weight_label" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/hight_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="@dimen/dim2"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/textLabelHeight"
             android:textColor="@color/white"
             android:textSize="@dimen/dimtext16"
-
             app:layout_constraintEnd_toEndOf="@+id/hight_label"
             app:layout_constraintStart_toStartOf="@+id/hight_label"
             app:layout_constraintTop_toTopOf="@+id/weight_text" />
 
         <TextView
-            android:fontFamily="@font/poppins_semi_bold"
             android:id="@+id/body_fat_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/dim32"
             android:elevation="2dp"
+            android:fontFamily="@font/poppins_semi_bold"
             android:text="@string/textFat"
             android:textColor="@color/white"
             android:textSize="@dimen/dimtext24"
@@ -159,42 +161,39 @@
             app:layout_constraintTop_toTopOf="@+id/hight_label" />
 
         <TextView
-            android:fontFamily="@font/poppins_medium"
             android:id="@+id/collections_for_you"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dim20"
             android:layout_marginTop="@dimen/dim16"
             android:text="@string/collections_for_you"
-            android:textColor="@color/dark_green"
-            android:textSize="@dimen/dimtext16"
+           style="@style/title_text"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/info_card" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/protein_meal_card"
-            android:layout_width="180dp"
+            android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/margintop_card_home"
             app:cardBackgroundColor="#fff"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardCornerRadius="@dimen/dim8"
+            app:cardElevation="@dimen/dim8"
             app:layout_constraintEnd_toStartOf="@+id/vitamin_d3_meal_card"
             app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/collections_for_you" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/vitamin_d3_meal_card"
-            android:layout_width="180dp"
+            android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/dim16"
             app:cardBackgroundColor="#fff"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardCornerRadius="@dimen/dim8"
+            app:cardElevation="@dimen/dim8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/protein_meal_card"
@@ -202,9 +201,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/fiber_meal_card"
-            android:layout_width="180dp"
+            android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_marginTop="@dimen/dim18"
+            android:layout_marginTop="@dimen/dim16"
             android:layout_marginBottom="@dimen/dim16"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="@dimen/dim8"
@@ -216,7 +215,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/high_carb_meal_card"
-            android:layout_width="180dp"
+            android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_marginBottom="@dimen/dim16"
             app:cardBackgroundColor="@color/white"
@@ -244,6 +243,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim14"
             android:elevation="@dimen/dim16"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/high_protein_meals"
             style="@style/body_text"
             app:layout_constraintEnd_toEndOf="@id/high_protein_image"
@@ -263,16 +263,14 @@
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
-            android:layout_width="150dp"
+            android:layout_width="@dimen/textwidth_home"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim14"
             android:elevation="@dimen/dim16"
             android:text="@string/top_10_recipes_n_contains_vitamin_d3"
             android:textAlignment="center"
-            android:textColor="@color/dark_green"
-            android:textSize="@dimen/textCardtext"
-            android:textStyle="bold"
+            android:fontFamily="@font/poppins_regular"
+            style="@style/body_text"
             app:layout_constraintEnd_toEndOf="@id/vitamin_image"
             app:layout_constraintStart_toStartOf="@id/vitamin_image"
             app:layout_constraintTop_toBottomOf="@id/vitamin_image" />
@@ -290,16 +288,14 @@
             app:layout_constraintTop_toTopOf="@id/fiber_meal_card" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim14"
             android:elevation="@dimen/dim16"
             android:text="@string/fibers"
             android:textAlignment="center"
-            android:textColor="@color/dark_green"
-            android:textSize="@dimen/textCardtext"
-            android:textStyle="bold"
+            style="@style/body_text"
+            android:fontFamily="@font/poppins_regular"
             app:layout_constraintEnd_toEndOf="@id/fiber_image"
             app:layout_constraintStart_toStartOf="@id/fiber_image"
             app:layout_constraintTop_toBottomOf="@id/fiber_image" />
@@ -317,26 +313,24 @@
             app:layout_constraintTop_toTopOf="@id/high_carb_meal_card" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim8"
             android:elevation="@dimen/dim16"
             android:text="@string/high_carb_meals"
             android:textAlignment="center"
-            android:textColor="@color/dark_green"
-            android:textSize="@dimen/textCardtext"
-            android:textStyle="bold"
+            style="@style/body_text"
+            android:fontFamily="@font/poppins_regular"
             app:layout_constraintEnd_toEndOf="@id/high_carb_image"
             app:layout_constraintStart_toStartOf="@id/high_carb_image"
             app:layout_constraintTop_toBottomOf="@id/high_carb_image" />
 
         <View
             android:id="@+id/blue_circle"
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:layout_marginVertical="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="@dimen/dim14"
+            android:layout_height="@dimen/dim14"
+            android:layout_marginVertical="@dimen/dim16"
+            android:layout_marginBottom="@dimen/dim16"
             android:background="@drawable/circle_shape"
             android:backgroundTint="@color/dark_green_pie_chart"
             android:elevation="@dimen/dim4"
@@ -345,39 +339,37 @@
             app:layout_constraintStart_toStartOf="@+id/orange_circle" />
 
         <TextView
-            android:fontFamily="@font/poppins_bold"
             android:id="@+id/protein_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginEnd="18dp"
-            android:elevation="4dp"
-            android:text="216 g"
-            android:textColor="@color/dark_green"
-            android:textSize="@dimen/dimtext8"
+            android:layout_marginStart="@dimen/marginstart"
+            android:elevation="@dimen/dim4"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/_216_g"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/dimtext10"
             app:layout_constraintBottom_toBottomOf="@+id/protein_text"
-            app:layout_constraintEnd_toEndOf="@+id/main_card"
             app:layout_constraintStart_toEndOf="@+id/protein_text"
             app:layout_constraintTop_toTopOf="@+id/protein_text" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/protein_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dim8"
             android:elevation="@dimen/dim4"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/protein"
-            android:textColor="@color/dark_green"
+            android:textColor="@color/text_color"
             android:textSize="@dimen/dimtext10"
             app:layout_constraintStart_toEndOf="@+id/blue_circle"
             app:layout_constraintTop_toTopOf="@+id/blue_circle" />
 
         <View
             android:id="@+id/orange_circle"
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:layout_marginStart="50dp"
+            android:layout_width="@dimen/dim14"
+            android:layout_height="@dimen/dim14"
+            android:layout_marginStart="@dimen/marginstart"
             android:background="@drawable/circle_shape"
             android:backgroundTint="@color/green_text_color"
             android:elevation="@dimen/dim4"
@@ -386,28 +378,28 @@
             app:layout_constraintTop_toTopOf="@+id/pie_chart" />
 
         <TextView
-            android:fontFamily="@font/poppins_bold"
             android:id="@+id/carb_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="@dimen/dim4"
+            android:fontFamily="@font/poppins_bold"
             android:text="@string/carbText"
-            android:textColor="@color/dark_green"
-            android:textSize="@dimen/dimtext8"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/dimtext10"
             app:layout_constraintBottom_toBottomOf="@+id/carb_text"
             app:layout_constraintEnd_toEndOf="@+id/protein_number"
             app:layout_constraintStart_toStartOf="@+id/protein_number"
             app:layout_constraintTop_toTopOf="@+id/carb_text" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/carb_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dim8"
             android:elevation="@dimen/dim4"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/carb"
-            android:textColor="@color/dark_green"
+            android:textColor="@color/text_color"
             android:textSize="@dimen/dimtext10"
             app:layout_constraintStart_toEndOf="@+id/orange_circle"
             app:layout_constraintTop_toTopOf="@+id/orange_circle" />
@@ -425,27 +417,27 @@
             app:layout_constraintTop_toBottomOf="@+id/orange_circle" />
 
         <TextView
-            android:fontFamily="@font/poppins_bold"
             android:id="@+id/fat_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="@dimen/dim4"
+            android:fontFamily="@font/poppins_bold"
             android:text="@string/fatText"
-            android:textColor="@color/dark_green"
-            android:textSize="@dimen/dimtext8"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/dimtext10"
             app:layout_constraintBottom_toBottomOf="@+id/fat_text"
             app:layout_constraintEnd_toEndOf="@+id/carb_number"
             app:layout_constraintStart_toStartOf="@+id/carb_number"
             app:layout_constraintTop_toTopOf="@+id/fat_text" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
             android:id="@+id/fat_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="@dimen/dim4"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/fat"
-            android:textColor="@color/dark_green"
+            android:textColor="@color/text_color"
             android:textSize="@dimen/dimtext10"
             app:layout_constraintStart_toStartOf="@+id/carb_text"
             app:layout_constraintTop_toTopOf="@+id/yellow_circle" />
