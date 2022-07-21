@@ -5,20 +5,18 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
-    android:paddingBottom="6dp"
+    android:paddingBottom="@dimen/paddingBottom_carogary"
     android:scrollbars="none">
 
         <TextView
 
             android:id="@+id/catogory"
-            style="@style/titelOfCatogry"
+            style="@style/title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
             android:text="Category content"
-            android:textColor="@color/black"
-            android:layout_marginTop="18dp"
-            android:textSize="18sp"
+            android:layout_marginTop="@dimen/margin_title_catogry"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -29,7 +27,7 @@
         android:id="@+id/Recycler_view_catogary_items"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="@dimen/marginTop_recycle_catogry"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
