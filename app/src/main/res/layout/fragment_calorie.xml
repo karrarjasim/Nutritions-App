@@ -112,12 +112,12 @@
         <TextView
             android:fontFamily="@font/poppins_regular"
             android:id="@+id/textView7"
+            style="@style/label_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="142dp"
             android:text="Goal calorie :  "
             android:textColor="#979797"
-            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView8"
             app:layout_constraintStart_toEndOf="@+id/progress_bar"

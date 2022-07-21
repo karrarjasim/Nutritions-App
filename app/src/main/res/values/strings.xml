@@ -68,4 +68,6 @@
     <string name="search_input_text">Search for meal ...</string>
     <string name="no_results_found_title">No Results Found</string>
     <string name="no_result_found_body">Try searching for a different keywork or tweek your search a little</string>
+    <string name="_211_g">211 g</string>
+    <string name="_12g">12g</string>
 </resources>
