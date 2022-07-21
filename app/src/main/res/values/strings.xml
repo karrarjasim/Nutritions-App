@@ -70,4 +70,7 @@
     <string name="no_result_found_body">Try searching for a different keywork or tweek your search a little</string>
     <string name="_211_g">211 g</string>
     <string name="_12g">12g</string>
+    <string name="light_green_pie_chare">#005F73</string>
+    <string name="mid_green_pie_chare">#73C080</string>
+    <string name="dark_green_pie_chare">#C8ECE2</string>
 </resources>
