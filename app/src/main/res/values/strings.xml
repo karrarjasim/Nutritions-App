@@ -73,4 +73,7 @@
     <string name="light_green_pie_chare">#005F73</string>
     <string name="mid_green_pie_chare">#73C080</string>
     <string name="dark_green_pie_chare">#C8ECE2</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="calorie">Calorie</string>
 </resources>

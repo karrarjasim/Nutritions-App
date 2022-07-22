@@ -3,13 +3,13 @@
     <item
         android:id="@+id/pageHome"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Home"/>
+        android:title="@string/home"/>
     <item
         android:id="@+id/pageSearch"
         android:icon="@drawable/ic_baseline_search_24"
-        android:title="Search"/>
+        android:title="@string/search"/>
     <item
         android:id="@+id/pageCalorie"
         android:icon="@drawable/ic_baseline_local_fire_department_24"
-        android:title="Calorie"/>
+        android:title="@string/calorie"/>
 </menu>
