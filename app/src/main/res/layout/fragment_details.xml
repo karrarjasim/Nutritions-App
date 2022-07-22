@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="true"
-    android:background="@color/white">
+    android:background="@color/card_bg">
 
 
     <ScrollView
@@ -29,7 +29,7 @@
             android:layout_height="@dimen/size_icon_normal"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginTop="@dimen/margin_larg"
-            android:background="@color/white"
+            android:background="@color/card_bg"
             android:src="@drawable/ic_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

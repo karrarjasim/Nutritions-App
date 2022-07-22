@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Nutritions App</string>
+    <string name="calorie_calculator_title">Calculate Daily Calories</string>
+    <string name="age_label">Age</string>
+    <string name="height_label">Height</string>
+    <string name="weight_label">Weight</string>
+    <string name="activity_label">Activity</string>
+    <string name="gender_label">Gender</string>
+    <string name="calculator_body">For accurate calculation, we need some basic info about you.</string>
+    <string name="title_text">track your daliy calories</string>
+    <string name="card_status_description">Items crosses your body optimal calories</string>
+    <string name="card_status_face">:(</string>
+    <string name="items_selected">selected items</string>
+    <string name="name_of_added_item">Burger</string>
+    <string name="item_calories_count">200 cal</string>
+    <string name="calories_icon_description">calories_icon</string>
+
+    <string-array name="planets_array">
+        <item>Sedentary(no exercise, desk job)</item>
+        <item>Moderate exercise(3–5 days per week)</item>
+        <item>Hard exercise(6–7 days per week)</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="find_track_and_eat_healthy_food">Find, track and eat healthy food.</string>
+    <string name="collections_for_you">Collections for you</string>
+    <string name="high_protein_meals">High protein meals</string>
+    <string name="top_10_recipes_n_contains_vitamin_d3">Top 10 recipes contains vitamin D3</string>
+    <string name="fibers">Fibers</string>
+    <string name="high_carb_meals">High carb meals</string>
+    <string name="protein">Protein</string>
+    <string name="carb">Carb</string>
+    <string name="fat">Fat</string>
+    <string name="weight">75</string>
+    <string name="height">170</string>
+    <string name="age">25</string>
+    <string name="done">Done</string>
+    <string name="blue">#005F73</string>
+    <string name="red">#73C080</string>
+    <string name="yellow">#C8ECE2</string>
+    <string name="name_of_meal">Name of meal</string>
+    <string name="sugar">Sugar</string>
+    <string name="fiber">Fiber</string>
+    <string name="water">Water</string>
+    <string name="calcium">Calcium</string>
+    <string name="cholesterol">Cholesterol</string>
+    <string name="caffeine">Caffeine</string>
+    <string name="add_to_diary">add to Diary</string>
+    <string name="male_label">Male</string>
+    <string name="female_label">Female</string>
+    <string name="enter_btn">Enter</string>
+    <string name="cardName">item name</string>
+    <string name="cardCalories">card calories</string>
+    <string name="_214_g">214 g</string>
+    <string name="_216_g">216 g</string>
+    <string name="textWeight">57 kg</string>
+    <string name="textHieght">164 cm</string>
+    <string name="body_fat">Body fat</string>
+    <string name="textLabelWieght">Weight</string>
+    <string name="textLabelHeight">Height</string>
+    <string name="textFat">13%</string>
+    <string name="proteinNumber">216 g</string>
+    <string name="carbText">216 g</string>
+    <string name="fatText">216 g</string>
+    <string name="image_description">image description</string>
+    <string name="search_input_text">Search for meal ...</string>
+    <string name="no_results_found_title">No Results Found</string>
+    <string name="no_result_found_body">Try searching for a different keywork or tweek your search a little</string>
+    <string name="_211_g">211 g</string>
+    <string name="_12g">12g</string>
+    <string name="light_green_pie_chare">#005F73</string>
+    <string name="mid_green_pie_chare">#73C080</string>
+    <string name="dark_green_pie_chare">#C8ECE2</string>
+</resources>
