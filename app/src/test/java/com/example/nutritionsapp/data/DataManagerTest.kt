@@ -2,6 +2,7 @@ package com.example.nutritionsapp.data
 
 import com.example.nutritionsapp.data.domain.Meal
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.TestInstance
 
 
@@ -13,82 +14,69 @@ internal class DataManagerTest {
     private var mealsContainsVitamin: List<Meal>? = null
     private var mealsContainsCarb: List<Meal>? = null
     private var mealsContainsFiber: List<Meal>? = null
-    private var optimalCalories: Int? = dataManager.optimalCalories
-    private var addedMeals = mutableListOf(
-        Meal(
-            id = 0,
-            calories = "500",
-            name = "Pizza",
-            caffeine = "10",
-            fat = "10",
-            protein = "10",
-            saturatedFat = "10",
-            servingSize = "100",
-            totalFat = "10",
-            water = "10 g",
-            calcium = "10 g",
-            fiber = "10 g",
-            sugar = "10 g",
-            cholesterol = "10 g",
-            carb = "10 g",
-            vitaminD = "10 g",
-        ),
-        Meal(
-            id = 1,
-            calories = "500",
-            name = "Burger",
-            caffeine = "10",
-            fat = "10",
-            protein = "10",
-            saturatedFat = "10",
-            servingSize = "100",
-            totalFat = "10",
-            water = "10 g",
-            calcium = "10 g",
-            fiber = "10 g",
-            sugar = "10 g",
-            cholesterol = "10 g",
-            carb = "10 g",
-            vitaminD = "10 g",
-        ),
-        Meal(
-            id = 2,
-            calories = "500",
-            name = "Chips",
-            caffeine = "10",
-            fat = "10",
-            protein = "10",
-            saturatedFat = "10",
-            servingSize = "100",
-            totalFat = "10",
-            water = "10 g",
-            calcium = "10 g",
-            fiber = "10 g",
-            sugar = "10 g",
-            cholesterol = "10 g",
-            carb = "10 g",
-            vitaminD = "10 g",
-        ),
-        Meal(
-            id = 3,
-            calories = "510",
-            name = "Potatoes",
-            caffeine = "10",
-            fat = "10",
-            protein = "10",
-            saturatedFat = "10",
-            servingSize = "100",
-            totalFat = "10",
-            water = "10 g",
-            calcium = "10 g",
-            fiber = "10 g",
-            sugar = "10 g",
-            cholesterol = "10 g",
-            carb = "10 g",
-            vitaminD = "10 g",
-        )
-    )
+    private var optimalCalories: Int? = null
+    private var addedMeals = mutableListOf<Meal>()
 
+    @BeforeAll
+    fun setUp() {
+        addedMeals = mutableListOf(
+            Meal(
+                id = 0,
+                calories = "500",
+                name = "Pizza",
+                caffeine = "10",
+                fat = "10",
+                protein = "10",
+                saturatedFat = "10",
+                servingSize = "100",
+                totalFat = "10",
+                water = "10 g",
+                calcium = "10 g",
+                fiber = "10 g",
+                sugar = "10 g",
+                cholesterol = "10 g",
+                carb = "10 g",
+                vitaminD = "10 g",
+            ),
+            Meal(
+                id = 1,
+                calories = "500",
+                name = "Burger",
+                caffeine = "10",
+                fat = "10",
+                protein = "10",
+                saturatedFat = "10",
+                servingSize = "100",
+                totalFat = "10",
+                water = "10 g",
+                calcium = "10 g",
+                fiber = "10 g",
+                sugar = "10 g",
+                cholesterol = "10 g",
+                carb = "10 g",
+                vitaminD = "10 g",
+            ),
+            Meal(
+                id = 2,
+                calories = "500",
+                name = "Chips",
+                caffeine = "10",
+                fat = "10",
+                protein = "10",
+                saturatedFat = "10",
+                servingSize = "100",
+                totalFat = "10",
+                water = "10 g",
+                calcium = "10 g",
+                fiber = "10 g",
+                sugar = "10 g",
+                cholesterol = "10 g",
+                carb = "10 g",
+                vitaminD = "10 g",
+            )
+        )
+        optimalCalories = dataManager.optimalCalories
+    }
 
     @org.junit.Test
     fun should_Return_CalculatedCalories_When_RunFunction() {
@@ -144,7 +132,6 @@ internal class DataManagerTest {
         highProteinMeals = dataManager.getHighProteinMeals(addedMeals, 10)
 
         // then
-        println("(highProteinMeals as MutableList<Meal>).size = ${(highProteinMeals as MutableList<Meal>).size}")
         assertEquals(
             10,
             (highProteinMeals as MutableList<Meal>).size

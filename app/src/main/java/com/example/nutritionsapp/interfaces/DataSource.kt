@@ -4,5 +4,5 @@ import com.example.nutritionsapp.data.domain.Meal
 
 
 interface DataSource {
-    fun getAllMeals(): Meal
+    fun parse(line: String): Meal
 }

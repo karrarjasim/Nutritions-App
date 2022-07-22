@@ -19,13 +19,14 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
 
     var age: Int = 20
     var height: Int = 150
-    var weight: Int = 70
-    var activityFactor: Double = 1.2
+    var weight: Int = 75
+    var activityFactor: Double = 1.2 // The  activity factor is a function of the type of activity for an individual
     var calories: Int = 0
 
 
     override fun onStart() {
         super.onStart()
+
         context?.let {
             ArrayAdapter.createFromResource(
                 it,
@@ -70,19 +71,26 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
 
         }
 
+        binding.radioGroup.setOnCheckedChangeListener{ _, _ ->
+            binding.enterBtn.isEnabled = true
+        }
+
         binding.enterBtn.setOnClickListener() {
-            if (binding.female.isChecked) {
-                calories =  (((10 * weight) + (6.25 * height) - (5 * age) - 161) * activityFactor).toInt()
+
+            calories = if (binding.female.isChecked) {
+                   (((10 * weight) + (6.25 * height) - (5 * age) - 161) * activityFactor).toInt()
             }else{
-                calories =  (((10 * weight) + (6.25 * height) - (5 * age ) + 5 ) * activityFactor).toInt()
+                  (((10 * weight) + (6.25 * height) - (5 * age ) + 5 ) * activityFactor).toInt()
             }
-            log(calories)
 
             val intent = Intent(activity, HomeActivity::class.java).apply {
                 putExtra(Constants.CALORIES_KEY, calories)
+                putExtra(Constants.WEIGHT, weight)
+                putExtra(Constants.HEIGHT, height)
+            }.also {
+                startActivity(it)
+                activity?.finish()
             }
-            startActivity(intent)
-            activity?.finish()
         }
 
 

@@ -1,42 +1,41 @@
 package com.example.nutritionsapp.ui
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentHomeBinding
-import com.example.nutritionsapp.util.CsvParser
+import com.example.nutritionsapp.interfaces.NavigationInterface
+import com.example.nutritionsapp.util.Constants
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.ColorTemplate.rgb
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 
-class HomeFragment: BaseFragment<FragmentHomeBinding>() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override var LOG_TAG = "HOME_FRAGMENT"
-    val dataManager = DataManager()
-    private val mealsList: List<Meal> = dataManager.mealsList
+    lateinit var dataManager: DataManager
+    lateinit var mealsList: MutableList<Meal>
+
 
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
         get() = FragmentHomeBinding::inflate
 
     override fun addCallBacks() {
-        binding.proteinMealCard.setOnClickListener{
+        binding.proteinMealCard.setOnClickListener {
             val proteinList = dataManager.getHighProteinMeals(mealsList)
             log(proteinList)
             openCategoryDetails(proteinList)
         }
 
-        binding.vitaminD3MealCard.setOnClickListener{
+        binding.vitaminD3MealCard.setOnClickListener {
             val vitaminsList = dataManager.getTopMealsContainsVitamin(mealsList)
             openCategoryDetails(vitaminsList)
         }
@@ -52,19 +51,30 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
         }
     }
 
+
     override fun onStart() {
         super.onStart()
-        val calorie = arguments?.getInt("calorie")
+        val calorie = arguments?.getInt(Constants.CALORIES_KEY)
+        val weight = arguments?.getInt(Constants.WEIGHT)
+        val height = arguments?.getInt(Constants.HEIGHT)
         setupPieChart(calorie.toString())
         loadPieChartData()
-        openFile()
+        dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
+        mealsList = dataManager.mealsList
+        binding.weightLabel.text = weight.toString()
+        binding.hightLabel.text = height.toString()
 
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = context as NavigationInterface
     }
 
     private fun setupPieChart(calories: String) {
         binding.pieChart.apply {
-            centerText = "calories\n $calories"
-            setCenterTextSize(12F)
+            centerText = "\n$calories"
+            setCenterTextSize(18F)
             setUsePercentValues(true)
             description.isEnabled = false
             legend.isEnabled = false
@@ -81,12 +91,12 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
 
         val colors: ArrayList<Int> = ArrayList()
         colors.apply {
-            add(rgb("#0064E5"))
-            add(rgb("#FF6752"))
-            add(rgb("#FAB131"))
+            add(rgb("#005F73")) // blue
+            add(rgb("#73C080")) // red
+            add(rgb("#C8ECE2")) // yellow
         }
 
-        val dataSet = PieDataSet(entries,"")
+        val dataSet = PieDataSet(entries, "")
         dataSet.colors = colors
         val data = PieData(dataSet)
         binding.pieChart.data = data
@@ -96,29 +106,26 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
         data.setValueTextColor(Color.BLACK)
         binding.pieChart.invalidate()
         binding.pieChart.animateY(1400, Easing.EaseInOutQuad)
+
     }
 
-    private fun openFile(){
-        val inputStream = activity?.assets?.open("nutrition.csv")
-        val buffer = BufferedReader(InputStreamReader(inputStream))
-        val parser = CsvParser()
-        buffer.forEachLine {
-            val meal = parser.parse(it)
-            dataManager.addMeal(meal)
-        }
+
+    private fun openCategoryDetails(mealsList: MutableList<Meal>) {
+        val categoryFragment =
+            CategoryFragment.newInstance(mealsList as ArrayList<Meal>, dataManager)
+        listener?.addFragment(categoryFragment)
     }
 
-    private fun openCategoryDetails(mealsList: MutableList<Meal>){
-        val categoryFragment = CategoryFragment.newInstance(mealsList as ArrayList<Meal>)
-        (activity as HomeActivity).addFragment(categoryFragment)
-    }
 
     companion object {
 
-        fun newInstance(calorie: Int): HomeFragment {
+        fun newInstance(calorie: Int,weight: Int,height: Int, dataManager: DataManager): HomeFragment {
             return HomeFragment().apply {
                 arguments = Bundle().apply {
-                    putInt("calorie", calorie)
+                    putInt(Constants.CALORIES_KEY, calorie)
+                    putInt(Constants.WEIGHT, weight)
+                    putInt(Constants.HEIGHT, height)
+                    putSerializable(Constants.DATA_MANAGER_KEY, dataManager)
                 }
             }
         }

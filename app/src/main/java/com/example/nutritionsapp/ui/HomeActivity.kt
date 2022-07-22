@@ -1,36 +1,59 @@
 package com.example.nutritionsapp.ui
 
+
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.databinding.ActivityHomeBinding
+import com.example.nutritionsapp.interfaces.NavigationInterface
 import com.example.nutritionsapp.util.Constants
+import com.example.nutritionsapp.util.CsvParser
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() , NavigationInterface{
 
     private lateinit var binding: ActivityHomeBinding
     private lateinit var homeFragment: HomeFragment
     private lateinit var searchFragment: SearchFragment
     private lateinit var calorieFragment : CalorieFragment
-    val dataManager = DataManager()
+    private val dataManager = DataManager()
+    private  var calories = 0
+    private  var weight = 0
+    private  var height = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val calories = intent.getIntExtra(Constants.CALORIES_KEY, 0)
-        initSubView(calories)
+        calories = intent.getIntExtra(Constants.CALORIES_KEY, calories)
+        weight = intent.getIntExtra(Constants.WEIGHT,weight)
+        height = intent.getIntExtra(Constants.HEIGHT, height)
+        if (savedInstanceState == null){
+            initSubView(calories)
+        }
         addNavigationListener()
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        openFile()
     }
 
     private fun addNavigationListener() {
         binding.bottomAppBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.pageHome -> {
+                    homeFragment = HomeFragment.newInstance(calories, weight, height, dataManager)
                     replaceFragment(homeFragment)
                     true
                 }
@@ -40,7 +63,7 @@ class HomeActivity : AppCompatActivity() {
                     true
                 }
                 R.id.pageCalorie -> {
-                    calorieFragment = CalorieFragment.newInstance(dataManager)
+                    calorieFragment = CalorieFragment.newInstanceFromHome(dataManager)
                     replaceFragment(calorieFragment)
                     true
                 }
@@ -50,20 +73,39 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initSubView(calories: Int) {
-        homeFragment = HomeFragment.newInstance(calories)
+        homeFragment = HomeFragment.newInstance(calories, weight, height, dataManager)
         addFragment(homeFragment)
     }
 
-    fun addFragment(fragment: Fragment) {
+    override fun addFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.fragment_container, fragment)
         transaction.addToBackStack("fragment")
         transaction.commit()
     }
 
-    fun replaceFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
     }
+
+    private fun openFile() {
+        val inputStream = this.assets?.open("nutrition.csv")
+        val buffer = BufferedReader(InputStreamReader(inputStream))
+        val parser = CsvParser()
+        buffer.forEachLine {
+            val meal = parser.parse(it)
+            dataManager.addMeal(meal)
+        }
+    }
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null) {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
+    }
+
+
 }

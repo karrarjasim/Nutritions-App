@@ -4,7 +4,10 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.nutritionsapp.R
 import com.example.nutritionsapp.data.DataManager
 import com.example.nutritionsapp.data.domain.Meal
 import com.example.nutritionsapp.databinding.FragmentDetailsBinding
@@ -21,55 +24,68 @@ import org.w3c.dom.Text
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
+class DeatilsFragment : BaseFragment<FragmentDetailsBinding>() {
 
     override var LOG_TAG = Constants.DEATILS_KEY
-
-
+    lateinit var dataManager: DataManager
+    var meal: Meal? = null
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentDetailsBinding
-        get()= FragmentDetailsBinding::inflate
+        get() = FragmentDetailsBinding::inflate
 
     override fun onStart() {
         super.onStart()
+        meal = requireNotNull(arguments?.getParcelable<Meal>(Constants.ID_KEY))
+        /// meal comes when we click on a meal in the list in the added meals in calories fragment
+        dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
 
-        val meal = arguments?.getParcelable<Meal>(Constants.ID_KEY)
+        if (dataManager.addedMealsToBeCalculated.contains(meal)) {
+            binding.buttonDialy.text = getString(R.string.done)
+            binding.buttonDialy.isClickable = false
+        }
+
         addProperties(meal)
-
-        var carb  = meal?.carb?.toFloatNumber()
-        var protein = meal?.protein?.toFloatNumber()
-        var fat = meal?.fat?.toFloatNumber()
+        val carb = meal?.carb?.toFloatNumber() ?: 0f
+        val protein = meal?.protein?.toFloatNumber() ?: 0f
+        val fat = meal?.fat?.toFloatNumber() ?: 0f
         setupPieChart(meal?.calories)
-        loadPieChartData(carb!!,protein!!,fat!!)
+        loadPieChartData(carb, protein, fat)
 
     }
 
     private fun addProperties(meal: Meal?) {
         binding.caffeineNumber.text = meal?.caffeine
-        binding.waterNumber.text =meal?.water
-        binding.carbNumber.text =meal?.carb
-        binding.fatNumber.text =meal?.fat
-        binding.countFiber.text =meal?.fiber
-        binding.titleDetails.text =meal?.name
-        binding.proteinNumber.text =meal?.protein
-        binding.calciumNumber.text =meal?.calcium
-        binding.cholesterolNumber.text =meal?.cholesterol
-        binding.sugarNumber.text =meal?.sugar
+        binding.waterNumber.text = meal?.water
+        binding.carbNumber.text = meal?.carb
+        binding.fatNumber.text = meal?.fat
+        binding.countFiber.text = meal?.fiber
+        binding.titleDetails.text = meal?.name
+        binding.proteinNumber.text = meal?.protein
+        binding.calciumNumber.text = meal?.calcium
+        binding.cholesterolNumber.text = meal?.cholesterol
+        binding.sugarNumber.text = meal?.sugar
     }
 
     override fun addCallBacks() {
-        binding.btnDialy.setOnClickListener {
-            binding.btnDialy.text = "Done"
+        dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
+
+        binding.buttonDialy.setOnClickListener {
+            meal?.let {
+                dataManager.addItemToAddedItems(it)
+            }
+
+            Toast.makeText(context, "Added successfully", Toast.LENGTH_LONG).show()
+            binding.buttonDialy.isClickable = false
+
+
         }
         binding.arrowIcon.setOnClickListener {
             this.parentFragmentManager.popBackStack()
         }
     }
 
-
-
-    private fun setupPieChart( calories:String?) {
+    private fun setupPieChart(calories: String?) {
         binding.pieChartDetails.apply {
-            centerText = "calories\n $calories"
+            centerText = "$calories\nCal"
             setCenterTextSize(12F)
             setUsePercentValues(true)
             description.isEnabled = false
@@ -77,19 +93,19 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
         }
     }
 
-    private fun loadPieChartData(carb :Float ,protein:Float,fat :Float) {
+    private fun loadPieChartData(carb: Float, protein: Float, fat: Float) {
         val entries: ArrayList<PieEntry> = ArrayList()
         entries.apply {
-            add(PieEntry(carb ))
+            add(PieEntry(carb))
             add(PieEntry(protein))
             add(PieEntry(fat))
         }
 
         val colors: ArrayList<Int> = ArrayList()
         colors.apply {
-            add(rgb("#0064E5"))
-            add(rgb("#FF6752"))
-            add(rgb("#FAB131"))
+            add(rgb(getString(R.string.light_green_pie_chare))) // light green
+            add(rgb(getString(R.string.mid_green_pie_chare))) // mid green
+            add(rgb(getString(R.string.dark_green_pie_chare))) // dark green
         }
 
         val dataSet = PieDataSet(entries, "")
@@ -106,15 +122,14 @@ class DeatilsFragment: BaseFragment<FragmentDetailsBinding>() {
 
 
     companion object {
-        fun newInstance(meal :Meal):DeatilsFragment {
+        fun newInstance(meal: Meal, dataManager: DataManager): DeatilsFragment {
             return DeatilsFragment().apply {
                 arguments = Bundle().apply {
                     putParcelable(Constants.ID_KEY, meal)
-
+                    putSerializable(Constants.DATA_MANAGER_KEY, dataManager)
                 }
             }
         }
     }
-
 
 }

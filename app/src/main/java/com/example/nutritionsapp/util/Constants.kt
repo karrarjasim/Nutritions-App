@@ -11,7 +11,6 @@ object Constants {
         const val PROTEIN = 38
         const val FAT = 67
         const val CAFFEINE = 74
-
         const val WATER =  76
         const val SUGAR = 60
         const val FIBRE = 59
@@ -25,6 +24,10 @@ object Constants {
     const val CALORIES_KEY = "daily_calories"
     const val DEATILS_KEY = "DeatilsFragment"
     const val ID_KEY = "ID"
-
+    const val DATA_MANAGER_KEY = "data_manager"
     const val CATEGORY_LIST_KEY = "meals_list"
+    const val ADDED_OR_NOT = "added_or_not"
+    const val WEIGHT = "weight"
+    const val HEIGHT = "height"
+
 }

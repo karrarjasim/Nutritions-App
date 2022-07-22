@@ -1,310 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:fontFamily="@font/poppins_bold"
+        android:id="@+id/calculated_items_Screen_Title"
+        style="@style/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/title_text"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_containing_status"
+        android:layout_width="match_parent"
+        android:layout_height="148dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/card_bg"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculated_items_Screen_Title" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_containing_status"
+        app:layout_constraintEnd_toEndOf="@+id/card_containing_status"
+        app:layout_constraintStart_toStartOf="@+id/card_containing_status"
+        app:layout_constraintTop_toTopOf="@+id/card_containing_status">
 
         <TextView
-            android:id="@+id/calculated_items_Screen_Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/calculated_items_Screen_Title"
-            style="@style/title_text"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/card_status_description"
+            style="@style/body_text"
+            android:layout_width="180dp"
+            android:layout_height="45dp"
+            android:text="@string/card_status_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/progress_bar"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_containing_status"
-            android:layout_width="0dp"
-            android:layout_height="220dp"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="#F5F5F5"
-            app:cardCornerRadius="16dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calculated_items_Screen_Title">
-
+        <!--
             <TextView
-                android:id="@+id/card_status_description"
-                android:layout_width="137dp"
-                android:layout_height="61dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="58dp"
-                android:text="@string/card_status_description"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
+            android:fontFamily="@font/poppins_regular"
                 android:id="@+id/card_status_face"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="130dp"
                 android:text="@string/card_status_face"
+                android:layout_marginStart="60dp"
                 android:textColor="@color/black"
-                android:textSize="48sp"
-                android:textStyle="bold" />
+                android:textSize="46sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/card_status_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView7"
+                app:layout_constraintTop_toTopOf="parent" />
+-->
 
-            <ProgressBar
-                android:id="@+id/progress_bar"
-                style="@style/CircularDeterminateProgressBar"
-                android:layout_width="190dp"
-                android:layout_height="190dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="20dp"
-                tools:progress="110" />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/CircularDeterminateProgressBar"
+            android:layout_width="142dp"
+            android:layout_height="142dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:progress="70" />
 
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="60dp"
-                android:background="@drawable/ic_calories_icon"
-                android:contentDescription="@string/calories_icon_description" />
-
-            <TextView
-                android:id="@+id/calories_count"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="106dp"
-                android:layout_marginEnd="54dp"
-                android:text="@string/calories"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="135dp"
-                android:layout_marginEnd="44dp"
-                android:text="Cal"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-
-        </androidx.cardview.widget.CardView>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="46dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/ic_calories_icon"
+            android:contentDescription="@string/calories_icon_description"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar"
+            app:layout_constraintTop_toTopOf="@+id/progress_bar" />
 
         <TextView
-            style="@style/label_text"
-            android:id="@+id/selected_items"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:id="@+id/calories_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="66dp"
-            android:text="@string/items_selected"
+            android:layout_gravity="end"
+            android:text="70%"
+            android:textColor="@color/number_calures"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_containing_status" />
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/textView7"
+            style="@style/label_text"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/selected_items">
+            android:layout_marginStart="142dp"
+            android:text="Goal calorie :  "
+            android:textColor="@color/color_gole"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            app:layout_constraintStart_toEndOf="@+id/progress_bar"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/single_item_card1"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="6dp"
-                app:cardBackgroundColor="#F5F5F5"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/selected_items">
+        <TextView
+            android:fontFamily="@font/poppins_medium"
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="2500"
+            android:textColor="@color/numbers_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/card_status_description"
+            app:layout_constraintStart_toEndOf="@+id/progress_bar"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-                <TextView
-                    android:id="@+id/card_name"
-                    style="@style/textviewMarginStart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginTop="18dp"
-                    android:text="Burger" />
-
-                <TextView
-                    android:id="@+id/card_calories"
-                    style="@style/textviewMarginEnd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginEnd="28dp"
-                    android:text="200 cal"
-                    android:textColor="@color/black" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/single_item_card2"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="6dp"
-                app:cardBackgroundColor="#F5F5F5"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/single_item_card1">
-
-                <TextView
-                    android:id="@+id/card_name2"
-                    style="@style/textviewMarginStart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginTop="18dp"
-                    android:text="Pizza" />
-
-                <TextView
-                    style="@style/textviewMarginEnd"
-                    android:id="@+id/card_calories2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginEnd="28dp"
-                    android:text="150 cal"
-                    android:textStyle="bold" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/single_item_card3"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="6dp"
-                app:cardBackgroundColor="#F5F5F5"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/single_item_card2">
-
-                <TextView
-                    style="@style/textviewMarginStart"
-                    android:id="@+id/card_name3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginTop="18dp"
-                    android:text="Rezo" />
-
-                <TextView
-                    style="@style/textviewMarginEnd"
-                    android:id="@+id/card_calories3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginEnd="28dp"
-                    android:text="170 cal" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/single_item_card4"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="6dp"
-                app:cardBackgroundColor="#F5F5F5"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/single_item_card2">
-
-                <TextView
-                    style="@style/textviewMarginStart"
-                    android:id="@+id/card_name4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginTop="18dp"
-                    android:text="Rezo" />
-
-                <TextView
-                    style="@style/textviewMarginEnd"
-                    android:id="@+id/card_calories4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginEnd="28dp"
-                    android:text="170 cal" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/single_item_card5"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="6dp"
-                app:cardBackgroundColor="#F5F5F5"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/single_item_card2">
-
-                <TextView
-                    style="@style/textviewMarginStart"
-                    android:id="@+id/card_name5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginTop="18dp"
-                    android:text="Rezo" />
-
-                <TextView
-                    style="@style/textviewMarginEnd"
-                    android:id="@+id/card_calories5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginEnd="28dp"
-                    android:text="170 cal" />
-
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+    <!--    </androidx.cardview.widget.CardView>-->
 
+    <TextView
+        android:fontFamily="@font/poppins_medium"
+        android:id="@+id/selected_items"
+        style="@style/label_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/items_selected"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_containing_status" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_added_items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="275dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selected_items"
+        tools:listitem="@layout/item_meal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
