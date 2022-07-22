@@ -55,10 +55,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun onStart() {
         super.onStart()
         val calorie = arguments?.getInt(Constants.CALORIES_KEY)
+        val weight = arguments?.getInt(Constants.WEIGHT)
+        val height = arguments?.getInt(Constants.HEIGHT)
         setupPieChart(calorie.toString())
         loadPieChartData()
         dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
         mealsList = dataManager.mealsList
+        binding.weightLabel.text = weight.toString()
+        binding.hightLabel.text = height.toString()
 
     }
 
@@ -102,23 +106,25 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         data.setValueTextColor(Color.BLACK)
         binding.pieChart.invalidate()
         binding.pieChart.animateY(1400, Easing.EaseInOutQuad)
+
     }
 
 
     private fun openCategoryDetails(mealsList: MutableList<Meal>) {
         val categoryFragment =
             CategoryFragment.newInstance(mealsList as ArrayList<Meal>, dataManager)
-//        (activity as HomeActivity).addFragment(categoryFragment)
         listener?.addFragment(categoryFragment)
     }
 
 
     companion object {
 
-        fun newInstance(calorie: Int, dataManager: DataManager): HomeFragment {
+        fun newInstance(calorie: Int,weight: Int,height: Int, dataManager: DataManager): HomeFragment {
             return HomeFragment().apply {
                 arguments = Bundle().apply {
                     putInt(Constants.CALORIES_KEY, calorie)
+                    putInt(Constants.WEIGHT, weight)
+                    putInt(Constants.HEIGHT, height)
                     putSerializable(Constants.DATA_MANAGER_KEY, dataManager)
                 }
             }

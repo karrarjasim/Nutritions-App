@@ -19,7 +19,7 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
 
     var age: Int = 20
     var height: Int = 150
-    var weight: Int = 70
+    var weight: Int = 75
     var activityFactor: Double = 1.2 // The  activity factor is a function of the type of activity for an individual
     var calories: Int = 0
 
@@ -85,6 +85,8 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
 
             val intent = Intent(activity, HomeActivity::class.java).apply {
                 putExtra(Constants.CALORIES_KEY, calories)
+                putExtra(Constants.WEIGHT, weight)
+                putExtra(Constants.HEIGHT, height)
             }.also {
                 startActivity(it)
                 activity?.finish()

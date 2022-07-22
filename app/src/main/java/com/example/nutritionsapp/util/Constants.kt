@@ -27,5 +27,7 @@ object Constants {
     const val DATA_MANAGER_KEY = "data_manager"
     const val CATEGORY_LIST_KEY = "meals_list"
     const val ADDED_OR_NOT = "added_or_not"
+    const val WEIGHT = "weight"
+    const val HEIGHT = "height"
 
 }
