@@ -9,14 +9,19 @@
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/bg_catogry.xml" value="0.1" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/bottom_navigation_colors.xml" value="0.1" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/btn_background.xml" value="0.1" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/button_bg.xml" value="0.1" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/circle.xml" value="0.1" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/circle_darkthem.xml" value="0.1115" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/circle_shape.xml" value="0.1" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/search_bg.xml" value="0.1" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/drawable/textv_background.xml" value="0.1195" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/activity_home.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/drop_down_item.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_calculate.xml" value="0.25" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_calorie.xml" value="0.164967562557924" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_category.xml" value="0.22" />
-        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_home.xml" value="0.11574074074074074" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_details.xml" value="0.18181818181818182" />
+        <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_onboard.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/fragment_search.xml" value="0.22" />
         <entry key="..\:/Users/Asia/Documents/GitHub/Nutritions-App/app/src/main/res/layout/item_meal.xml" value="0.20416666666666666" />

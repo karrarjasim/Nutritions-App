@@ -6,14 +6,16 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="number_calures">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary">#37B64B</color>
+    <color name="primary">#559960</color>
     <color name="text_color">#008E7F</color>
     <color name="gray_mid">#C4C4C4</color>
+    <color name="label_color">#616161</color>
     <color name="item_color">#FFFFFF</color>
     <color name="normal_text_black">#474747</color>
     <color name="card_bg">#FFFFFF</color>
-    <color name="numbers_color">#FFFFFF</color>
+    <color name="numbers_color">#008E7F</color>
 
 
 
@@ -26,5 +28,6 @@
     <color name="dark_green_pie_chart">#73C080</color>
     <color name="green_text_color">#008E7F</color>
     <color name="card_color_home">#559960</color>
+    <color name="color_gole">#979797</color>
 
 </resources>

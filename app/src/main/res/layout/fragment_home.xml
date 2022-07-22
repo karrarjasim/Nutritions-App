@@ -262,14 +262,15 @@
             tools:ignore="ContentDescription" />
 
         <TextView
+            style="@style/body_text"
             android:layout_width="@dimen/textwidth_home"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim14"
             android:elevation="@dimen/dim16"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/top_10_recipes_n_contains_vitamin_d3"
             android:textAlignment="center"
-            android:fontFamily="@font/poppins_regular"
-            style="@style/body_text"
+            app:layout_constraintBottom_toBottomOf="@+id/vitamin_d3_meal_card"
             app:layout_constraintEnd_toEndOf="@id/vitamin_image"
             app:layout_constraintStart_toStartOf="@id/vitamin_image"
             app:layout_constraintTop_toBottomOf="@id/vitamin_image" />

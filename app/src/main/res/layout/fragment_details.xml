@@ -110,6 +110,7 @@
             android:elevation="@dimen/elevation_smail"
             android:text="Carbs"
             android:textSize="10sp"
+            android:textColor="@color/label_color"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/carb_number"
             app:layout_constraintTop_toBottomOf="@id/carb_number" />
@@ -145,6 +146,7 @@
             android:layout_height="wrap_content"
             android:elevation="@dimen/elevation_smail"
             android:text="@string/protein"
+            android:textColor="@color/label_color"
             android:textSize="10sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/protein_number"
@@ -180,6 +182,7 @@
             android:layout_height="wrap_content"
             android:elevation="@dimen/elevation_smail"
             android:text="@string/fat"
+            android:textColor="@color/label_color"
             android:textSize="10sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/fat_number"

@@ -6,11 +6,13 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#262626</color>
+    <color name="number_calures">#577E75</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary">#37B64B</color>
-    <color name="text_color">#008E7F</color>
+    <color name="primary">#559960</color>
+    <color name="text_color">#FFFFFF</color>
     <color name="gray_mid">#C4C4C4</color>
     <color name="item_color">#FFFFFF</color>
+    <color name="label_color">#C4C4C4</color>
     <color name="normal_text_black">#ADC2A3</color>
     <color name="card_bg">#373737</color>
     <color name="numbers_color">#577E75</color>
