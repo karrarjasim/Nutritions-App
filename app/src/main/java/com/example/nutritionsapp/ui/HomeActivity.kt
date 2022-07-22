@@ -26,6 +26,8 @@ class HomeActivity : AppCompatActivity() , NavigationInterface{
     private lateinit var calorieFragment : CalorieFragment
     private val dataManager = DataManager()
     private  var calories = 0
+    private  var weight = 0
+    private  var height = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +35,8 @@ class HomeActivity : AppCompatActivity() , NavigationInterface{
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         calories = intent.getIntExtra(Constants.CALORIES_KEY, calories)
+        weight = intent.getIntExtra(Constants.WEIGHT,weight)
+        height = intent.getIntExtra(Constants.HEIGHT, height)
         if (savedInstanceState == null){
             initSubView(calories)
         }
@@ -49,7 +53,7 @@ class HomeActivity : AppCompatActivity() , NavigationInterface{
         binding.bottomAppBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.pageHome -> {
-                    homeFragment = HomeFragment.newInstance(calories, dataManager)
+                    homeFragment = HomeFragment.newInstance(calories, weight, height, dataManager)
                     replaceFragment(homeFragment)
                     true
                 }
@@ -69,7 +73,7 @@ class HomeActivity : AppCompatActivity() , NavigationInterface{
     }
 
     private fun initSubView(calories: Int) {
-        homeFragment = HomeFragment.newInstance(calories, dataManager)
+        homeFragment = HomeFragment.newInstance(calories, weight, height, dataManager)
         addFragment(homeFragment)
     }
 
