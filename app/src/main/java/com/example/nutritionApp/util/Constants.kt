@@ -1,7 +1,7 @@
 package com.example.nutritionApp.util
 
 object Constants {
-    object ColumnIndex{
+    object ColumnIndex {
         const val ID = 0
         const val NAME = 1
         const val SERVING_SIZE = 2
@@ -11,10 +11,10 @@ object Constants {
         const val PROTEIN = 38
         const val FAT = 67
         const val CAFFEINE = 74
-        const val WATER =  76
+        const val WATER = 76
         const val SUGAR = 60
         const val FIBRE = 59
-        const val CALCIUM =29
+        const val CALCIUM = 29
         const val CHOLESTEROL = 6
 
         const val VITAMIN_D = 28
