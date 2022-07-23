@@ -1,5 +1,6 @@
 package com.example.nutritionApp.ui
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.*
 import com.example.nutritionApp.R
 import com.example.nutritionApp.databinding.FragmentCalculateBinding
+import com.example.nutritionApp.util.Constants
 import com.example.nutritionApp.util.PrefsUtil
 
 
@@ -19,14 +21,12 @@ class CalculateFragment : BaseFragment<FragmentCalculateBinding>() {
     private var age: Int = 20
     var height: Int = 150
     private var weight: Int = 75
-    var activityFactor: String = "0.0"
-    var selectedActivityFactor: Int = 0
+    var activityFactor: Double = 0.0
     var calories: Int = 0
 
 
     override fun onStart() {
         super.onStart()
-
         context?.let {
             ArrayAdapter.createFromResource(
                 it,
@@ -59,23 +59,13 @@ class CalculateFragment : BaseFragment<FragmentCalculateBinding>() {
         }
         binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                if (PrefsUtil.selectedActivityFactorInform != null || PrefsUtil.selectedActivityFactorInform != -1) {
-                    selectedActivityFactor = PrefsUtil.selectedActivityFactorInform!!
-                    activityFactor = PrefsUtil.activityFactorInform!!
-                    println("@@@activityFactor = $activityFactor")
-                    println("@@@selectedActivityFactor = $selectedActivityFactor")
-                    return
-                }
                 activityFactor = when (p2) {
-                    0 -> "1.2"
-                    1 -> "1.55"
-                    2 -> "1.725"
-                    else -> "0.0"
+                    0 -> 1.2
+                    1 -> 1.55
+                    2 -> 1.725
+                    else -> 0.0
                 }
-                selectedActivityFactor = p2
-                println("activityFactor = $activityFactor")
-                println("selectedActivityFactor = $selectedActivityFactor")
-                Log.v("activityFactor", activityFactor)
+                Log.v("activityFactor", activityFactor.toString())
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -83,25 +73,31 @@ class CalculateFragment : BaseFragment<FragmentCalculateBinding>() {
             }
         }
 
-        binding.radioGroup.setOnCheckedChangeListener { _, _ ->
+        binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
             binding.enterBtn.isEnabled = true
+            if (checkedId == 1) {
+                binding.male.isChecked = true
+            } else {
+                binding.female.isChecked = true
+
+            }
         }
 
         binding.enterBtn.setOnClickListener {
             calories = if (binding.female.isChecked) {
-                (((10 * weight) + (6.25 * height) - (5 * age) - 161) * activityFactor.toDouble()).toInt()
+                (((10 * weight) + (6.25 * height) - (5 * age) - 161) * activityFactor).toInt()
             } else {
-                (((10 * weight) + (6.25 * height) - (5 * age) + 5) * activityFactor.toDouble()).toInt()
+                (((10 * weight) + (6.25 * height) - (5 * age) + 5) * activityFactor).toInt()
             }
             saveInforms()
-//            Intent(activity, HomeActivity::class.java).apply {
-//                putExtra(Constants.CALORIES_KEY, calories)
-//                putExtra(Constants.WEIGHT, weight)
-//                putExtra(Constants.HEIGHT, height)
-//            }.also {
-//                startActivity(it)
-//                activity?.finish()
-//            }
+            Intent(activity, HomeActivity::class.java).apply {
+                putExtra(Constants.CALORIES_KEY, calories)
+                putExtra(Constants.WEIGHT, weight)
+                putExtra(Constants.HEIGHT, height)
+            }.also {
+                startActivity(it)
+                activity?.finish()
+            }
         }
 
 
@@ -111,9 +107,7 @@ class CalculateFragment : BaseFragment<FragmentCalculateBinding>() {
         PrefsUtil.ageInform = age
         PrefsUtil.heightInform = height
         PrefsUtil.weightInform = weight
-        PrefsUtil.selectedActivityFactorInform = selectedActivityFactor
-        PrefsUtil.activityFactorInform = activityFactor
-
+        PrefsUtil.optimalCaloriesInform = calories
     }
 
     private fun getSavedInforms() {
@@ -127,12 +121,9 @@ class CalculateFragment : BaseFragment<FragmentCalculateBinding>() {
             binding.weightSlider.value = weight.toFloat()
             binding.weightValue.text = weight.toString()
         }
-        if (PrefsUtil.ageInform != null || PrefsUtil.ageInform != 0) {
-            age = PrefsUtil.ageInform!!
-            binding.ageSlider.value = age.toFloat()
-            binding.ageValue.text = age.toString()
+        if (PrefsUtil.optimalCaloriesInform != null || PrefsUtil.optimalCaloriesInform != 0) {
+            calories = PrefsUtil.optimalCaloriesInform!!
         }
-        println("PrefsUtil.selectedActivityFactorInform = ${PrefsUtil.selectedActivityFactorInform}")
     }
 
     // needing the calculated calories // age // weight // height // body fat // selected items and progress percentage // searched items

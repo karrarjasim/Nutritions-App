@@ -10,6 +10,7 @@ import com.example.nutritionApp.data.domain.Meal
 import com.example.nutritionApp.databinding.FragmentHomeBinding
 import com.example.nutritionApp.interfaces.NavigationInterface
 import com.example.nutritionApp.util.Constants
+import com.example.nutritionApp.util.PrefsUtil
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
@@ -50,12 +51,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
     }
 
-
     override fun onStart() {
         super.onStart()
-        val calorie = arguments?.getInt(Constants.CALORIES_KEY)
-        val weight = arguments?.getInt(Constants.WEIGHT)
-        val height = arguments?.getInt(Constants.HEIGHT)
+        val height =
+            if (PrefsUtil.heightInform != null || PrefsUtil.heightInform != 0) PrefsUtil.heightInform else arguments?.getInt(
+                Constants.HEIGHT
+            )
+        val weight =
+            if (PrefsUtil.weightInform != null || PrefsUtil.weightInform != 0) PrefsUtil.weightInform else arguments?.getInt(
+                Constants.WEIGHT
+            )
+        val calorie =
+            if (PrefsUtil.optimalCaloriesInform != null || PrefsUtil.optimalCaloriesInform != 0) PrefsUtil.optimalCaloriesInform else arguments?.getInt(
+                Constants.CALORIES_KEY
+            )
+
         setupPieChart(calorie.toString())
         loadPieChartData()
         dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
@@ -118,7 +128,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     companion object {
 
-        fun newInstance(calorie: Int,weight: Int,height: Int, dataManager: DataManager): HomeFragment {
+        fun newInstance(
+            calorie: Int,
+            weight: Int,
+            height: Int,
+            dataManager: DataManager
+        ): HomeFragment {
             return HomeFragment().apply {
                 arguments = Bundle().apply {
                     putInt(Constants.CALORIES_KEY, calorie)

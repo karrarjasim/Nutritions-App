@@ -9,8 +9,6 @@ object PrefsUtil {
     private const val KEY_AGE = "age"
     private const val KEY_HEIGHT = "height"
     private const val KEY_WIGHT = "weight"
-    private const val KEY_ACTIVITY_FACTOR = "key_activity_factor"
-    private const val KEY_Selected_ACTIVITY_FACTOR = "key_selected_activity_factor"
 
 
     private const val KEY_OPTIMAL_CALORIES = "optimal_calories"
@@ -36,20 +34,6 @@ object PrefsUtil {
         get() = sharedPreferences?.getInt(KEY_WIGHT, 75)
         set(value) {
             value?.let { sharedPreferences?.edit()?.putInt(KEY_WIGHT, it)?.apply() }
-        }
-
-    var activityFactorInform: String?
-        get() = sharedPreferences?.getString(KEY_ACTIVITY_FACTOR, "0.0")
-        set(value) {
-            value?.let { sharedPreferences?.edit()?.putString(KEY_ACTIVITY_FACTOR, it)?.apply() }
-        }
-
-    var selectedActivityFactorInform: Int?
-        get() = sharedPreferences?.getInt(KEY_Selected_ACTIVITY_FACTOR, -1)
-        set(value) {
-            value?.let {
-                sharedPreferences?.edit()?.putInt(KEY_Selected_ACTIVITY_FACTOR, it)?.apply()
-            }
         }
 
 
