@@ -14,6 +14,7 @@ import com.example.nutritionsapp.databinding.ActivityHomeBinding
 import com.example.nutritionsapp.interfaces.NavigationInterface
 import com.example.nutritionsapp.util.Constants
 import com.example.nutritionsapp.util.CsvParser
+import com.example.nutritionsapp.util.PrefsUtil
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -41,6 +42,7 @@ class HomeActivity : AppCompatActivity() , NavigationInterface{
             initSubView(calories)
         }
         addNavigationListener()
+
 
     }
 

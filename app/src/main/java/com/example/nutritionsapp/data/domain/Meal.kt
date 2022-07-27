@@ -2,6 +2,7 @@ package com.example.nutritionsapp.data.domain
 
 import android.os.Parcel
 import android.os.Parcelable
+import java.io.Serializable
 
 data class Meal(
     val id: Int,
@@ -20,44 +21,7 @@ data class Meal(
     val sugar: String,
     val calcium: String,
     val cholesterol: String,
-) : Parcelable {
-    constructor(parcel: Parcel) : this (
-        parcel.readInt(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-    ){
+) : Serializable {
 
-    }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<Meal> {
-        override fun createFromParcel(parcel: Parcel): Meal {
-            return Meal(parcel)
-        }
-
-        override fun newArray(size: Int): Array<Meal?> {
-            return arrayOfNulls(size)
-        }
-    }
 
 }
