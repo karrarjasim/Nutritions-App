@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.databinding.ActivityCalculateBinding
+import com.example.nutritionsapp.util.PrefsUtil
 
 class CalculateActivity : AppCompatActivity() {
 
@@ -16,7 +17,7 @@ class CalculateActivity : AppCompatActivity() {
         binding = ActivityCalculateBinding.inflate(layoutInflater)
         setTheme(R.style.splashScreenTheme)
         setContentView(binding.root)
-
+        PrefsUtil.initSharedPreferences(applicationContext)
     }
 
 }

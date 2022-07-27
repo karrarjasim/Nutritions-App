@@ -34,7 +34,7 @@ class DeatilsFragment : BaseFragment<FragmentDetailsBinding>() {
 
     override fun onStart() {
         super.onStart()
-        meal = requireNotNull(arguments?.getParcelable<Meal>(Constants.ID_KEY))
+        meal = requireNotNull(arguments?.getSerializable(Constants.ID_KEY)) as Meal
         /// meal comes when we click on a meal in the list in the added meals in calories fragment
         dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
 
@@ -125,7 +125,7 @@ class DeatilsFragment : BaseFragment<FragmentDetailsBinding>() {
         fun newInstance(meal: Meal, dataManager: DataManager): DeatilsFragment {
             return DeatilsFragment().apply {
                 arguments = Bundle().apply {
-                    putParcelable(Constants.ID_KEY, meal)
+                    putSerializable(Constants.ID_KEY, meal)
                     putSerializable(Constants.DATA_MANAGER_KEY, dataManager)
                 }
             }
