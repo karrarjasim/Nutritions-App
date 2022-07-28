@@ -29,5 +29,8 @@ object Constants {
     const val ADDED_OR_NOT = "added_or_not"
     const val WEIGHT = "weight"
     const val HEIGHT = "height"
+    const val SHARED_PREFS = "my_sharedPrefs"
+    const val KEY_AGE = "age"
+
 
 }

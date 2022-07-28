@@ -24,9 +24,9 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>(), MealInteractio
         super.onStart()
         dataManager = arguments?.getSerializable(Constants.DATA_MANAGER_KEY) as DataManager
 
-        val mealsList = arguments?.getParcelableArrayList<Meal>(Constants.CATEGORY_LIST_KEY)
+        val mealsList = arguments?.getSerializable(Constants.CATEGORY_LIST_KEY)
         log(mealsList.toString())
-        setText(mealsList)
+        setText(mealsList as ArrayList<Meal>?)
     }
 
     override fun onAttach(context: Context) {
@@ -57,7 +57,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>(), MealInteractio
         fun newInstance(proteinList: ArrayList<Meal>, dataManager: DataManager): CategoryFragment {
             return CategoryFragment().apply {
                 arguments = Bundle().apply {
-                    putParcelableArrayList(Constants.CATEGORY_LIST_KEY, proteinList)
+                    putSerializable(Constants.CATEGORY_LIST_KEY, proteinList)
                     putSerializable(Constants.DATA_MANAGER_KEY, dataManager)
 
                 }

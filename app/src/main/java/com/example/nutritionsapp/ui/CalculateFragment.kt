@@ -9,6 +9,7 @@ import android.widget.*
 import com.example.nutritionsapp.R
 import com.example.nutritionsapp.databinding.FragmentCalculateBinding
 import com.example.nutritionsapp.util.Constants
+import com.example.nutritionsapp.util.PrefsUtil
 
 
 class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
@@ -37,6 +38,16 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
                 adapter.setDropDownViewResource(R.layout.selected_drop_down_item)
                 binding.spinner.adapter = adapter
 
+            }
+        }
+        if (PrefsUtil.calories !== 0){
+            val intent = Intent(activity, HomeActivity::class.java).apply {
+                putExtra(Constants.CALORIES_KEY, PrefsUtil.calories)
+                putExtra(Constants.WEIGHT, PrefsUtil.weight)
+                putExtra(Constants.HEIGHT, PrefsUtil.heigth)
+            }.also {
+                startActivity(it)
+                activity?.finish()
             }
         }
 
@@ -82,7 +93,7 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
             }else{
                   (((10 * weight) + (6.25 * height) - (5 * age ) + 5 ) * activityFactor).toInt()
             }
-
+            saveUserInfo()
             val intent = Intent(activity, HomeActivity::class.java).apply {
                 putExtra(Constants.CALORIES_KEY, calories)
                 putExtra(Constants.WEIGHT, weight)
@@ -94,9 +105,15 @@ class CalculateFragment: BaseFragment<FragmentCalculateBinding>() {
         }
 
 
+
     }
 
-
+    fun saveUserInfo(){
+        PrefsUtil.age = age
+        PrefsUtil.heigth = height
+        PrefsUtil.weight = weight
+        PrefsUtil.calories = calories
+    }
 
 
 
